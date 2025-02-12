@@ -44,9 +44,13 @@ int main(){
             }
             cout << setw(24) << fixed << setprecision(2) << (double)((0.4*sum/n.paz.size())+(0.6*n.egz)) << endl;
         }
-        else if (n.paz.size()%2!=0)
-            cout << setw(24) << n.paz[n.paz.size()/2] << endl;
-        else cout << setw(24) << fixed << setprecision(2) << (double)(n.paz[n.paz.size()/2]+n.paz[n.paz.size()/2-1])/2 << endl;
+        else{
+            std::sort(n.paz.begin(), n.paz.end());
+            if (n.paz.size()%2!=0)
+                cout << setw(24) << n.paz[n.paz.size()/2] << endl;
+            else
+                cout << setw(24) << fixed << setprecision(2) << (double)(n.paz[n.paz.size()/2]+n.paz[n.paz.size()/2-1])/2 << endl;
+        }
     }
 
     return 0;
