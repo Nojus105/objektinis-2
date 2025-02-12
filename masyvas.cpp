@@ -7,9 +7,37 @@ struct Stud {
     int egz;
 
     Stud() : paz(nullptr){}
-
+    
+    //pasalina dinamiskai priskirta atminti, preventina memory leaks
     ~Stud() {
         delete[] paz;
+    }
+    // Delete copy constructor and copy assignment operator to avoid shallow copying.
+    Stud(const Stud&) = delete;
+    Stud& operator=(const Stud&) = delete;
+    
+    // Move constructor: transfers ownership of resources.
+     Stud(Stud&& other) noexcept
+        : vard(move(other.vard)), pav(move(other.pav)),
+        paz(other.paz), paz_count(other.paz_count), egz(other.egz)
+    {
+        other.paz = nullptr;
+        other.paz_count = 0;
+    }
+    
+    // Move assignment operator: releases current resources and takes ownership of the other's.
+    Stud& operator=(Stud&& other) noexcept {
+        if (this != &other) {
+            delete[] paz;
+            vard = move(other.vard);
+            pav = move(other.pav);
+            paz = other.paz;
+            paz_count = other.paz_count;
+            egz = other.egz;
+            other.paz = nullptr;
+            other.paz_count = 0;
+        }
+        return *this;
     }
 
     void addGrade(int grade) {
@@ -53,7 +81,8 @@ int main() {
             cout << "Neteisingas pazymys, iveskite is naujo: ";
             cin >> laik.egz;
         }
-        grupe.push_back(laik);
+        //move panaudotas, kad avoidint Stud kopiju
+        grupe.push_back(std::move(laik));
     }
     cout << "Vidurkis - ivestis 0, mediana - ivestis 1" << endl;
     bool gal;
@@ -64,7 +93,7 @@ int main() {
     else cout << "Galutinis (Med.)" << endl;
     for (int i = 0; i < 40; i++) cout << "-";
     cout << endl;
-    for (auto n : grupe) {
+    for (auto& n : grupe) {
         cout << n.pav << setw(12) << n.vard;
         int sum = 0;
         // visu pazymiu suma
