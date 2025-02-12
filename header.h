@@ -4,6 +4,10 @@
 #include <algorithm>
 #include <sstream>
 #include <utility>
+#include <conio.h>
+#include <string>
+#include <ctime>
+#include <cstdlib>
 
 using std::cout;
 using std::cin;
