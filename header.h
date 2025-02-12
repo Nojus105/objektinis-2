@@ -2,6 +2,7 @@
 #include <vector>
 #include <iomanip>
 #include <algorithm>
+#include <sstream>
 
 using std::cout;
 using std::cin;

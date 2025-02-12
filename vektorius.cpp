@@ -3,26 +3,38 @@
 struct Stud{
     string vard, pav;
     vector<int> paz;
-    int egz=0;
+    int egz;
 };
 
 int main(){
     vector<Stud> grupe;
-    for (int i=0; i<1; i++){
+    while (true) {
         Stud laik;
-        cout << "Iveskite studento varda: ";
+        cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
         cin >> laik.vard;
+        string temp=laik.vard;
+        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+        if (temp == "STOP") break;
         cout << "Iveskite studento pavarde: ";
         cin >> laik.pav;
-        cout << "Iveskite studento pazymius: ";
+        cout << "Iveskite studento pazymius (atskirti tarpais): ";
+        cin.ignore(); //nekyla problemu su praeita cin operacija
+        string line;
+        getline(cin, line);
+        std::stringstream ss(line);
         int x;
-        while(true){
-            cin >> x;
-            if (x <= 0 || x>10) break;
-            laik.paz.push_back(x);
+        while (ss >> x) {
+            if (x > 0 && x <= 10) 
+                laik.paz.push_back(x);
+            else
+                cout << "Neteisingas pazymys: " << x << endl;
         }
         cout << "Iveskite studento egzamino pazymi: ";
         cin >> laik.egz;
+        while(laik.egz<=0 || laik.egz>10){
+            cout << "Neteisingas pazymys, iveskite is naujo: ";
+            cin >> laik.egz;
+        }
         grupe.push_back(laik);
     }
     cout << "Vidurkis - ivestis 0, mediana - ivestis 1" << endl;
