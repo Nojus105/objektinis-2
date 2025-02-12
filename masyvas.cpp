@@ -1,94 +1,26 @@
 #include "header.h"
-
-struct Stud {
-    string vard, pav;
-    int* paz;
-    int paz_count=0;
-    int egz;
-
-    Stud() : paz(nullptr){}
-    
-    //pasalina dinamiskai priskirta atminti, preventina memory leaks
-    ~Stud() {
-        delete[] paz;
-    }
-    // Delete copy constructor and copy assignment operator to avoid shallow copying.
-    Stud(const Stud&) = delete;
-    Stud& operator=(const Stud&) = delete;
-    
-    // Move constructor: transfers ownership of resources.
-     Stud(Stud&& other) noexcept
-        : vard(move(other.vard)), pav(move(other.pav)),
-        paz(other.paz), paz_count(other.paz_count), egz(other.egz)
-    {
-        other.paz = nullptr;
-        other.paz_count = 0;
-    }
-    
-    // Move assignment operator: releases current resources and takes ownership of the other's.
-    Stud& operator=(Stud&& other) noexcept {
-        if (this != &other) {
-            delete[] paz;
-            vard = move(other.vard);
-            pav = move(other.pav);
-            paz = other.paz;
-            paz_count = other.paz_count;
-            egz = other.egz;
-            other.paz = nullptr;
-            other.paz_count = 0;
-        }
-        return *this;
-    }
-
-    void addGrade(int grade) {
-        int* new_paz = new int[paz_count + 1];
-        for (int i = 0; i < paz_count; i++) {
-            new_paz[i] = paz[i];
-        }
-        new_paz[paz_count] = grade;
-        delete[] paz;
-        paz = new_paz;
-        paz_count++;
-    }
-};
+#include "functions1.cpp"
 
 int main() {
+    srand(time(0));
     vector<Stud> grupe;
-    while (true) {
-        Stud laik;
-        cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
-        cin >> laik.vard;
-        string temp = laik.vard;
-        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
-        if (temp == "STOP") break;
-        cout << "Iveskite studento pavarde: ";
-        cin >> laik.pav;
-        cout << "Iveskite studento pazymius (atskirti tarpais): ";
-        cin.ignore(); //nekyla problemu su praeita cin operacija
-        string line;
-        getline(cin, line);
-        std::stringstream ss(line);
-        int x;
-        while (ss >> x) {
-            if (x > 0 && x <= 10) 
-                laik.addGrade(x);
-            else
-                cout << "Neteisingas pazymys: " << x << endl;
-        }
-        cout << "Iveskite studento egzamino pazymi: ";
-        cin >> laik.egz;
-        while (laik.egz <= 0 || laik.egz > 10) {
-            cout << "Neteisingas pazymys, iveskite is naujo: ";
-            cin >> laik.egz;
-        }
-        //move panaudotas, kad avoidint Stud kopiju
-        grupe.push_back(std::move(laik));
+    cout << "1 - manual ivedimas, 2 - generuoti pazymius, 3 - generuoti pazymius, vardus, pavardes" << endl;
+    char pasirinkimas=getch();
+    Stud laik;
+    if (pasirinkimas == '1') {
+        Manual(laik, grupe);
+    } else if (pasirinkimas == '2') {
+        Semi(laik, grupe);
+    } else if (pasirinkimas == '3') {
+        Auto(grupe);
+    } else {
+        cout << "Neteisingas pasirinkimas" << endl;
+        return 1;
     }
-    cout << "Vidurkis - ivestis 0, mediana - ivestis 1" << endl;
-    bool gal;
-    cin >> gal;
+    cout << "0 - Vidurkis, 1 - Mediana" << endl;
+    char gal=getch();
     cout << "Pavarde" << setw(12) << "Vardas" << setw(24);
-    if (gal == false)
+    if (gal == '0')
         cout << "Galutinis (Vid.)" << endl;
     else cout << "Galutinis (Med.)" << endl;
     for (int i = 0; i < 40; i++) cout << "-";

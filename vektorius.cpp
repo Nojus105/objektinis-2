@@ -1,47 +1,29 @@
 #include "header.h"
-
-struct Stud{
-    string vard, pav;
-    vector<int> paz;
-    int egz;
-};
+#include "functions.cpp"
 
 int main(){
+    srand(time(0));
     vector<Stud> grupe;
-    while (true) {
-        Stud laik;
-        cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
-        cin >> laik.vard;
-        string temp=laik.vard;
-        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
-        if (temp == "STOP") break;
-        cout << "Iveskite studento pavarde: ";
-        cin >> laik.pav;
-        cout << "Iveskite studento pazymius (atskirti tarpais): ";
-        cin.ignore(); //nekyla problemu su praeita cin operacija
-        string line;
-        getline(cin, line);
-        std::stringstream ss(line);
-        int x;
-        while (ss >> x) {
-            if (x > 0 && x <= 10) 
-                laik.paz.push_back(x);
-            else
-                cout << "Neteisingas pazymys: " << x << endl;
-        }
-        cout << "Iveskite studento egzamino pazymi: ";
-        cin >> laik.egz;
-        while(laik.egz<=0 || laik.egz>10){
-            cout << "Neteisingas pazymys, iveskite is naujo: ";
-            cin >> laik.egz;
-        }
-        grupe.push_back(laik);
+    cout << "1 - manual ivedimas, 2 - generuoti pazymius, 3 - generuoti pazymius, vardus, pavardes" << endl;
+    char pasirinkimas=getch();
+    Stud laik;
+    if (pasirinkimas=='1'){
+        Manual(laik, grupe);
     }
-    cout << "Vidurkis - ivestis 0, mediana - ivestis 1" << endl;
-    bool gal;
-    cin >> gal;
+    else if(pasirinkimas=='2'){
+        Semi(laik, grupe);
+    }
+    else if(pasirinkimas=='3'){
+        Auto(grupe);
+    }
+    else{
+        cout << "Neteisingas pasirinkimas" << endl;
+        return 1;
+    }
+    cout << "0 - Vidurkis, 1 - Mediana" << endl;
+    char gal=getch();
     cout << "Pavarde" << setw(12) << "Vardas" << setw(24);
-    if (gal==false)
+    if (gal=='0')
         cout << "Galutinis (Vid.)" << endl;
     else cout << "Galutinis (Med.)" << endl;
     for (int i=0; i<40; i++) cout << "-";
@@ -50,7 +32,7 @@ int main(){
         cout << n.pav << setw(12) << n.vard;
         int sum=0;
         //visu pazymiu suma
-        if (gal==false){
+        if (gal=='0'){
             for (auto m : n.paz){
                 sum+=m;
             }
