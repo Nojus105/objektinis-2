@@ -28,10 +28,23 @@ void Manual(Stud &laik, vector<Stud> &grupe){
             else
                 cout << "Neteisingas pazymys: " << x << endl;
         }
+        while (laik.paz.empty()) {
+            cout << "Turite ivesti bent viena pazymi. Iveskite studento pazymius (atskirti tarpais): ";
+            getline(cin, line);
+            std::stringstream ss(line);
+            while (ss >> x) {
+                if (x > 0 && x <= 10) 
+                    laik.paz.push_back(x);
+                else
+                    cout << "Neteisingas pazymys: " << x << endl;
+            }
+        }
         cout << "Iveskite studento egzamino pazymi: ";
         cin >> laik.egz;
         while(laik.egz<=0 || laik.egz>10){
             cout << "Neteisingas pazymys, iveskite is naujo: ";
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cin >> laik.egz;
         }
         grupe.push_back(laik);

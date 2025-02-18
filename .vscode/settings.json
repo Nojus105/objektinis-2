@@ -5,6 +5,10 @@
         "iostream": "cpp",
         "iosfwd": "cpp",
         "xstring": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iterator": "cpp",
+        "ios": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp"
     }
 }
