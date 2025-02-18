@@ -77,11 +77,22 @@ void Manual(Stud &laik, vector<Stud> &grupe) {
             else
                 cout << "Neteisingas pazymys: " << x << endl;
         }
+        while (laik.paz_count == 0) {
+            cout << "Turite ivesti bent viena pazymi. Iveskite studento pazymius (atskirti tarpais): ";
+            getline(cin, line);
+            std::stringstream ss(line);
+            while (ss >> x) {
+                if (x > 0 && x <= 10)
+                    laik.addGrade(x);
+                else
+                    cout << "Neteisingas pazymys: " << x << endl;
+            }
+        }
         cout << "Iveskite studento egzamino pazymi: ";
-        cin >> laik.egz;
-        while (laik.egz <= 0 || laik.egz > 10) {
+        while (!(cin >> laik.egz) || laik.egz <= 0 || laik.egz > 10) {
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cout << "Neteisingas pazymys, iveskite is naujo: ";
-            cin >> laik.egz;
         }
         grupe.push_back(move(laik));
     }
