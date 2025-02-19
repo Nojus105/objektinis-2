@@ -90,6 +90,7 @@ void Manual(Stud &laik, vector<Stud> &grupe) {
         }
         cout << "Iveskite studento egzamino pazymi: ";
         while (!(cin >> laik.egz) || laik.egz <= 0 || laik.egz > 10) {
+            //isvalo klaidinga ivesti
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cout << "Neteisingas pazymys, iveskite is naujo: ";
@@ -136,3 +137,4 @@ void Auto(vector<Stud> &grupe) {
         grupe.push_back(move(laik));
     }
 }
+
