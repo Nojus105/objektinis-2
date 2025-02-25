@@ -19,3 +19,4 @@ using std::fixed;
 using std::setprecision;
 using std::setw;
 using std::ifstream;
+using std::ofstream;
