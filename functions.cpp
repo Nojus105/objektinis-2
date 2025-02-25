@@ -103,3 +103,36 @@ void Auto(vector<Stud> &grupe)
         grupe.push_back(laik);
     }
 }
+void Skaityti(Stud &laik, vector<Stud> &grupe)
+{
+    ifstream fd("kursiokai.txt");
+    if (!fd)
+    {
+        cout << "Failas nerastas" << endl;
+        exit(1);
+    }
+    string x;
+    int count = 0;
+    fd >> x >> x;
+    while (true)
+    {
+        fd >> x;
+        if (x == "Egz.")
+            break;
+        count++;
+    }
+    while (!fd.eof())
+    {
+        fd >> laik.vard >> laik.pav;
+        laik.paz.clear();
+        for (int i = 0; i < count; i++)
+        {
+            int temp;
+            fd >> temp;
+            laik.paz.push_back(temp);
+        }
+        fd >> laik.egz;
+        grupe.push_back(laik);
+    };
+    fd.close();
+}

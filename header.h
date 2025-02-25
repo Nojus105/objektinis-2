@@ -8,6 +8,7 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
 
 using std::cout;
 using std::cin;
@@ -17,3 +18,4 @@ using std::vector;
 using std::fixed;
 using std::setprecision;
 using std::setw;
+using std::ifstream;
