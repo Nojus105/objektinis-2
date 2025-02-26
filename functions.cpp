@@ -1,12 +1,5 @@
 #include "header.h"
 
-struct Stud
-{
-    string vard, pav;
-    vector<int> paz;
-    int egz;
-};
-
 void Manual(Stud &laik, vector<Stud> &grupe)
 {
     while (true)

@@ -9,6 +9,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+#pragma once
 
 using std::cout;
 using std::cin;
@@ -20,3 +21,10 @@ using std::setprecision;
 using std::setw;
 using std::ifstream;
 using std::ofstream;
+
+struct Stud
+{
+    string vard, pav;
+    vector<int> paz;
+    int egz;
+};
