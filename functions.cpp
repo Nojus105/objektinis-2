@@ -175,9 +175,9 @@ void Faile(vector<Stud> &grupe, char gal)
 {
     ofstream fr("rezultatai.txt");
     if (gal == '0')
-        fr << setw(18) << "Pavarde" << setw(25) << "Vardas" << "Galutinis (Vid.)" << endl;
+        fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Vid.)" << endl;
     else if (gal == '1')
-        fr << setw(18) << "Pavarde" << setw(25) << "Vardas" << "Galutinis (Med.)" << endl;
+        fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Med.)" << endl;
     for (int i = 0; i < 50; i++)
         fr << "-";
     fr << endl;
@@ -195,11 +195,11 @@ void Faile(vector<Stud> &grupe, char gal)
             }
             fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
         }
-        else
+        else if (gal == '1')
         {
             std::sort(n.paz.begin(), n.paz.end());
             if (n.paz.size() % 2 != 0)
-                fr << n.paz[n.paz.size() / 2] << endl;
+                fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
             else
                 fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
         }
@@ -221,7 +221,7 @@ void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal)
     }
     else if (rusiavimas == 'g')
     {
-        if (gal == '0') //vidurkis
+        if (gal == '0') // vidurkis
         {
             sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
                  {
@@ -235,7 +235,7 @@ void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal)
 
                  return avgA < avgB; });
         }
-        else if (gal == '1') //mediana
+        else if (gal == '1') // mediana
         {
             sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
                  {

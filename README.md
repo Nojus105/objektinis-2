@@ -28,12 +28,18 @@ After building the project, you can run the executable files (`masyvas.exe` or `
 1. **Manual Input**: Allows the user to manually input student data.
 2. **Semi-Random Generation**: Generates student data with random grades.
 3. **Fully Random Generation**: Generates student data with random names and grades.
+4. **Read from file**: Read data from user's selected file.
+
+### Output Modes
+
+1. **Console**: Prints results in console.
+2. **File**: Prints results in file.
 
 ### Calculation Modes
 
 1. **Average (Vidurkis)**: Calculates the final grade based on the average of the grades.
 2. **Median (Mediana)**: Calculates the final grade based on the median of the grades.
 
-## Example
+### Sorting Modes
 
-When you run the program, you will be prompted to choose an input mode:
+User can choose to sort by name, surname or final grade.
