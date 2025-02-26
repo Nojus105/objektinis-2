@@ -43,3 +43,9 @@ After building the project, you can run the executable files (`masyvas.exe` or `
 ### Sorting Modes
 
 User can choose to sort by name, surname or final grade.
+
+### Testing Times
+
+1. **1 million**: file read - 8.5 seconds, calculations - 2 seconds
+2. **100k**: file read - 2 seconds, calculations - <1 second
+3. **10k**: file read - <1 second, calculations - <1 second
