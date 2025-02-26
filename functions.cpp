@@ -105,7 +105,10 @@ void Auto(vector<Stud> &grupe)
 }
 void Skaityti(Stud &laik, vector<Stud> &grupe)
 {
-    ifstream fd("kursiokai.txt");
+    cout << "Iveskite failo pavadinima: ";
+    string failas;
+    cin >> failas;
+    ifstream fd(failas);
     if (!fd)
     {
         cout << "Failas nerastas" << endl;
@@ -147,7 +150,7 @@ void Ekrane(vector<Stud> &grupe, char gal)
     cout << endl;
     for (auto n : grupe)
     {
-        cout << n.pav << setw(18) << n.vard;
+        cout << setw(19) << std::left << n.pav << setw(15) << n.vard;
         int sum = 0;
         // visu pazymiu suma
         if (gal == '0')
@@ -156,15 +159,15 @@ void Ekrane(vector<Stud> &grupe, char gal)
             {
                 sum += m;
             }
-            cout << setw(25) << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+            cout << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
         }
         else
         {
             std::sort(n.paz.begin(), n.paz.end());
             if (n.paz.size() % 2 != 0)
-                cout << setw(25) << n.paz[n.paz.size() / 2] << endl;
+                cout << n.paz[n.paz.size() / 2] << endl;
             else
-                cout << setw(25) << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                cout << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
         }
     }
 }
@@ -172,16 +175,16 @@ void Faile(vector<Stud> &grupe, char gal)
 {
     ofstream fr("rezultatai.txt");
     if (gal == '0')
-        fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Vid.)" << endl;
+        fr << setw(18) << "Pavarde" << setw(25) << "Vardas" << "Galutinis (Vid.)" << endl;
     else if (gal == '1')
-        fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Med.)" << endl;
+        fr << setw(18) << "Pavarde" << setw(25) << "Vardas" << "Galutinis (Med.)" << endl;
     for (int i = 0; i < 50; i++)
         fr << "-";
     fr << endl;
 
     for (auto n : grupe)
     {
-        fr << n.pav << setw(18) << n.vard;
+        fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
         int sum = 0;
         // visu pazymiu suma
         if (gal == '0')
@@ -190,17 +193,63 @@ void Faile(vector<Stud> &grupe, char gal)
             {
                 sum += m;
             }
-            fr << setw(25) << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+            fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
         }
         else
         {
             std::sort(n.paz.begin(), n.paz.end());
             if (n.paz.size() % 2 != 0)
-                fr << setw(25) << n.paz[n.paz.size() / 2] << endl;
+                fr << n.paz[n.paz.size() / 2] << endl;
             else
-                fr << setw(25) << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
         }
     }
 
     fr.close();
+}
+void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal)
+{
+    if (rusiavimas == 'v')
+    {
+        sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
+             { return a.vard < b.vard; });
+    }
+    else if (rusiavimas == 'p')
+    {
+        sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
+             { return a.pav < b.pav; });
+    }
+    else if (rusiavimas == 'g')
+    {
+        if (gal == '0') //vidurkis
+        {
+            sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
+                 {
+                 double sumA = 0;
+                 for (int grade : a.paz) sumA += grade;
+                 double avgA = (0.4 * sumA / a.paz.size()) + (0.6 * a.egz);
+
+                 double sumB = 0;
+                 for (int grade : b.paz) sumB += grade;
+                 double avgB = (0.4 * sumB / b.paz.size()) + (0.6 * b.egz);
+
+                 return avgA < avgB; });
+        }
+        else if (gal == '1') //mediana
+        {
+            sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
+                 {
+                 auto median = [](const vector<int> &paz) -> double {
+                     vector<int> sortedPaz = paz;
+                     std::sort(sortedPaz.begin(), sortedPaz.end());
+                     if (sortedPaz.size() % 2 != 0)
+                         return sortedPaz[sortedPaz.size() / 2];
+                     else
+                         return (sortedPaz[sortedPaz.size() / 2] + sortedPaz[sortedPaz.size() / 2 - 1]) / 2.0;
+                 };
+                 double medA = median(a.paz);
+                 double medB = median(b.paz);
+                 return medA < medB; });
+        }
+    }
 }

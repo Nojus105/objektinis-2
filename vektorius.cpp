@@ -43,6 +43,18 @@ int main()
         else
             cout << "Neteisingas pasirinkimas" << endl;
     }
+    cout << "Rusiavimas pagal varda (v), pavarde(p), galutini bala (g)" << endl;
+    while (true)
+    {
+        char rusiavimas = getch();
+        if (rusiavimas == 'v' || rusiavimas == 'p' || rusiavimas == 'g')
+        {
+            Rusiuoti(grupe, rusiavimas, gal);
+            break;
+        }
+        else
+            cout << "Neteisingas pasirinkimas" << endl;
+    }
     cout << "0 - ekrane, 1 - faile" << endl;
     while (true)
     {
