@@ -2,69 +2,115 @@
 
 void Manual(Stud &laik, vector<Stud> &grupe)
 {
+    int StudSkaicius = 0;
     while (true)
     {
+    EnterName:
         Stud laik;
-        cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
-        cin >> laik.vard;
-        string temp = laik.vard;
-        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
-        if (temp == "STOP")
-            break;
-        cout << "Iveskite studento pavarde: ";
-        cin >> laik.pav;
+        try
+        {
+            cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
+            cin >> laik.vard;
+            string temp = laik.vard;
+            transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+            if (temp == "STOP" && StudSkaicius == 0)
+                throw std::exception();
+            if (temp == "STOP")
+                break;
+            cout << "Iveskite studento pavarde: ";
+            cin >> laik.pav;
+            StudSkaicius++;
+        }
+        catch (std::exception &e)
+        {
+            cout << "Iveskite bent viena studenta" << endl;
+            goto EnterName;
+        }
         cout << "Iveskite studento pazymius (atskirti tarpais): ";
         cin.ignore(); // nekyla problemu su praeita cin operacija
         string line;
         getline(cin, line);
         std::stringstream ss(line);
-        int x;
-        while (ss >> x)
+        double x;
+        try
         {
-            if (x > 0 && x <= 10)
-                laik.paz.push_back(x);
-            else
-                cout << "Neteisingas pazymys: " << x << endl;
-        }
-        while (laik.paz.empty())
-        {
-            cout << "Turite ivesti bent viena pazymi. Iveskite studento pazymius (atskirti tarpais): ";
-            getline(cin, line);
-            std::stringstream ss(line);
             while (ss >> x)
             {
-                if (x > 0 && x <= 10)
+                if (x > 0 && x <= 10 && x == (int)x)
                     laik.paz.push_back(x);
                 else
                     cout << "Neteisingas pazymys: " << x << endl;
             }
+            if (laik.paz.empty())
+                throw std::exception();
+        }
+        catch (std::exception &e)
+        {
+            while (laik.paz.empty())
+            {
+                cout << "Turite ivesti bent viena pazymi: ";
+                getline(cin, line);
+                std::stringstream ss(line);
+                while (ss >> x)
+                {
+                    if (x > 0 && x <= 10 && x == (int)x)
+                        laik.paz.push_back(x);
+                    else
+                        cout << "Neteisingas pazymys: " << x << endl;
+                }
+            }
         }
         cout << "Iveskite studento egzamino pazymi: ";
-        cin >> laik.egz;
-        while (laik.egz <= 0 || laik.egz > 10)
+        try
         {
-            cout << "Neteisingas pazymys, iveskite is naujo: ";
-            // isvalo klaidinga ivesti
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cin >> laik.egz;
+            double egz;
+            cin >> egz;
+            if (egz <= 0 || egz > 10 || egz != (int)egz)
+                throw std::exception();
+            laik.egz = egz;
+        }
+        catch (std::exception &e)
+        {
+            double egz;
+            while (egz <= 0 || egz > 10 || egz != (int)egz)
+            {
+                cout << "Neteisingas pazymys, iveskite is naujo: ";
+                // isvalo klaidinga ivesti
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cin >> egz;
+            }
+            laik.egz = egz;
         }
         grupe.push_back(laik);
     }
 }
 void Semi(Stud &laik, vector<Stud> &grupe)
 {
+    int StudSkaicius = 0;
     while (true)
     {
+    EnterName1:
         Stud laik;
-        cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
-        cin >> laik.vard;
-        string temp = laik.vard;
-        transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
-        if (temp == "STOP")
-            break;
-        cout << "Iveskite studento pavarde: ";
-        cin >> laik.pav;
+        try
+        {
+            cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
+            cin >> laik.vard;
+            string temp = laik.vard;
+            transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+            if (temp == "STOP" && StudSkaicius == 0)
+                throw std::exception();
+            if (temp == "STOP")
+                break;
+            cout << "Iveskite studento pavarde: ";
+            cin >> laik.pav;
+            StudSkaicius++;
+        }
+        catch (std::exception &e)
+        {
+            cout << "Iveskite bent viena studenta" << endl;
+            goto EnterName1;
+        }
         int num_grades = rand() % 10 + 1;
         for (int i = 0; i < num_grades; ++i)
         {
@@ -101,11 +147,21 @@ void Skaityti(Stud &laik, vector<Stud> &grupe)
     cout << "Iveskite failo pavadinima: ";
     string failas;
     cin >> failas;
-    ifstream fd(failas);
-    if (!fd)
+    ifstream fd;
+    try
     {
-        cout << "Failas nerastas" << endl;
-        exit(1);
+        fd.open(failas);
+        if (!fd)
+            throw std::exception();
+    }
+    catch (std::exception &e)
+    {
+        while (!fd)
+        {
+            cout << "Failas nerastas. Iveskite failo pavadinima: ";
+            cin >> failas;
+            fd.open(failas);
+        }
     }
     string x;
     int count = 0;
