@@ -222,39 +222,136 @@ void Ekrane(vector<Stud> &grupe, char gal)
 }
 void Faile(vector<Stud> &grupe, char gal)
 {
-    ofstream fr("rezultatai.txt");
-    if (gal == '0')
-        fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Vid.)" << endl;
-    else if (gal == '1')
-        fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Med.)" << endl;
-    for (int i = 0; i < 50; i++)
-        fr << "-";
-    fr << endl;
-
-    for (auto n : grupe)
+    cout << "Paskirstyti i 2 grupes?" << endl;
+    cout << "0 - Ne, 1 - Taip" << endl;
+    char pasirinkimas;
+    try
     {
-        fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
-        int sum = 0;
-        // visu pazymiu suma
+        pasirinkimas = getch();
+        if (pasirinkimas != '0' && pasirinkimas != '1')
+            throw std::exception();
+    }
+    catch (std::exception &e)
+    {
+        while (true)
+        {
+            cout << "Neteisingas pasirinkimas" << endl;
+            pasirinkimas = getch();
+            if (pasirinkimas == '0' || pasirinkimas == '1')
+                break;
+        }
+    }
+    if (pasirinkimas == '1')
+    {
+        ofstream fr("vargsiukai.txt");
+        ofstream fr1("galvociai.txt");
         if (gal == '0')
         {
-            for (int m : n.paz)
-            {
-                sum += m;
-            }
-            fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+            fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Vid.)" << endl;
+            fr1 << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Vid.)" << endl;
         }
         else if (gal == '1')
         {
-            std::sort(n.paz.begin(), n.paz.end());
-            if (n.paz.size() % 2 != 0)
-                fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
-            else
-                fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+            fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Med.)" << endl;
+            fr1 << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Med.)" << endl;
+        }
+        for (int i = 0; i < 50; i++)
+        {
+            fr << "-";
+            fr1 << "-";
+        }
+        fr << endl;
+        fr1 << endl;
+
+        for (auto n : grupe)
+        {
+            int sum = 0;
+            // visu pazymiu suma
+            if (gal == '0')
+            {
+                for (int m : n.paz)
+                {
+                    sum += m;
+                }
+                if ((double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) < 5)
+                {
+                    fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                    fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+                }
+                else
+                {
+                    fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                    fr1 << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+                }
+            }
+            else if (gal == '1')
+            {
+                std::sort(n.paz.begin(), n.paz.end());
+                if (n.paz.size() % 2 != 0)
+                {
+                    if (n.paz[n.paz.size() / 2] < 5)
+                    {
+                        fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                        fr << n.paz[n.paz.size() / 2] << endl;
+                    }
+                    else
+                    {
+                        fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                        fr1 << n.paz[n.paz.size() / 2] << endl;
+                    }
+                }
+                else
+                {
+                    if ((double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 < 5)
+                    {
+                        fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                        fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                    }
+                    else
+                    {
+                        fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                        fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                    }
+                }
+            }
         }
     }
+    else
+    {
+        ofstream fr("rezultatai.txt");
+        if (gal == '0')
+            fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Vid.)" << endl;
+        else if (gal == '1')
+            fr << "Pavarde" << setw(18) << "Vardas" << setw(25) << "Galutinis (Med.)" << endl;
+        for (int i = 0; i < 50; i++)
+            fr << "-";
+        fr << endl;
 
-    fr.close();
+        for (auto n : grupe)
+        {
+            fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
+            int sum = 0;
+            // visu pazymiu suma
+            if (gal == '0')
+            {
+                for (int m : n.paz)
+                {
+                    sum += m;
+                }
+                fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+            }
+            else if (gal == '1')
+            {
+                std::sort(n.paz.begin(), n.paz.end());
+                if (n.paz.size() % 2 != 0)
+                    fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
+                else
+                    fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+            }
+        }
+
+        fr.close();
+    }
 }
 void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal)
 {
@@ -328,12 +425,12 @@ void GeneruotiFaila()
     int num_grades = rand() % 16 + 5;
     for (int i = 0; i < num_grades; i++)
     {
-        fr << setw(8) << "ND"+to_string(i + 1);
+        fr << setw(8) << "ND" + to_string(i + 1);
     }
     fr << setw(8) << "Egz." << endl;
     for (int i = 0; i < name; i++)
     {
-        fr << setw(20) << "Vardas"+to_string(i+1) << setw(20) << "Pavarde"+to_string(i + 1);
+        fr << setw(20) << "Vardas" + to_string(i + 1) << setw(20) << "Pavarde" + to_string(i + 1);
         for (int j = 0; j < num_grades; j++)
         {
             fr << setw(8) << rand() % 10 + 1;
