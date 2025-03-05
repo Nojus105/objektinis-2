@@ -3,6 +3,7 @@
 
 int main()
 {
+    auto start = std::chrono::high_resolution_clock::now();
     srand(time(0));
     vector<Stud> grupe;
     Stud laik;
@@ -123,6 +124,9 @@ int main()
             goto Pasirinkimas3;
         }
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << "Programos veikimo laikas: " << elapsed.count() << endl;
 
     return 0;
 }

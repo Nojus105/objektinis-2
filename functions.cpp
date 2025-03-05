@@ -163,6 +163,7 @@ void Skaityti(Stud &laik, vector<Stud> &grupe)
             fd.open(failas);
         }
     }
+    auto start = std::chrono::high_resolution_clock::now();
     string x;
     int count = 0;
     fd >> x >> x;
@@ -187,6 +188,9 @@ void Skaityti(Stud &laik, vector<Stud> &grupe)
         grupe.push_back(laik);
     };
     fd.close();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << failas << " studentu failo skaitymo laikas: " << elapsed.count() << endl;
 }
 void Ekrane(vector<Stud> &grupe, char gal)
 {
@@ -419,7 +423,7 @@ void GeneruotiFaila()
             cin >> name;
         }
     }
-
+    auto start = std::chrono::high_resolution_clock::now();
     ofstream fr(to_string(name) + ".txt");
     fr << setw(20) << std::left << "Vardas" << setw(20) << "Pavarde";
     int num_grades = rand() % 16 + 5;
@@ -438,4 +442,7 @@ void GeneruotiFaila()
         fr << setw(8) << rand() % 10 + 1 << endl;
     }
     fr.close();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << name << " studentu failo generavimo laikas: " << elapsed.count() << endl;
 }
