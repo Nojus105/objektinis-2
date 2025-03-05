@@ -5,8 +5,23 @@ int main()
 {
     srand(time(0));
     vector<Stud> grupe;
-    cout << "1 - manual ivedimas, 2 - generuoti pazymius, 3 - generuoti pazymius, vardus, pavardes, 4 - skaityti faila" << endl;
     Stud laik;
+    cout << "Sugeneruoti studentu faila?" << endl;
+    cout << "0 - Ne, 1 - Taip" << endl;
+    while (true)
+    {
+        char pasirinkimas = getch();
+        if (pasirinkimas == '1')
+        {
+            GeneruotiFaila();
+            break;
+        }
+        else if (pasirinkimas == '0')
+            break;
+        else
+            cout << "Neteisingas pasirinkimas" << endl;
+    }
+    cout << "1 - manual ivedimas, 2 - generuoti pazymius, 3 - generuoti pazymius, vardus, pavardes, 4 - skaityti faila" << endl;
     while (true)
     {
     Pasirinkimas:

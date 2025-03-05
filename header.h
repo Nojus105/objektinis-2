@@ -21,6 +21,7 @@ using std::setprecision;
 using std::setw;
 using std::ifstream;
 using std::ofstream;
+using std::to_string;
 
 struct Stud
 {

@@ -302,3 +302,43 @@ void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal)
         }
     }
 }
+void GeneruotiFaila()
+{
+    int name;
+    cout << "Kiek studentu generuoti: ";
+    try
+    {
+        cin >> name;
+        if (name <= 0)
+            throw std::exception();
+    }
+    catch (std::exception &e)
+    {
+        while (name <= 0)
+        {
+            cout << "Ivestas netinkamas skaicius. Iveskite is naujo: ";
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin >> name;
+        }
+    }
+
+    ofstream fr(to_string(name) + ".txt");
+    fr << setw(20) << std::left << "Vardas" << setw(20) << "Pavarde";
+    int num_grades = rand() % 16 + 5;
+    for (int i = 0; i < num_grades; i++)
+    {
+        fr << setw(8) << "ND"+to_string(i + 1);
+    }
+    fr << setw(8) << "Egz." << endl;
+    for (int i = 0; i < name; i++)
+    {
+        fr << setw(20) << "Vardas"+to_string(i+1) << setw(20) << "Pavarde"+to_string(i + 1);
+        for (int j = 0; j < num_grades; j++)
+        {
+            fr << setw(8) << rand() % 10 + 1;
+        }
+        fr << setw(8) << rand() % 10 + 1 << endl;
+    }
+    fr.close();
+}
