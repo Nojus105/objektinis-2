@@ -30,3 +30,4 @@ struct Stud
     vector<int> paz;
     int egz;
 };
+

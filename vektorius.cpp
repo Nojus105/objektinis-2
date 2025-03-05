@@ -1,4 +1,5 @@
 #include "header.h"
+#include "functions.cpp"
 
 int main()
 {
@@ -24,44 +25,35 @@ int main()
     cout << "1 - manual ivedimas, 2 - generuoti pazymius, 3 - generuoti pazymius, vardus, pavardes, 4 - skaityti faila" << endl;
     while (true)
     {
-    Pasirinkimas:
-        try
+        char pasirinkimas = getch();
+        if (pasirinkimas == '1')
         {
-            char pasirinkimas = getch();
-            if (pasirinkimas == '1')
-            {
-                Manual(laik, grupe);
-                break;
-            }
-            else if (pasirinkimas == '2')
-            {
-                Semi(laik, grupe);
-                break;
-            }
-            else if (pasirinkimas == '3')
-            {
-                Auto(grupe);
-                break;
-            }
-            else if (pasirinkimas == '4')
-            {
-                Skaityti(laik, grupe);
-                break;
-            }
-            else
-                throw std::exception();
+            Manual(laik, grupe);
+            break;
         }
-        catch (std::exception &e)
+        else if (pasirinkimas == '2')
         {
+            Semi(laik, grupe);
+            break;
+        }
+        else if (pasirinkimas == '3')
+        {
+            Auto(grupe);
+            break;
+        }
+        else if (pasirinkimas == '4')
+        {
+            Skaityti(laik, grupe);
+            break;
+        }
+        else
             cout << "Neteisingas pasirinkimas" << endl;
-            goto Pasirinkimas;
-        }
     }
     cout << "0 - Vidurkis, 1 - Mediana" << endl;
     char gal;
     while (true)
     {
-    Pasirinkimas1:
+    Pasirinkimas:
         try
         {
             gal = getch();
@@ -73,7 +65,7 @@ int main()
         catch (std::exception &e)
         {
             cout << "Neteisingas pasirinkimas" << endl;
-            goto Pasirinkimas1;
+            goto Pasirinkimas;
         }
     }
     cout << "Rusiavimas pagal varda (v), pavarde(p), galutini bala (g)" << endl;

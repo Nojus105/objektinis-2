@@ -27,38 +27,33 @@ void Manual(Stud &laik, vector<Stud> &grupe)
             goto EnterName;
         }
         cout << "Iveskite studento pazymius (atskirti tarpais): ";
+    Ivedimas:
         cin.ignore(); // nekyla problemu su praeita cin operacija
         string line;
         getline(cin, line);
         std::stringstream ss(line);
-        double x;
-        try
+        string temp;
+        while (ss >> temp)
         {
-            while (ss >> x)
+            try
             {
+                double x = std::stod(temp);
                 if (x > 0 && x <= 10 && x == (int)x)
                     laik.paz.push_back(x);
                 else
-                    cout << "Neteisingas pazymys: " << x << endl;
+                    throw std::exception();
             }
-            if (laik.paz.empty())
-                throw std::exception();
-        }
-        catch (std::exception &e)
-        {
-            while (laik.paz.empty())
+            catch (std::exception &e)
             {
-                cout << "Turite ivesti bent viena pazymi: ";
-                getline(cin, line);
-                std::stringstream ss(line);
-                while (ss >> x)
-                {
-                    if (x > 0 && x <= 10 && x == (int)x)
-                        laik.paz.push_back(x);
-                    else
-                        cout << "Neteisingas pazymys: " << x << endl;
-                }
+                cout << "Iveskite tinkamus pazymius (0-10): ";
+                laik.paz.clear();
+                goto Ivedimas;
             }
+        }
+        if (laik.paz.empty())
+        {
+            cout << "Turite ivesti bent viena pazymi" << endl;
+            goto Ivedimas;
         }
         cout << "Iveskite studento egzamino pazymi: ";
         try
@@ -347,7 +342,7 @@ void Faile(vector<Stud> &grupe, char gal)
             else if (gal == '1')
             {
                 std::sort(n.paz.begin(), n.paz.end());
-                if (n.paz.size() % 2 != 0)
+                if (n.paz.size() % 2 == 0)
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
                 else
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
