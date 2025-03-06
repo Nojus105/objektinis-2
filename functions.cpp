@@ -137,7 +137,7 @@ void Auto(vector<Stud> &grupe)
         grupe.push_back(laik);
     }
 }
-void Skaityti(Stud &laik, vector<Stud> &grupe)
+void Skaityti(Stud &laik, vector<Stud> &grupe, double &TotalTime)
 {
     cout << "Iveskite failo pavadinima: ";
     string failas;
@@ -186,6 +186,7 @@ void Skaityti(Stud &laik, vector<Stud> &grupe)
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
     std::cout << failas << " studentu failo skaitymo laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
 }
 void Ekrane(vector<Stud> &grupe, char gal)
 {
@@ -219,10 +220,10 @@ void Ekrane(vector<Stud> &grupe, char gal)
         }
     }
 }
-void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai)
+void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
-    if(gal=='0')
+    if (gal == '0')
     {
         for (auto n : grupe)
         {
@@ -238,7 +239,7 @@ void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<S
                 galvociai.push_back(n);
         }
     }
-    else if(gal=='1')
+    else if (gal == '1')
     {
         for (auto n : grupe)
         {
@@ -262,8 +263,9 @@ void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<S
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
     cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
 }
-void Faile(vector<Stud> &grupe, char gal)
+void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
     cout << "0 - Ne, 1 - Taip" << endl;
@@ -307,7 +309,8 @@ void Faile(vector<Stud> &grupe, char gal)
         fr1 << endl;
         vector<Stud> vargsiukai;
         vector<Stud> galvociai;
-        Skirstymas(grupe, gal, vargsiukai, galvociai);
+        Skirstymas(grupe, gal, vargsiukai, galvociai, TotalTime);
+        auto start = std::chrono::high_resolution_clock::now();
         for (auto n : vargsiukai)
         {
             fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
@@ -352,6 +355,12 @@ void Faile(vector<Stud> &grupe, char gal)
                     fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
             }
         }
+        fr.close();
+        fr1.close();
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed = end - start;
+        cout << "Studentu isvedimo i failus laikas: " << elapsed.count() << endl;
+        TotalTime += elapsed.count();
     }
     else
     {
@@ -436,7 +445,7 @@ void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal)
         }
     }
 }
-void GeneruotiFaila()
+void GeneruotiFaila(double &TotalTime)
 {
     int name;
     cout << "Kiek studentu generuoti: ";
@@ -478,4 +487,5 @@ void GeneruotiFaila()
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
     std::cout << name << " studentu failo generavimo laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
 }

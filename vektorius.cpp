@@ -5,6 +5,7 @@ int main()
 {
     srand(time(0));
     vector<Stud> grupe;
+    double TotalTime = 0;
     Stud laik;
     cout << "Sugeneruoti studentu faila?" << endl;
     cout << "0 - Ne, 1 - Taip" << endl;
@@ -13,7 +14,7 @@ int main()
         char pasirinkimas = getch();
         if (pasirinkimas == '1')
         {
-            GeneruotiFaila();
+            GeneruotiFaila(TotalTime);
             break;
         }
         else if (pasirinkimas == '0')
@@ -42,7 +43,7 @@ int main()
         }
         else if (pasirinkimas == '4')
         {
-            Skaityti(laik, grupe);
+            Skaityti(laik, grupe, TotalTime);
             break;
         }
         else
@@ -102,7 +103,7 @@ int main()
             }
             else if (pasirinkimas == '1')
             {
-                Faile(grupe, gal);
+                Faile(grupe, gal, TotalTime);
                 break;
             }
             else
@@ -114,6 +115,7 @@ int main()
             goto Pasirinkimas3;
         }
     }
+    cout << "Programa veike: " << TotalTime << " s" << endl;
 
     return 0;
 }
