@@ -219,6 +219,50 @@ void Ekrane(vector<Stud> &grupe, char gal)
         }
     }
 }
+void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai)
+{
+    auto start = std::chrono::high_resolution_clock::now();
+    if(gal=='0')
+    {
+        for (auto n : grupe)
+        {
+            int sum = 0;
+            // visu pazymiu suma
+            for (int m : n.paz)
+            {
+                sum += m;
+            }
+            if ((double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) < 5)
+                vargsiukai.push_back(n);
+            else
+                galvociai.push_back(n);
+        }
+    }
+    else if(gal=='1')
+    {
+        for (auto n : grupe)
+        {
+            std::sort(n.paz.begin(), n.paz.end());
+            if (n.paz.size() % 2 != 0)
+            {
+                if (n.paz[n.paz.size() / 2] < 5)
+                    vargsiukai.push_back(n);
+                else
+                    galvociai.push_back(n);
+            }
+            else
+            {
+                if ((double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 < 5)
+                    vargsiukai.push_back(n);
+                else
+                    galvociai.push_back(n);
+            }
+        }
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
+}
 void Faile(vector<Stud> &grupe, char gal)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
@@ -261,9 +305,12 @@ void Faile(vector<Stud> &grupe, char gal)
         }
         fr << endl;
         fr1 << endl;
-
-        for (auto n : grupe)
+        vector<Stud> vargsiukai;
+        vector<Stud> galvociai;
+        Skirstymas(grupe, gal, vargsiukai, galvociai);
+        for (auto n : vargsiukai)
         {
+            fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
             int sum = 0;
             // visu pazymiu suma
             if (gal == '0')
@@ -272,46 +319,37 @@ void Faile(vector<Stud> &grupe, char gal)
                 {
                     sum += m;
                 }
-                if ((double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) < 5)
-                {
-                    fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
-                    fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
-                }
-                else
-                {
-                    fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
-                    fr1 << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
-                }
+                fr << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
             }
             else if (gal == '1')
             {
                 std::sort(n.paz.begin(), n.paz.end());
-                if (n.paz.size() % 2 != 0)
-                {
-                    if (n.paz[n.paz.size() / 2] < 5)
-                    {
-                        fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
-                        fr << n.paz[n.paz.size() / 2] << endl;
-                    }
-                    else
-                    {
-                        fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
-                        fr1 << n.paz[n.paz.size() / 2] << endl;
-                    }
-                }
+                if (n.paz.size() % 2 == 0)
+                    fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
                 else
+                    fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+            }
+        }
+        for (auto n : galvociai)
+        {
+            fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
+            int sum = 0;
+            // visu pazymiu suma
+            if (gal == '0')
+            {
+                for (int m : n.paz)
                 {
-                    if ((double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 < 5)
-                    {
-                        fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
-                        fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
-                    }
-                    else
-                    {
-                        fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
-                        fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
-                    }
+                    sum += m;
                 }
+                fr1 << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+            }
+            else if (gal == '1')
+            {
+                std::sort(n.paz.begin(), n.paz.end());
+                if (n.paz.size() % 2 == 0)
+                    fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
+                else
+                    fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
             }
         }
     }
