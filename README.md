@@ -46,6 +46,8 @@ User can choose to sort by name, surname or final grade.
 
 ### Testing Times
 
-1. **1 million**: file read - 8.5 seconds, calculations - 2 seconds
-2. **100k**: file read - 2 seconds, calculations - <1 second
-3. **10k**: file read - <1 second, calculations - <1 second
+1. **1k**: file create - 0.035 s, file read - 0.007 s, file distribution - 0.001 s, print - 0.011 s, total - 0.054 s
+2. **10k**: file create - 0.219 s, file read - 0.095 s, file distribution - 0.004 s, print - 0.077 s, total - 0.395 s
+3. **100k**: file create - 1.798 s, file read - 0.687 s, file distribution - 0.021 s, print - 0.771 s, total - 3.277 s
+4. **1m**: file create - 16.223 s, file read - 5.462, file distribution - 0.220 s,, print - 7.575 s, total - 29.480 s
+5. **10m**: file create - 167.577 s, file read - error, will be fixed...
