@@ -31,3 +31,12 @@ struct Stud
     int egz;
 };
 
+void Manual(Stud &laik, vector<Stud> &grupe);
+void Semi(Stud &laik, vector<Stud> &grupe);
+void Auto(vector<Stud> &grupe);
+void Skaityti(Stud &laik, vector<Stud> &grupe, double &TotalTime);
+void Ekrane(vector<Stud> &grupe, char gal);
+void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Faile(vector<Stud> &grupe, char gal, double &TotalTime);
+void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal);
+void GeneruotiFaila(double &TotalTime);

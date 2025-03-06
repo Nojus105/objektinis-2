@@ -45,7 +45,7 @@ void Manual(Stud &laik, vector<Stud> &grupe)
             }
             catch (std::exception &e)
             {
-                cout << "Iveskite tinkamus pazymius (0-10): ";
+                cout << "Iveskite tinkamus pazymius (1-10): ";
                 laik.paz.clear();
                 goto Ivedimas;
             }
