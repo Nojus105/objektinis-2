@@ -3,7 +3,6 @@
 
 int main()
 {
-    auto start = std::chrono::high_resolution_clock::now();
     srand(time(0));
     vector<Stud> grupe;
     Stud laik;
