@@ -10,6 +10,8 @@
 #include <cstdlib>
 #include <fstream>
 #include <chrono>
+#include <list>
+#include <deque>
 #pragma once
 
 using std::cout;
@@ -23,6 +25,8 @@ using std::setw;
 using std::ifstream;
 using std::ofstream;
 using std::to_string;
+using std::list;
+using std::deque;
 
 struct Stud
 {
