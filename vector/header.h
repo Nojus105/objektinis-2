@@ -11,6 +11,7 @@
 #include <fstream>
 #include <chrono>
 #include <numeric>
+#include <future>
 #pragma once
 
 using std::cout;
@@ -43,3 +44,4 @@ void skirstymas3(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<
 void Faile(vector<Stud> &grupe, char gal, double &TotalTime);
 void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);
+void processChunk(const string &chunk, vector<Stud> &grupe, int count);

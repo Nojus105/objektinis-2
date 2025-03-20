@@ -142,46 +142,53 @@ void Skaityti(Stud &laik, list<Stud> &grupe, double &TotalTime)
     cout << "Iveskite failo pavadinima: ";
     string failas;
     cin >> failas;
-    ifstream fd;
-    try
+    ifstream fd(failas, std::ios::in | std::ios::binary);
+    while (!fd)
     {
-        fd.open(failas);
-        if (!fd)
-            throw std::exception();
+        cout << "Failas nerastas. Iveskite failo pavadinima: ";
+        cin >> failas;
+        fd.open(failas, std::ios::in | std::ios::binary);
     }
-    catch (std::exception &e)
-    {
-        while (!fd)
-        {
-            cout << "Failas nerastas. Iveskite failo pavadinima: ";
-            cin >> failas;
-            fd.open(failas);
-        }
-    }
+    const size_t bufferSize = 8 * 1024 * 1024;
+    char *buffer = new char[bufferSize];
+
     auto start = std::chrono::high_resolution_clock::now();
+
     string x;
     int count = 0;
+
     fd >> x >> x;
-    while (true)
+
+    while (fd >> x)
     {
-        fd >> x;
         if (x == "Egz.")
             break;
         count++;
     }
-    while (!fd.eof())
+
+    // Read file data in large chunks
+    while (fd)
     {
-        fd >> laik.vard >> laik.pav;
-        laik.paz.clear();
-        for (int i = 0; i < count; i++)
+        fd.read(buffer, bufferSize);                       // Read chunk into buffer
+        std::stringstream ss(string(buffer, fd.gcount())); // Use only the valid data in the buffer
+
+        while (ss >> laik.vard >> laik.pav)
         {
-            int temp;
-            fd >> temp;
-            laik.paz.push_back(temp);
+            laik.paz.clear();
+            for (int i = 0; i < count; i++)
+            {
+                int temp;
+                ss >> temp;
+                laik.paz.push_back(temp);
+            }
+
+            ss >> laik.egz;
+            grupe.push_back(laik);
         }
-        fd >> laik.egz;
-        grupe.push_back(laik);
-    };
+    }
+
+    delete[] buffer; // Free the allocated memory
+
     fd.close();
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
@@ -428,7 +435,7 @@ void Faile(list<Stud> &grupe, char gal, double &TotalTime)
             else if (gal == '1')
             {
                 std::sort(n.paz.begin(), n.paz.end());
-                if (n.paz.size() % 2 == 0)
+                if (n.paz.size() % 2 != 0)
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
                 else
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
@@ -452,7 +459,7 @@ void Faile(list<Stud> &grupe, char gal, double &TotalTime)
                 else if (gal == '1')
                 {
                     std::sort(n.paz.begin(), n.paz.end());
-                    if (n.paz.size() % 2 == 0)
+                    if (n.paz.size() % 2 != 0)
                         fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
                     else
                         fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
@@ -477,7 +484,7 @@ void Faile(list<Stud> &grupe, char gal, double &TotalTime)
                 else if (gal == '1')
                 {
                     std::sort(n.paz.begin(), n.paz.end());
-                    if (n.paz.size() % 2 == 0)
+                    if (n.paz.size() % 2 != 0)
                         fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
                     else
                         fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
@@ -518,7 +525,7 @@ void Faile(list<Stud> &grupe, char gal, double &TotalTime)
             else if (gal == '1')
             {
                 std::sort(n.paz.begin(), n.paz.end());
-                if (n.paz.size() % 2 == 0)
+                if (n.paz.size() % 2 != 0)
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
                 else
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
