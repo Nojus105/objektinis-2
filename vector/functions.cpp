@@ -325,37 +325,27 @@ void Skirstymas3(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<
 
     if (gal == '0')
     {
-        // Use std::partition to split students into two groups based on the average grade
-        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n) {
-            int sum = std::accumulate(n.paz.begin(), n.paz.end(), 0); // Calculate sum of grades
-            double average = (0.4 * sum / n.paz.size()) + (0.6 * n.egz); // Calculate average
-            return average < 5; // Predicate for "vargsiukai"
-        });
-
-        // Move "vargsiukai" to the separate vector
+        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n)
+                                 {
+            int sum = std::accumulate(n.paz.begin(), n.paz.end(), 0);
+            double average = (0.4 * sum / n.paz.size()) + (0.6 * n.egz);
+            return average < 5; });
         vargsiukai.assign(grupe.begin(), it);
-
-        // Move "galvociai" to the separate vector
         galvociai.assign(it, grupe.end());
     }
     else if (gal == '1')
     {
-        // Use std::partition to split students into two groups based on the median grade
-        auto it = std::partition(grupe.begin(), grupe.end(), [](Stud &n) {
-            std::sort(n.paz.begin(), n.paz.end()); // Sort grades for median calculation
+        auto it = std::partition(grupe.begin(), grupe.end(), [](Stud &n)
+                                 {
+            std::sort(n.paz.begin(), n.paz.end());
             double median;
             if (n.paz.size() % 2 != 0)
                 median = n.paz[n.paz.size() / 2];
             else
                 median = (n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2.0;
 
-            return median < 5; // Predicate for "vargsiukai"
-        });
-
-        // Move "vargsiukai" to the separate vector
+            return median < 5; });
         vargsiukai.assign(grupe.begin(), it);
-
-        // Move "galvociai" to the separate vector
         galvociai.assign(it, grupe.end());
     }
 
@@ -444,7 +434,7 @@ void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
             }
         }
-        if (strategija == '1')
+        if (strategija == '1' || strategija =='3')
         {
             for (auto n : galvociai)
             {
