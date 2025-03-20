@@ -10,8 +10,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <chrono>
-#include <list>
-#include <deque>
+#include <numeric>
 #pragma once
 
 using std::cout;
@@ -25,8 +24,6 @@ using std::setw;
 using std::ifstream;
 using std::ofstream;
 using std::to_string;
-using std::list;
-using std::deque;
 
 struct Stud
 {
@@ -42,6 +39,7 @@ void Skaityti(Stud &laik, vector<Stud> &grupe, double &TotalTime);
 void Ekrane(vector<Stud> &grupe, char gal);
 void Skirstymas(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Skirstymas2(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
+void skirstymas3(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Faile(vector<Stud> &grupe, char gal, double &TotalTime);
 void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);

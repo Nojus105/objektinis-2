@@ -319,6 +319,51 @@ void Skirstymas2(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double
     cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
+void Skirstymas3(vector<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
+{
+    auto start = std::chrono::high_resolution_clock::now();
+
+    if (gal == '0')
+    {
+        // Use std::partition to split students into two groups based on the average grade
+        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n) {
+            int sum = std::accumulate(n.paz.begin(), n.paz.end(), 0); // Calculate sum of grades
+            double average = (0.4 * sum / n.paz.size()) + (0.6 * n.egz); // Calculate average
+            return average < 5; // Predicate for "vargsiukai"
+        });
+
+        // Move "vargsiukai" to the separate vector
+        vargsiukai.assign(grupe.begin(), it);
+
+        // Move "galvociai" to the separate vector
+        galvociai.assign(it, grupe.end());
+    }
+    else if (gal == '1')
+    {
+        // Use std::partition to split students into two groups based on the median grade
+        auto it = std::partition(grupe.begin(), grupe.end(), [](Stud &n) {
+            std::sort(n.paz.begin(), n.paz.end()); // Sort grades for median calculation
+            double median;
+            if (n.paz.size() % 2 != 0)
+                median = n.paz[n.paz.size() / 2];
+            else
+                median = (n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2.0;
+
+            return median < 5; // Predicate for "vargsiukai"
+        });
+
+        // Move "vargsiukai" to the separate vector
+        vargsiukai.assign(grupe.begin(), it);
+
+        // Move "galvociai" to the separate vector
+        galvociai.assign(it, grupe.end());
+    }
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
+}
 void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
@@ -372,8 +417,10 @@ void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
         vector<Stud> galvociai;
         if (strategija == '1')
             Skirstymas1(grupe, gal, vargsiukai, galvociai, TotalTime);
-        if (strategija == '2')
+        else if (strategija == '2')
             Skirstymas2(grupe, gal, vargsiukai, TotalTime);
+        else if (strategija == '3')
+            Skirstymas3(grupe, gal, vargsiukai, galvociai, TotalTime);
         auto start = std::chrono::high_resolution_clock::now();
         for (auto n : vargsiukai)
         {
