@@ -319,6 +319,41 @@ void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double 
     cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
+void Skirstymas3(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
+{
+    auto start = std::chrono::high_resolution_clock::now();
+
+    if (gal == '0')
+    {
+        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n)
+                                 {
+            int sum = std::accumulate(n.paz.begin(), n.paz.end(), 0);
+            double average = (0.4 * sum / n.paz.size()) + (0.6 * n.egz);
+            return average < 5; });
+        vargsiukai.assign(grupe.begin(), it);
+        galvociai.assign(it, grupe.end());
+    }
+    else if (gal == '1')
+    {
+        auto it = std::partition(grupe.begin(), grupe.end(), [](Stud &n)
+                                 {
+            std::sort(n.paz.begin(), n.paz.end());
+            double median;
+            if (n.paz.size() % 2 != 0)
+                median = n.paz[n.paz.size() / 2];
+            else
+                median = (n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2.0;
+
+            return median < 5; });
+        vargsiukai.assign(grupe.begin(), it);
+        galvociai.assign(it, grupe.end());
+    }
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
+}
 void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
@@ -361,9 +396,9 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
         }
         fr << endl;
         fr1 << endl;
-        cout << "Pasirinkite strategija (1, 2): " << endl;
+        cout << "Pasirinkite strategija (1, 2, 3): " << endl;
         char strategija = getch();
-        while (strategija != '1' && strategija != '2')
+        while (strategija != '1' && strategija != '2' && strategija != '3')
         {
             cout << "Neteisingas pasirinkimas" << endl;
             strategija = getch();
@@ -374,6 +409,8 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
             Skirstymas1(grupe, gal, vargsiukai, galvociai, TotalTime);
         if (strategija == '2')
             Skirstymas2(grupe, gal, vargsiukai, TotalTime);
+        if (strategija == '3')
+            Skirstymas3(grupe, gal, vargsiukai, galvociai, TotalTime);
         auto start = std::chrono::high_resolution_clock::now();
         for (auto n : vargsiukai)
         {
@@ -397,7 +434,7 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
             }
         }
-        if (strategija == '1')
+        if (strategija == '1' || strategija == '3')
         {
             for (auto n : galvociai)
             {

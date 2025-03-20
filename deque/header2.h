@@ -11,6 +11,7 @@
 #include <fstream>
 #include <chrono>
 #include <deque>
+#include <numeric>
 #pragma once
 
 using std::cout;
@@ -39,7 +40,8 @@ void Auto(deque<Stud> &grupe);
 void Skaityti(Stud &laik, deque<Stud> &grupe, double &TotalTime);
 void Ekrane(deque<Stud> &grupe, char gal);
 void Skirstymas1(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
-void Skip(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
+void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
+void Skirstymas3(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Faile(deque<Stud> &grupe, char gal, double &TotalTime);
 void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);
