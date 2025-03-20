@@ -38,9 +38,9 @@ make clean
 ```
 
 ### Naudojimo pavyzdžiai:
-![Pavyzdys 1](images/1.png)
-![Pavyzdys 2](images/2.png)
-![Pavyzdys 3](images/3.png)
+![](https://github.com/user-attachments/assets/d2972b82-278a-4785-9a52-673036cec0cf)
+![](https://github.com/user-attachments/assets/675f3a26-68f0-4576-af1d-6014f2ec60b9)
+![](https://github.com/user-attachments/assets/5059e332-cc1d-4cbc-a4d8-47aef0c31453)
 
 ---
 
@@ -83,7 +83,7 @@ make clean
 ### Išvados
 Matoma, kad **strategija Nr. 2** veikė lėčiausiai (ypač su vektoriais). Naudojamos atminties kiekis kito minimaliai, todėl spartos atžvilgiu **vektoriaus konteineris su strategija Nr. 3** yra sparčiausias pasirinkimas.
 
-![Rezultatai](images/3.png)
+![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
 
 ---
 
