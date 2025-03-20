@@ -89,31 +89,18 @@ int main()
         }
     }
     cout << "0 - ekrane, 1 - faile" << endl;
-    while (true)
+    char pasirinkimas = getch();
+    while (pasirinkimas != '0' && pasirinkimas != '1')
     {
-    Pasirinkimas3:
-        try
-        {
-            char pasirinkimas = getch();
-            if (pasirinkimas == '0')
-            {
-                Ekrane(grupe, gal);
-                break;
-            }
-            else if (pasirinkimas == '1')
-            {
-                Faile(grupe, gal, TotalTime);
-                break;
-            }
-            else
-                throw std::exception();
-        }
-        catch (std::exception &e)
-        {
-            cout << "Neteisingas pasirinkimas" << endl;
-            goto Pasirinkimas3;
-        }
+        cout << "Neteisingas pasirinkimas" << endl;
+        pasirinkimas = getch();
     }
+    if (pasirinkimas == '0')
+        Ekrane(grupe, gal);
+    else if (pasirinkimas == '1')
+        Faile(grupe, gal, TotalTime);
+    else
+        throw std::exception();
     cout << "Programa veike: " << TotalTime << " s" << endl;
 
     return 0;

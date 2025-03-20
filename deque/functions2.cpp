@@ -220,7 +220,7 @@ void Ekrane(deque<Stud> &grupe, char gal)
         }
     }
 }
-void Skirstymas(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
+void Skirstymas1(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
     if (gal == '0')
@@ -257,6 +257,60 @@ void Skirstymas(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<St
                     vargsiukai.push_back(n);
                 else
                     galvociai.push_back(n);
+            }
+        }
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
+}
+void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime)
+{
+    auto start = std::chrono::high_resolution_clock::now();
+    if (gal == '0')
+    {
+        for (auto n = grupe.begin(); n != grupe.end();)
+        {
+            int sum = 0;
+            // visu pazymiu suma
+            for (int m : n->paz)
+            {
+                sum += m;
+            }
+            if ((double)((0.4 * sum / n->paz.size()) + (0.6 * n->egz)) < 5)
+            {
+                vargsiukai.push_back(*n);
+                n = grupe.erase(n);
+            }
+            else
+                n++;
+        }
+    }
+    else if (gal == '1')
+    {
+        for (auto n = grupe.begin(); n != grupe.end();)
+        {
+            std::sort(n->paz.begin(), n->paz.end());
+            if (n->paz.size() % 2 != 0)
+            {
+                if (n->paz[n->paz.size() / 2] < 5)
+                {
+                    vargsiukai.push_back(*n);
+                    n = grupe.erase(n);
+                }
+                else
+                    n++;
+            }
+            else
+            {
+                if ((double)(n->paz[n->paz.size() / 2] + n->paz[n->paz.size() / 2 - 1]) / 2 < 5)
+                {
+                    vargsiukai.push_back(*n);
+                    n = grupe.erase(n);
+                }
+                else
+                    n++;
             }
         }
     }
@@ -307,9 +361,19 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
         }
         fr << endl;
         fr1 << endl;
+        cout << "Pasirinkite strategija (1, 2): " << endl;
+        char strategija = getch();
+        while (strategija != '1' && strategija != '2')
+        {
+            cout << "Neteisingas pasirinkimas" << endl;
+            strategija = getch();
+        }
         vector<Stud> vargsiukai;
         vector<Stud> galvociai;
-        Skirstymas(grupe, gal, vargsiukai, galvociai, TotalTime);
+        if (strategija == '1')
+            Skirstymas1(grupe, gal, vargsiukai, galvociai, TotalTime);
+        if (strategija == '2')
+            Skirstymas2(grupe, gal, vargsiukai, TotalTime);
         auto start = std::chrono::high_resolution_clock::now();
         for (auto n : vargsiukai)
         {
@@ -333,26 +397,54 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
                     fr << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
             }
         }
-        for (auto n : galvociai)
+        if (strategija == '1')
         {
-            fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
-            int sum = 0;
-            // visu pazymiu suma
-            if (gal == '0')
+            for (auto n : galvociai)
             {
-                for (int m : n.paz)
+                fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                int sum = 0;
+                // visu pazymiu suma
+                if (gal == '0')
                 {
-                    sum += m;
+                    for (int m : n.paz)
+                    {
+                        sum += m;
+                    }
+                    fr1 << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
                 }
-                fr1 << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+                else if (gal == '1')
+                {
+                    std::sort(n.paz.begin(), n.paz.end());
+                    if (n.paz.size() % 2 == 0)
+                        fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
+                    else
+                        fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                }
             }
-            else if (gal == '1')
+        }
+        else if (strategija == '2')
+        {
+            for (auto n : grupe)
             {
-                std::sort(n.paz.begin(), n.paz.end());
-                if (n.paz.size() % 2 == 0)
-                    fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
-                else
-                    fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
+                int sum = 0;
+                // visu pazymiu suma
+                if (gal == '0')
+                {
+                    for (int m : n.paz)
+                    {
+                        sum += m;
+                    }
+                    fr1 << fixed << setprecision(2) << (double)((0.4 * sum / n.paz.size()) + (0.6 * n.egz)) << endl;
+                }
+                else if (gal == '1')
+                {
+                    std::sort(n.paz.begin(), n.paz.end());
+                    if (n.paz.size() % 2 == 0)
+                        fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2]) << endl;
+                    else
+                        fr1 << fixed << setprecision(2) << (double)(n.paz[n.paz.size() / 2] + n.paz[n.paz.size() / 2 - 1]) / 2 << endl;
+                }
             }
         }
         fr.close();
