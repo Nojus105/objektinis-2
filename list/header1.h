@@ -43,5 +43,5 @@ void Skaityti(Stud &laik, list<Stud> &grupe, double &TotalTime);
 void Ekrane(list<Stud> &grupe, char gal);
 void Skirstymas(list<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Faile(list<Stud> &grupe, char gal, double &TotalTime);
-void Rusiuoti(list<Stud> &grupe, char rusiavimas, char gal);
+void Rusiuoti(list<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);

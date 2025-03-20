@@ -76,7 +76,7 @@ int main()
             char rusiavimas = getch();
             if (rusiavimas == 'v' || rusiavimas == 'p' || rusiavimas == 'g')
             {
-                Rusiuoti(grupe, rusiavimas, gal);
+                Rusiuoti(grupe, rusiavimas, gal, TotalTime);
                 break;
             }
             else

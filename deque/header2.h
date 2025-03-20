@@ -40,5 +40,5 @@ void Skaityti(Stud &laik, deque<Stud> &grupe, double &TotalTime);
 void Ekrane(deque<Stud> &grupe, char gal);
 void Skirstymas(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Faile(deque<Stud> &grupe, char gal, double &TotalTime);
-void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal);
+void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);

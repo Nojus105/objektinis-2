@@ -399,8 +399,9 @@ void Faile(list<Stud> &grupe, char gal, double &TotalTime)
         fr.close();
     }
 }
-void Rusiuoti(list<Stud> &grupe, char rusiavimas, char gal)
+void Rusiuoti(list<Stud> &grupe, char rusiavimas, char gal, double &TotalTime)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     if (rusiavimas == 'v')
     {
         grupe.sort([](const Stud &a, const Stud &b)
@@ -446,6 +447,10 @@ void Rusiuoti(list<Stud> &grupe, char rusiavimas, char gal)
                        });
         }
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Studentu rusiavimo laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
 }
 void GeneruotiFaila(double &TotalTime)
 {

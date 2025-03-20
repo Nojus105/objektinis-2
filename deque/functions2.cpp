@@ -399,8 +399,9 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
         fr.close();
     }
 }
-void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal)
+void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     if (rusiavimas == 'v')
     {
         sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
@@ -444,6 +445,10 @@ void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal)
                  return medA < medB; });
         }
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Studentu rusiavimo laikas: " << elapsed.count() << endl;
+    TotalTime += elapsed.count();
 }
 void GeneruotiFaila(double &TotalTime)
 {
