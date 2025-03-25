@@ -207,8 +207,6 @@ void Ekrane(deque<Stud> &grupe, char gal)
     for (auto n : grupe)
     {
         cout << setw(19) << std::left << n.pav << setw(15) << n.vard;
-        int sum = 0;
-        // visu pazymiu suma
         if (gal == '0')
         {
             for (int m : n.paz)
