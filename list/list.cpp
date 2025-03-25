@@ -96,7 +96,7 @@ int main()
         pasirinkimas = getch();
     }
     if (pasirinkimas == '0')
-        Ekrane(grupe, gal);
+        Ekrane(grupe, gal, TotalTime);
     else if (pasirinkimas == '1')
         Faile(grupe, gal, TotalTime);
     else

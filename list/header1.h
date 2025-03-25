@@ -35,16 +35,18 @@ struct Stud
     string vard, pav;
     vector<int> paz;
     int egz;
+    double vid;
+    double med;
 };
 
 void Manual(Stud &laik, list<Stud> &grupe);
 void Semi(Stud &laik, list<Stud> &grupe);
 void Auto(list<Stud> &grupe);
 void Skaityti(Stud &laik, list<Stud> &grupe, double &TotalTime);
-void Ekrane(list<Stud> &grupe, char gal);
-void Skirstymas1(list<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Ekrane(list<Stud> &grupe, char gal, double &TotalTime);
+void Skirstymas1(list<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Skirstymas2(list<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
-void Skirstymas3(list<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Skirstymas3(list<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Faile(list<Stud> &grupe, char gal, double &TotalTime);
 void Rusiuoti(list<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);

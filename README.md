@@ -52,8 +52,8 @@ make clean
 | **1k** | 0.035 s | 0.015 s | 0 s | 0 s | 0.011 s | 0.061 s | 0.028 s | 0 s |
 | **10k** | 0.219 s | 0.105 s | 0.017 s | 0.004 s | 0.077 s | 0.422 s | 0.076 s | 0.001 s |
 | **100k** | 1.798 s | 0.392 s | 0.138 s | 0.021 s | 0.771 s | 3.120 s | 180.122 s | 0.012 s |
-| **1m** | 16.223 s | 3.508 s | 1.597 s | 0.220 s | 7.575 s | 29.123 s | >5 min | 0.101 s |
-| **10m** | 167.577 s | 12.626 | 2.577 | 0.395 | 12.886 | 196.061 | >5 min | 0.186 |
+| **1m** | 16.223 s | 7.795 s | 0.996 s | 0.098 s | 9.040 s | 34.152 s | >5 min | 0.048 s |
+| **10m** | 167.577 s | 87.541 | 12.792 | crash | 88.551 | 356.461 | crash | crash |
 
 ### **List**
 | Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas | Spausdinimas | Iš viso | Paskirstymas (2) | Paskirstymas (3) |
@@ -61,8 +61,8 @@ make clean
 | **1k** | 0.012 s | 0 s | 0 s | 0.026 s | 0.039 s | 0 s | 0 s |
 | **10k** | 0.117 s | 0.013 s | 0.006 s | 0.107 s | 0.244 s | 0 s | 0.001 s |
 | **100k** | 0.422 s | 0.114 s | 0.025 s | 0.923 s | 1.483 s | 0.024 s | 0.015 s |
-| **1m** | 3.482 s | 1.373 s | 0.240 s | 9.042 s | 14.137 s | 0.284 s | 0.124 s |
-| **10m** | 12.916 s | 2.302 s | 0.400 | 13.862 | 29.481 | 0.410 | 0.243 |
+| **1m** | 7.131 s | 0.579 s | 0.216 s | 9.120 s | 17.046 s | 0.182 s | 0.397 s |
+| **10m** | 86.119 s | 10.844 s | crash | 89.815 s | 188.504 s | 1.726 s | 4.288 s |
 
 ### **Deque**
 | Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas | Spausdinimas | Iš viso | Paskirstymas (2) | Paskirstymas (3) |
@@ -70,8 +70,8 @@ make clean
 | **1k** | 0.015 s | 0 s | 0.002 s | 0.029 s | 0.046 s | 0 s | 0 s |
 | **10k** | 0.108 s | 0.014 s | 0.008 s | 0.097 s | 0.227 s | 0 s | 0.003 s |
 | **100k** | 0.407 s | 0.155 s | 0.029 s | 0.919 s | 1.510 s | 0.025 s | 0.012 s |
-| **1m** | 3.438 s | 2.071 s | 0.276 s | 9.293 s | 15.078 s | 0.243 s | 0.116 s |
-| **10m** | 12.666 s | 3.609 s | 0.454 | 14.111 | 30.840 | 0.309 | 0.201 |
+| **1m** | 7.214 s | 1.092 s | 0.102 s | 9.293 s | 17.701 s | 0.059 s | 0.059 s |
+| **10m** | 85.353 s | 12.767 s | crash | 89.707 s | 188.283 s | 0.456 s | 0.470 s |
 
 ---
 
@@ -81,7 +81,7 @@ make clean
 - **Storage:** NVMe M.2 SSD 1TB
 
 ### Išvados
-Matoma, kad **strategija Nr. 2** veikė lėčiausiai (ypač su vektoriais). Naudojamos atminties kiekis kito minimaliai, todėl spartos atžvilgiu **vektoriaus konteineris su strategija Nr. 3** yra sparčiausias pasirinkimas.
+**Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas.
 
 ![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
 

@@ -32,16 +32,18 @@ struct Stud
     string vard, pav;
     vector<int> paz;
     int egz;
+    double vid;
+    double med;
 };
 
 void Manual(Stud &laik, deque<Stud> &grupe);
 void Semi(Stud &laik, deque<Stud> &grupe);
 void Auto(deque<Stud> &grupe);
 void Skaityti(Stud &laik, deque<Stud> &grupe, double &TotalTime);
-void Ekrane(deque<Stud> &grupe, char gal);
-void Skirstymas1(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime);
+void Skirstymas1(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
-void Skirstymas3(deque<Stud> grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Skirstymas3(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Faile(deque<Stud> &grupe, char gal, double &TotalTime);
 void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);
