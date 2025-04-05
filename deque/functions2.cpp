@@ -228,8 +228,6 @@ void Skaityti(Stud &laik, deque<Stud> &grupe, double &TotalTime)
         }
     }
 
-    delete[] buffer; // Free the allocated memory
-
     fd.close();
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;

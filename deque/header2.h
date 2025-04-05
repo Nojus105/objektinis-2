@@ -39,7 +39,6 @@ struct Stud
 void Manual(Stud &laik, deque<Stud> &grupe);
 void Semi(Stud &laik, deque<Stud> &grupe);
 void Auto(deque<Stud> &grupe);
-void Skaityti(Stud &laik, deque<Stud> &grupe, double &TotalTime);
 void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime);
 void Skirstymas1(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
 void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
