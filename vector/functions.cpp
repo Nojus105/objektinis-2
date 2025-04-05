@@ -207,7 +207,7 @@ void Stud::Skaityti(vector<Stud> &grupe, double &TotalTime)
     }
 
     const size_t bufferSize = 8 * 1024 * 1024;
-    std::unique_ptr<char[]> buffer(new char[bufferSize]); // smart pointeris automatiskam atminties valdymui
+    char* buffer = new char[bufferSize];
     string leftover;
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -231,9 +231,9 @@ void Stud::Skaityti(vector<Stud> &grupe, double &TotalTime)
 
     while (fd)
     {
-        fd.read(buffer.get(), bufferSize);
+        fd.read(buffer, bufferSize);
         size_t bytesRead = fd.gcount();
-        std::stringstream ss(leftover + string(buffer.get(), bytesRead));
+        std::stringstream ss(leftover + string(buffer, bytesRead));
 
         string line;
         leftover.clear();
@@ -285,6 +285,8 @@ void Stud::Skaityti(vector<Stud> &grupe, double &TotalTime)
             grupe.push_back(*this);
         }
     }
+
+    delete[] buffer; // destruktorius atlaisvinti atminti
 
     fd.close();
     auto end = std::chrono::high_resolution_clock::now();
