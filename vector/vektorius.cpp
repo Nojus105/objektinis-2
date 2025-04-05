@@ -42,7 +42,7 @@ int main()
         }
         else if (pasirinkimas == '4')
         {
-            Skaityti(laik, grupe, TotalTime);
+            laik.Skaityti(grupe, TotalTime);
             break;
         }
         else

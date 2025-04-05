@@ -42,7 +42,7 @@ int main()
         }
         else if (pasirinkimas == '4')
         {
-            Skaityti(laik, grupe, TotalTime);
+            laik.Skaityti(grupe, TotalTime);
             break;
         }
         else
@@ -99,8 +99,6 @@ int main()
         Ekrane(grupe, gal, TotalTime);
     else if (pasirinkimas == '1')
         Faile(grupe, gal, TotalTime);
-    else
-        throw std::exception();
     cout << "Programa veike: " << TotalTime << " s" << endl;
 
     return 0;
