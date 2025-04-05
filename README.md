@@ -113,7 +113,8 @@ make clean
 **Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas.
 
 **Klasės konteineris** užtrunka šiek tiek ilgiau skaitymo funkcijoje, tačiau visas kitas funkcijas atlieka greičiau (skirtumas nėra didelis).
-**Optimizavimo flagai** Naudojant -O2 ir -O3 flag'us matomas didelis spartos skirtumas palyginus be flag'o. Skirtumas tarp -O2 ir -O3 yra minimalus, bet vistiek pastebime, kad -O3 veikia sparčiausiai. Su -O1 flag'u kilo problemų, yra errorų tarp naudojamos mingw32 versijos ir -O1 flag.
+
+Naudojant -O2 ir -O3 **Optimizavimo flag'us** matomas didelis spartos skirtumas palyginus be flag'o. Skirtumas tarp -O2 ir -O3 yra minimalus, bet vistiek pastebime, kad -O3 veikia sparčiausiai. Su -O1 flag'u kilo problemų, yra errorų tarp naudojamos mingw32 versijos ir -O1 flag.
 
 ![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
 
