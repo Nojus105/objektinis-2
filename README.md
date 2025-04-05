@@ -111,6 +111,7 @@ make clean
 
 ### Išvados
 **Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas.
+
 ![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
 
 **Klasės konteineris** užtrunka šiek tiek ilgiau skaitymo funkcijoje, tačiau visas kitas funkcijas atlieka greičiau (skirtumas nėra didelis).
