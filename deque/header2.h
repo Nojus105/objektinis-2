@@ -41,6 +41,7 @@ public:
     Stud() : vard(""), pav(""), egz(0), vid(0.0), med(0.0) {}
     Stud(const string &vardas, const string &pavarde, const vector<int> &pazymiai, int egzaminas)
         : vard(vardas), pav(pavarde), paz(pazymiai), egz(egzaminas), vid(0.0), med(0.0) {}
+    ~Stud();
 
     // getteriai
     inline string getVardas() const { return vard; }

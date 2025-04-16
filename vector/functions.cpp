@@ -10,21 +10,15 @@ void Manual(Stud &laik, vector<Stud> &grupe)
         try
         {
             cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
-            string vardas;
-            cin >> vardas;
-            laik.setVardas(vardas);
-            string temp = vardas;
+            cin >> laik.vard;
+            string temp = laik.vard;
             transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
             if (temp == "STOP" && StudSkaicius == 0)
                 throw std::exception();
             if (temp == "STOP")
                 break;
-
             cout << "Iveskite studento pavarde: ";
-            string pavarde;
-            cin >> pavarde;
-            laik.setPavarde(pavarde);
-
+            cin >> laik.pav;
             StudSkaicius++;
         }
         catch (std::exception &e)
@@ -39,42 +33,40 @@ void Manual(Stud &laik, vector<Stud> &grupe)
         getline(cin, line);
         std::stringstream ss(line);
         string temp;
-        vector<int> pazymiai;
         while (ss >> temp)
         {
             try
             {
                 double x = std::stod(temp);
                 if (x > 0 && x <= 10 && x == (int)x)
-                    pazymiai.push_back(x);
+                    laik.paz.push_back(x);
                 else
                     throw std::exception();
             }
             catch (std::exception &e)
             {
                 cout << "Iveskite tinkamus pazymius (1-10): ";
-                pazymiai.clear();
+                laik.paz.clear();
                 goto Ivedimas;
             }
         }
-        if (pazymiai.empty())
+        if (laik.paz.empty())
         {
             cout << "Turite ivesti bent viena pazymi" << endl;
             goto Ivedimas;
         }
-
         cout << "Iveskite studento egzamino pazymi: ";
         try
         {
-            int egz;
+            double egz;
             cin >> egz;
             if (egz <= 0 || egz > 10 || egz != (int)egz)
                 throw std::exception();
-            laik.setEgzaminas(egz);
+            laik.egz = egz;
         }
         catch (std::exception &e)
         {
-            int egz;
+            double egz;
             while (egz <= 0 || egz > 10 || egz != (int)egz)
             {
                 cout << "Neteisingas pazymys, iveskite is naujo: ";
@@ -83,24 +75,11 @@ void Manual(Stud &laik, vector<Stud> &grupe)
                 cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 cin >> egz;
             }
-            laik.setEgzaminas(egz);
+            laik.egz = egz;
         }
-        double vid = 0;
-        for (auto i : pazymiai)
-            vid += i;
-        vid = (vid / pazymiai.size()) * 0.4 + laik.getEgzaminas() * 0.6;
-        laik.setVidurkis(vid);
-        sort(pazymiai.begin(), pazymiai.end());
-        double med;
-        if (pazymiai.size() % 2 != 0)
-            med = pazymiai[pazymiai.size() / 2];
-        else
-            med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
-        laik.setMediana(med);
         grupe.push_back(laik);
     }
 }
-
 void Semi(Stud &laik, vector<Stud> &grupe)
 {
     int StudSkaicius = 0;
@@ -111,21 +90,15 @@ void Semi(Stud &laik, vector<Stud> &grupe)
         try
         {
             cout << "Iveskite studento varda (arba 'STOP' norint baigti): ";
-            string vardas;
-            cin >> vardas;
-            laik.setVardas(vardas);
-            string temp = vardas;
+            cin >> laik.vard;
+            string temp = laik.vard;
             transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
             if (temp == "STOP" && StudSkaicius == 0)
                 throw std::exception();
             if (temp == "STOP")
                 break;
-
             cout << "Iveskite studento pavarde: ";
-            string pavarde;
-            cin >> pavarde;
-            laik.setPavarde(pavarde);
-
+            cin >> laik.pav;
             StudSkaicius++;
         }
         catch (std::exception &e)
@@ -133,29 +106,15 @@ void Semi(Stud &laik, vector<Stud> &grupe)
             cout << "Iveskite bent viena studenta" << endl;
             goto EnterName1;
         }
-        vector<int> pazymiai;
         int num_grades = rand() % 10 + 1;
         for (int i = 0; i < num_grades; ++i)
         {
-            pazymiai.push_back(rand() % 10 + 1);
+            laik.paz.push_back(rand() % 10 + 1);
         }
-        laik.setEgzaminas(rand() % 10 + 1);
-        double vid = 0;
-        for (auto i : pazymiai)
-            vid += i;
-        vid = (vid / pazymiai.size()) * 0.4 + laik.getEgzaminas() * 0.6;
-        laik.setVidurkis(vid);
-        sort(pazymiai.begin(), pazymiai.end());
-        double med;
-        if (pazymiai.size() % 2 != 0)
-            med = pazymiai[pazymiai.size() / 2];
-        else
-            med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
-        laik.setMediana(med);
+        laik.egz = rand() % 10 + 1;
         grupe.push_back(laik);
     }
 }
-
 void Auto(vector<Stud> &grupe)
 {
     vector<string> vardai = {"Jonas", "Petras", "Antanas", "Kazys", "Marius", "Tomas", "Lukas", "Andrius", "Paulius", "Darius"};
@@ -166,34 +125,19 @@ void Auto(vector<Stud> &grupe)
     {
         Stud laik;
         int index = rand() % 10;
-        laik.setVardas(vardai[index]);
+        laik.vard = vardai[index];
         index = rand() % 10;
-        laik.setPavarde(pavardes[index]);
-
-        vector<int> pazymiai;
+        laik.pav = pavardes[index];
         int num_grades = rand() % 10 + 1;
         for (int i = 0; i < num_grades; ++i)
         {
-            pazymiai.push_back(rand() % 10 + 1);
+            laik.paz.push_back(rand() % 10 + 1);
         }
-        laik.setEgzaminas(rand() % 10 + 1);
-        double vid = 0;
-        for (auto i : pazymiai)
-            vid += i;
-        vid = (vid / pazymiai.size()) * 0.4 + laik.getEgzaminas() * 0.6;
-        laik.setVidurkis(vid);
-        sort(pazymiai.begin(), pazymiai.end());
-        double med;
-        if (pazymiai.size() % 2 != 0)
-            med = pazymiai[pazymiai.size() / 2];
-        else
-            med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
-        laik.setMediana(med);
+        laik.egz = rand() % 10 + 1;
         grupe.push_back(laik);
     }
 }
-
-void Stud::Skaityti(vector<Stud> &grupe, double &TotalTime)
+void Skaityti(Stud &laik, vector<Stud> &grupe, double &TotalTime)
 {
     cout << "Iveskite failo pavadinima: ";
     string failas;
@@ -206,17 +150,28 @@ void Stud::Skaityti(vector<Stud> &grupe, double &TotalTime)
         fd.open(failas, std::ios::in | std::ios::binary);
     }
 
+    // Estimate the number of students based on file size
+    fd.seekg(0, std::ios::end);
+    size_t fileSize = fd.tellg();
+    fd.seekg(0, std::ios::beg);
+
+    const size_t averageStudentSize = 100; // Estimate average size of one student's data in bytes
+    size_t estimatedStudents = fileSize / averageStudentSize;
+    grupe.reserve(estimatedStudents); // Preallocate memory for the vector
+
     const size_t bufferSize = 8 * 1024 * 1024;
-    char* buffer = new char[bufferSize];
-    string leftover;
+    char *buffer = new char[bufferSize];
+    string leftover; // To store leftover data from the previous chunk
 
     auto start = std::chrono::high_resolution_clock::now();
 
     string x;
     int count = 0;
 
+    // Read and skip the header
     fd >> x >> x;
 
+    // Count the number of grades (columns before "Egz.")
     while (fd >> x)
     {
         if (x == "Egz.")
@@ -224,69 +179,66 @@ void Stud::Skaityti(vector<Stud> &grupe, double &TotalTime)
         count++;
     }
 
+    // Reset the file pointer to the beginning of the data
     fd.clear();
     fd.seekg(0, std::ios::beg);
 
-    getline(fd, x);
+    // Skip the header again
+    getline(fd, x); // Skip the entire header line
 
+    // Read file data in large chunks
     while (fd)
     {
-        fd.read(buffer, bufferSize);
+        fd.read(buffer, bufferSize); // Read chunk into buffer
         size_t bytesRead = fd.gcount();
-        std::stringstream ss(leftover + string(buffer, bytesRead));
+        std::stringstream ss(leftover + string(buffer, bytesRead)); // Include leftover data
 
         string line;
-        leftover.clear();
-        while (getline(ss, line))
+        leftover.clear();         // Clear leftover before processing the current chunk
+        while (getline(ss, line)) // Process each line
         {
-            if (ss.eof() && line.back() != '\n') // issaugo neuzbaigtus duomenis
+            if (ss.eof() && line.back() != '\n') // Handle incomplete line
             {
-                leftover = line;
+                leftover = line; // Save the incomplete line as leftover
                 break;
             }
 
             std::stringstream lineStream(line);
-            string vardas, pavarde;
-            if (!(lineStream >> vardas >> pavarde))
+            if (!(lineStream >> laik.vard >> laik.pav)) // Read name and surname
                 continue;
 
-            setVardas(vardas);
-            setPavarde(pavarde);
-
-            vector<int> pazymiai;
-            for (int i = 0; i < count; i++)
+            laik.paz.clear();
+            for (int i = 0; i < count; i++) // Read grades
             {
                 int temp;
                 if (!(lineStream >> temp))
                     break;
-                pazymiai.push_back(temp);
+                laik.paz.push_back(temp);
             }
 
-            int egz;
-            if (!(lineStream >> egz))
+            if (!(lineStream >> laik.egz)) // Read exam grade
                 continue;
-            setEgzaminas(egz);
+            laik.vid = 0;
+            for (auto i : laik.paz)
+                laik.vid += i;
+            laik.vid = (laik.vid / laik.paz.size()) * 0.4 + laik.egz * 0.6;
 
-            double vid = 0;
-            for (auto i : pazymiai)
-                vid += i;
-            vid = (vid / pazymiai.size()) * 0.4 + egz * 0.6;
-            setVidurkis(vid);
+            // Sort the grades once
+            sort(laik.paz.begin(), laik.paz.end());
 
-            sort(pazymiai.begin(), pazymiai.end());
-
-            double med;
-            if (pazymiai.size() % 2 != 0)
-                med = pazymiai[pazymiai.size() / 2];
+            // Calculate the median
+            if (laik.paz.size() % 2 != 0)
+                laik.med = laik.paz[laik.paz.size() / 2];
             else
-                med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
-            setMediana(med);
+                laik.med = (laik.paz[laik.paz.size() / 2] + laik.paz[laik.paz.size() / 2 - 1]) / 2.0;
+            laik.paz.clear();
 
-            grupe.push_back(*this);
+            grupe.push_back(laik); // Add the student to the vector
         }
     }
 
-    delete[] buffer; // destruktorius atlaisvinti atminti
+    delete[] buffer; // Free the allocated memory
+    grupe.shrink_to_fit();
 
     fd.close();
     auto end = std::chrono::high_resolution_clock::now();
@@ -304,16 +256,17 @@ void Ekrane(vector<Stud> &grupe, char gal, double &TotalTime)
     for (int i = 0; i < 50; i++)
         cout << "-";
     cout << endl;
-    for (auto &n : grupe)
+    for (auto n : grupe)
     {
-        cout << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
+        cout << setw(19) << std::left << n.pav << setw(15) << n.vard;
         if (gal == '0')
         {
-            cout << fixed << setprecision(2) << n.getVidurkis() << endl;
+            cout << fixed << setprecision(2) << n.vid << endl;
         }
         else if (gal == '1')
         {
-            cout << fixed << setprecision(2) << n.getMediana() << endl;
+            std::sort(n.paz.begin(), n.paz.end());
+            cout << n.med << endl;
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
@@ -321,7 +274,6 @@ void Ekrane(vector<Stud> &grupe, char gal, double &TotalTime)
     cout << "Studentu isvedimo i ekrana laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
-
 void Skirstymas1(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
@@ -329,7 +281,7 @@ void Skirstymas1(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector
     {
         for (auto &n : grupe)
         {
-            if (n.getVidurkis() < 5)
+            if (n.vid < 5)
                 vargsiukai.push_back(std::move(n));
             else
                 galvociai.push_back(std::move(n));
@@ -339,7 +291,7 @@ void Skirstymas1(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector
     {
         for (auto &n : grupe)
         {
-            if (n.getMediana() < 5)
+            if (n.med < 5)
                 vargsiukai.push_back(std::move(n));
             else
                 galvociai.push_back(std::move(n));
@@ -350,7 +302,6 @@ void Skirstymas1(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector
     cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
-
 void Skirstymas2(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
@@ -358,7 +309,7 @@ void Skirstymas2(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double
     {
         for (auto n = grupe.begin(); n != grupe.end();)
         {
-            if (n->getVidurkis() < 5)
+            if ((*n).vid < 5)
             {
                 vargsiukai.push_back(*n);
                 n = grupe.erase(n);
@@ -371,7 +322,7 @@ void Skirstymas2(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double
     {
         for (auto n = grupe.begin(); n != grupe.end();)
         {
-            if (n->getMediana() < 5)
+            if ((*n).med < 5)
             {
                 vargsiukai.push_back(*n);
                 n = grupe.erase(n);
@@ -385,7 +336,6 @@ void Skirstymas2(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double
     cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
-
 void Skirstymas3(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
@@ -393,14 +343,16 @@ void Skirstymas3(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector
     if (gal == '0')
     {
         auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n)
-                                 { return n.getVidurkis() < 5; });
+                                 {
+            return n.vid < 5; });
         vargsiukai.assign(grupe.begin(), it);
         galvociai.assign(it, grupe.end());
     }
     else if (gal == '1')
     {
-        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n)
-                                 { return n.getMediana() < 5; });
+        auto it = std::partition(grupe.begin(), grupe.end(), [](Stud &n)
+                                 {
+            return n.med < 5; });
         vargsiukai.assign(grupe.begin(), it);
         galvociai.assign(it, grupe.end());
     }
@@ -410,7 +362,6 @@ void Skirstymas3(vector<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector
     cout << "Studentu skirstymo i dvi grupes laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
-
 void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
@@ -469,45 +420,45 @@ void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
         if (strategija == '3')
             Skirstymas3(grupe, gal, vargsiukai, galvociai, TotalTime);
         auto start = std::chrono::high_resolution_clock::now();
-        for (auto &n : vargsiukai)
+        for (auto n : vargsiukai)
         {
-            fr << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
+            fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
             if (gal == '0')
             {
-                fr << fixed << setprecision(2) << n.getVidurkis() << endl;
+                fr << fixed << setprecision(2) << n.vid << endl;
             }
             else if (gal == '1')
             {
-                fr << fixed << setprecision(2) << n.getMediana() << endl;
+                    fr << fixed << setprecision(2) << n.med << endl;
             }
         }
         if (strategija == '1' || strategija == '3')
         {
-            for (auto &n : galvociai)
+            for (auto n : galvociai)
             {
-                fr1 << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
+                fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
                 if (gal == '0')
                 {
-                    fr1 << fixed << setprecision(2) << n.getVidurkis() << endl;
+                    fr1 << fixed << setprecision(2) << n.vid << endl;
                 }
                 else if (gal == '1')
                 {
-                    fr1 << fixed << setprecision(2) << n.getMediana() << endl;
+                        fr1 << fixed << setprecision(2) << n.med << endl;
                 }
             }
         }
         else if (strategija == '2')
         {
-            for (auto &n : grupe)
+            for (auto n : grupe)
             {
-                fr1 << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
+                fr1 << setw(19) << std::left << n.pav << setw(15) << n.vard;
                 if (gal == '0')
                 {
-                    fr1 << fixed << setprecision(2) << n.getVidurkis() << endl;
+                    fr1 << fixed << setprecision(2) << n.vid << endl;
                 }
                 else if (gal == '1')
                 {
-                    fr1 << fixed << setprecision(2) << n.getMediana() << endl;
+                        fr1 << fixed << setprecision(2) << n.med << endl;
                 }
             }
         }
@@ -530,16 +481,16 @@ void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
             fr << "-";
         fr << endl;
 
-        for (auto &n : grupe)
+        for (auto n : grupe)
         {
-            fr << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
+            fr << setw(19) << std::left << n.pav << setw(15) << n.vard;
             if (gal == '0')
             {
-                fr << fixed << setprecision(2) << n.getVidurkis() << endl;
+                fr << fixed << setprecision(2) << n.vid << endl;
             }
             else if (gal == '1')
             {
-                fr << fixed << setprecision(2) << n.getMediana() << endl;
+                    fr << fixed << setprecision(2) << n.med << endl;
             }
         }
 
@@ -547,35 +498,34 @@ void Faile(vector<Stud> &grupe, char gal, double &TotalTime)
 
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
-        cout << "Studentu isvedimo i failus laikas: " << elapsed.count() << endl;
+        cout << "Studentu isvedimo i faila laikas: " << elapsed.count() << endl;
         TotalTime += elapsed.count();
     }
 }
-
 void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
     if (rusiavimas == 'v')
     {
         sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-             { return a.getVardas() < b.getVardas(); });
+             { return a.vard < b.vard; });
     }
     else if (rusiavimas == 'p')
     {
         sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-             { return a.getPavarde() < b.getPavarde(); });
+             { return a.pav < b.pav; });
     }
     else if (rusiavimas == 'g')
     {
         if (gal == '0') // vidurkis
         {
             sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-                 { return a.getVidurkis() < b.getVidurkis(); });
+                 { return a.vid < b.vid; });
         }
         else if (gal == '1') // mediana
         {
             sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-                 { return a.getMediana() < b.getMediana(); });
+                 { return a.med < b.med; });
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
@@ -583,7 +533,6 @@ void Rusiuoti(vector<Stud> &grupe, char rusiavimas, char gal, double &TotalTime)
     cout << "Studentu rusiavimo laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
-
 void GeneruotiFaila(double &TotalTime)
 {
     int name;

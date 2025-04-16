@@ -1,5 +1,16 @@
 #include "header2.h"
 
+Stud::~Stud()
+{
+    // Destruktorius
+    vard.clear();
+    pav.clear();
+    paz.clear();
+    egz = 0;
+    vid = 0.0;
+    med = 0.0;
+}
+
 void Manual(Stud &laik, deque<Stud> &grupe)
 {
     int StudSkaicius = 0;

@@ -100,6 +100,12 @@ make clean
 | **100k**          | 0.938 s          | 0.094 s    | 0.006 s         | 0.896 s      | 1.935 s |
 | **1m**            | 7.488 s          | 1.040 s    | 0.045 s         | 8.895 s      | 17.468 s |
 
+### **Deque naudojant struct (-03)**
+| Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas (3) | Spausdinimas | Iš viso |
+|-------------------|-----------------|------------|-----------------|--------------|---------|
+| **100k**          | 0.407 s          | 0.155 s    | 0.012 s         | 0.919 s      |  s |
+| **1m**            | 7.214 s          | 1.092 s    | 0.059 s         | 8.895 s      |  s |
+
 .exe failo dydis - 190 KB
 
 ---
