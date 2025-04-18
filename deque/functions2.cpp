@@ -2,7 +2,7 @@
 
 Stud::~Stud()
 {
-    // Destruktorius
+    // destruktorius
     vard.clear();
     pav.clear();
     paz.clear();

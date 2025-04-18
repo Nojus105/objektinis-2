@@ -43,6 +43,52 @@ public:
         : vard(vardas), pav(pavarde), paz(pazymiai), egz(egzaminas), vid(0.0), med(0.0) {}
     ~Stud();
 
+    // copy konstruktorius
+    Stud(const Stud &other)
+        : vard(other.vard), pav(other.pav), paz(other.paz), egz(other.egz), vid(other.vid), med(other.med) {}
+
+    // copy assignment operatorius
+    Stud &operator=(const Stud &other)
+    {
+        if (this == &other)
+            return *this;
+        vard = other.vard;
+        pav = other.pav;
+        paz = other.paz;
+        egz = other.egz;
+        vid = other.vid;
+        med = other.med;
+        return *this;
+    }
+
+    // move konstructorius
+    Stud(Stud &&other) noexcept
+        : vard(std::move(other.vard)), pav(std::move(other.pav)), paz(std::move(other.paz)),
+          egz(other.egz), vid(other.vid), med(other.med)
+    {
+        other.egz = 0;
+        other.vid = 0.0;
+        other.med = 0.0;
+    }
+
+    // move assignment operatorius
+    Stud &operator=(Stud &&other) noexcept
+    {
+        if (this == &other)
+            return *this;
+        vard = std::move(other.vard);
+        pav = std::move(other.pav);
+        paz = std::move(other.paz);
+        egz = other.egz;
+        vid = other.vid;
+        med = other.med;
+
+        other.egz = 0;
+        other.vid = 0.0;
+        other.med = 0.0;
+        return *this;
+    }
+
     // getteriai
     inline string getVardas() const { return vard; }
     inline string getPavarde() const { return pav; }
