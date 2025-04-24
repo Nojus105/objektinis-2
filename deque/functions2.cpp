@@ -11,7 +11,7 @@ Stud::~Stud()
     med = 0.0;
 }
 
-void Manual(Stud &laik, deque<Stud> &grupe)
+void Manual(Stud &laik, deque<Zmogus *> &grupe)
 {
     int StudSkaicius = 0;
     while (true)
@@ -108,11 +108,11 @@ void Manual(Stud &laik, deque<Stud> &grupe)
         else
             med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
         laik.setMediana(med);
-        grupe.push_back(std::move(laik));
+        grupe.push_back(new Stud(std::move(laik)));
     }
 }
 
-void Semi(Stud &laik, deque<Stud> &grupe)
+void Semi(Stud &laik, deque<Zmogus *> &grupe)
 {
     int StudSkaicius = 0;
     while (true)
@@ -163,11 +163,11 @@ void Semi(Stud &laik, deque<Stud> &grupe)
         else
             med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
         laik.setMediana(med);
-        grupe.push_back(std::move(laik));
+        grupe.push_back(new Stud(std::move(laik)));
     }
 }
 
-void Auto(deque<Stud> &grupe)
+void Auto(deque<Zmogus *> &grupe)
 {
     vector<string> vardai = {"Jonas", "Petras", "Antanas", "Kazys", "Marius", "Tomas", "Lukas", "Andrius", "Paulius", "Darius"};
     vector<string> pavardes = {"Jonaitis", "Petraitis", "Antanaitis", "Kazlauskas", "Marijonas", "Tomaitis", "Lukauskas", "Andriukaitis", "Paulauskas", "Darauskas"};
@@ -200,11 +200,11 @@ void Auto(deque<Stud> &grupe)
         else
             med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
         laik.setMediana(med);
-        grupe.push_back(std::move(laik));
+        grupe.push_back(new Stud(std::move(laik)));
     }
 }
 
-void Stud::Skaityti(deque<Stud> &grupe, double &TotalTime)
+void Stud::Skaityti(deque<Zmogus *> &grupe, double &TotalTime)
 {
     cout << "Iveskite failo pavadinima: ";
     string failas;
@@ -293,7 +293,7 @@ void Stud::Skaityti(deque<Stud> &grupe, double &TotalTime)
                 med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
             setMediana(med);
 
-            grupe.push_back(*this);
+            grupe.push_back(new Stud(*this));
         }
     }
 
@@ -305,7 +305,7 @@ void Stud::Skaityti(deque<Stud> &grupe, double &TotalTime)
     std::cout << failas << " studentu failo skaitymo laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
-void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime)
+void Ekrane(deque<Zmogus *> &grupe, char gal, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
     if (gal == '0')
@@ -317,14 +317,17 @@ void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime)
     cout << endl;
     for (const auto &n : grupe)
     {
-        cout << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
-        if (gal == '0')
+        if (auto stud = dynamic_cast<Stud *>(n))
         {
-            cout << fixed << setprecision(2) << n.getVidurkis() << endl;
-        }
-        else if (gal == '1')
-        {
-            cout << fixed << setprecision(2) << n.getMediana() << endl;
+            cout << setw(19) << std::left << stud->getPavarde() << setw(15) << stud->getVardas();
+            if (gal == '0')
+            {
+                cout << fixed << setprecision(2) << stud->getVidurkis() << endl;
+            }
+            else if (gal == '1')
+            {
+                cout << fixed << setprecision(2) << stud->getMediana() << endl;
+            }
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
@@ -333,27 +336,27 @@ void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime)
     TotalTime += elapsed.count();
 }
 
-void Skirstymas1(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
+void Skirstymas1(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
     if (gal == '0')
     {
         for (auto &n : grupe)
         {
-            if (n.getVidurkis() < 5)
-                vargsiukai.push_back(std::move(n));
+            if ((*dynamic_cast<Stud *>(n)).getVidurkis() < 5)
+                vargsiukai.push_back(std::move(*dynamic_cast<Stud *>(n)));
             else
-                galvociai.push_back(std::move(n));
+                galvociai.push_back(std::move(*dynamic_cast<Stud *>(n)));
         }
     }
     else if (gal == '1')
     {
         for (auto &n : grupe)
         {
-            if (n.getMediana() < 5)
-                vargsiukai.push_back(std::move(n));
+            if ((*dynamic_cast<Stud *>(n)).getMediana() < 5)
+                vargsiukai.push_back(std::move(*dynamic_cast<Stud *>(n)));
             else
-                galvociai.push_back(std::move(n));
+                galvociai.push_back(std::move(*dynamic_cast<Stud *>(n)));
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
@@ -362,29 +365,33 @@ void Skirstymas1(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<
     TotalTime += elapsed.count();
 }
 
-void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime)
+void Skirstymas2(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
     if (gal == '0')
     {
         for (auto n = grupe.begin(); n != grupe.end();)
         {
-            if (n->getVidurkis() < 5)
+            if (auto stud = dynamic_cast<Stud *>(*n))
             {
-                vargsiukai.push_back(*n);
-                n = grupe.erase(n);
+                if (stud->getVidurkis() < 5)
+                {
+                    vargsiukai.push_back(*dynamic_cast<Stud *>(*n));
+                    n = grupe.erase(n);
+                }
+
+                else
+                    n++;
             }
-            else
-                n++;
         }
     }
     else if (gal == '1')
     {
         for (auto n = grupe.begin(); n != grupe.end();)
         {
-            if (n->getMediana() < 5)
+            if (dynamic_cast<Stud *>(*n)->getMediana() < 5)
             {
-                vargsiukai.push_back(*n);
+                vargsiukai.push_back(*dynamic_cast<Stud *>(*n));
                 n = grupe.erase(n);
             }
             else
@@ -397,23 +404,35 @@ void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double 
     TotalTime += elapsed.count();
 }
 
-void Skirstymas3(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
+void Skirstymas3(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
 
-    if (gal == '0')
+    auto it = std::partition(grupe.begin(), grupe.end(), [gal](const Zmogus *n)
+                             {
+        auto stud = dynamic_cast<const Stud*>(n);
+        if (gal == '0') // Partition by average
+            return stud && stud->getVidurkis() < 5;
+        else if (gal == '1') // Partition by median
+            return stud && stud->getMediana() < 5;
+        return false; });
+
+    // Move elements to `vargsiukai`
+    for (auto i = grupe.begin(); i != it; ++i)
     {
-        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n)
-                                 { return n.getVidurkis() < 5; });
-        vargsiukai.assign(grupe.begin(), it);
-        galvociai.assign(it, grupe.end());
+        if (auto stud = dynamic_cast<Stud *>(*i))
+        {
+            vargsiukai.push_back(std::move(*stud)); // Move the Stud object
+        }
     }
-    else if (gal == '1')
+
+    // Move elements to `galvociai`
+    for (auto i = it; i != grupe.end(); ++i)
     {
-        auto it = std::partition(grupe.begin(), grupe.end(), [](const Stud &n)
-                                 { return n.getMediana() < 5; });
-        vargsiukai.assign(grupe.begin(), it);
-        galvociai.assign(it, grupe.end());
+        if (auto stud = dynamic_cast<Stud *>(*i))
+        {
+            galvociai.push_back(std::move(*stud)); // Move the Stud object
+        }
     }
 
     auto end = std::chrono::high_resolution_clock::now();
@@ -422,7 +441,7 @@ void Skirstymas3(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<
     TotalTime += elapsed.count();
 }
 
-void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
+void Faile(deque<Zmogus *> &grupe, char gal, double &TotalTime)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
     cout << "0 - Ne, 1 - Taip" << endl;
@@ -511,14 +530,14 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
         {
             for (auto &n : grupe)
             {
-                fr1 << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
+                fr1 << setw(19) << std::left << (*n).getPavarde() << setw(15) << (*n).getVardas();
                 if (gal == '0')
                 {
-                    fr1 << fixed << setprecision(2) << n.getVidurkis() << endl;
+                    fr1 << fixed << setprecision(2) << (*dynamic_cast<Stud *>(n)).getVidurkis() << endl;
                 }
                 else if (gal == '1')
                 {
-                    fr1 << fixed << setprecision(2) << n.getMediana() << endl;
+                    fr1 << fixed << setprecision(2) << (*dynamic_cast<Stud *>(n)).getMediana() << endl;
                 }
             }
         }
@@ -541,16 +560,19 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
             fr << "-";
         fr << endl;
 
-        for (auto &n : grupe)
+        for (const auto &n : grupe)
         {
-            fr << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
-            if (gal == '0')
+            if (dynamic_cast<Stud *>(n)) // check if cast is valid
             {
-                fr << fixed << setprecision(2) << n.getVidurkis() << endl;
-            }
-            else if (gal == '1')
-            {
-                fr << fixed << setprecision(2) << n.getMediana() << endl;
+                fr << setw(19) << std::left << (*n).getPavarde() << setw(15) << (*n).getVardas();
+                if (gal == '0')
+                {
+                    fr << fixed << setprecision(2) << (*dynamic_cast<Stud *>(n)).getVidurkis() << endl;
+                }
+                else if (gal == '1')
+                {
+                    fr << fixed << setprecision(2) << (*dynamic_cast<Stud *>(n)).getMediana() << endl;
+                }
             }
         }
 
@@ -563,30 +585,36 @@ void Faile(deque<Stud> &grupe, char gal, double &TotalTime)
     }
 }
 
-void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime)
+void Rusiuoti(deque<Zmogus *> &grupe, char rusiavimas, char gal, double &TotalTime)
 {
     auto start = std::chrono::high_resolution_clock::now();
     if (rusiavimas == 'v')
     {
-        sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-             { return a.getVardas() < b.getVardas(); });
+        std::sort(grupe.begin(), grupe.end(), [](const Zmogus *a, const Zmogus *b)
+                  { return a->getVardas() < b->getVardas(); });
     }
     else if (rusiavimas == 'p')
     {
-        sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-             { return a.getPavarde() < b.getPavarde(); });
+        std::sort(grupe.begin(), grupe.end(), [](const Zmogus *a, const Zmogus *b)
+                  { return a->getPavarde() < b->getPavarde(); });
     }
     else if (rusiavimas == 'g')
     {
         if (gal == '0') // vidurkis
         {
-            sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-                 { return a.getVidurkis() < b.getVidurkis(); });
+            std::sort(grupe.begin(), grupe.end(), [](const Zmogus *a, const Zmogus *b)
+                      {
+            auto studA = dynamic_cast<const Stud*>(a);
+            auto studB = dynamic_cast<const Stud*>(b);
+            return studA && studB && studA->getVidurkis() < studB->getVidurkis(); });
         }
         else if (gal == '1') // mediana
         {
-            sort(grupe.begin(), grupe.end(), [](const Stud &a, const Stud &b)
-                 { return a.getMediana() < b.getMediana(); });
+            std::sort(grupe.begin(), grupe.end(), [](const Zmogus *a, const Zmogus *b)
+                      {
+            auto studA = dynamic_cast<const Stud*>(a);
+            auto studB = dynamic_cast<const Stud*>(b);
+            return studA && studB && studA->getMediana() < studB->getMediana(); });
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
@@ -640,7 +668,8 @@ void GeneruotiFaila(double &TotalTime)
     TotalTime += elapsed.count();
 }
 
-void testRuleOfFive() {
+void testRuleOfFive()
+{
     // Test 1: copy konstruktorius
     Stud original("Jonas", "Jonaitis", {8, 9, 10}, 9);
     Stud copyConstructed(original);

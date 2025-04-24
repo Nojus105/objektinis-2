@@ -2,9 +2,22 @@
 
 int main()
 {
-    testRuleOfFive();
+    char test;
+    cout << "Ar norite testuoti? (y/n)" << endl;
+    while (true)
+    {
+        test = getch();
+        if (test == 'y' || test == 'n')
+            break;
+        else
+            cout << "Neteisingas pasirinkimas" << endl;
+    }
+    if(test == 'y')
+    {
+        testRuleOfFive();
+    }
     srand(time(0));
-    deque<Stud> grupe;
+    deque<Zmogus*> grupe;
     double TotalTime = 0;
     Stud laik;
     cout << "Sugeneruoti studentu faila?" << endl;

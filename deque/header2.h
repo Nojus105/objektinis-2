@@ -28,33 +28,58 @@ using std::string;
 using std::to_string;
 using std::vector;
 
-class Stud
+// Bazine/abstrakti klase
+class Zmogus
+{
+protected:
+    string vard, pav;
+
+public:
+    // Default konstruktorius
+    Zmogus() : vard(""), pav("") {}
+    Zmogus(const string &vardas, const string &pavarde) : vard(vardas), pav(pavarde) {}
+
+    // Virtualus destruktorius
+    virtual ~Zmogus() = default;
+
+    // Getteriai
+    inline string getVardas() const { return vard; }
+    inline string getPavarde() const { return pav; }
+
+    // Setteriai
+    inline void setVardas(const string &vardas) { vard = vardas; }
+    inline void setPavarde(const string &pavarde) { pav = pavarde; }
+
+    // Pure virtual function to enforce implementation in derived classes
+    virtual void Skaityti(deque<Zmogus *> &grupe, double &TotalTime) = 0;
+};
+
+// Derived klase
+class Stud : public Zmogus
 {
 private:
-    string vard, pav;
     vector<int> paz;
     int egz;
     double vid;
     double med;
 
 public:
-    // default konstruktorius
-    Stud() : vard(""), pav(""), egz(0), vid(0.0), med(0.0) {}
+    // Default konstruktorius
+    Stud() : Zmogus(), egz(0), vid(0.0), med(0.0) {}
     Stud(const string &vardas, const string &pavarde, const vector<int> &pazymiai, int egzaminas)
-        : vard(vardas), pav(pavarde), paz(pazymiai), egz(egzaminas), vid(0.0), med(0.0) {}
+        : Zmogus(vardas, pavarde), paz(pazymiai), egz(egzaminas), vid(0.0), med(0.0) {}
     ~Stud();
 
-    // copy konstruktorius
+    // Copy konstruktorius
     Stud(const Stud &other)
-        : vard(other.vard), pav(other.pav), paz(other.paz), egz(other.egz), vid(other.vid), med(other.med) {}
+        : Zmogus(other.vard, other.pav), paz(other.paz), egz(other.egz), vid(other.vid), med(other.med) {}
 
-    // copy assignment operatorius
+    // Copy assignment operatorius
     Stud &operator=(const Stud &other)
     {
         if (this == &other)
             return *this;
-        vard = other.vard;
-        pav = other.pav;
+        Zmogus::operator=(other);
         paz = other.paz;
         egz = other.egz;
         vid = other.vid;
@@ -62,9 +87,9 @@ public:
         return *this;
     }
 
-    // move konstruktorius
+    // Move konstruktorius
     Stud(Stud &&other) noexcept
-        : vard(std::move(other.vard)), pav(std::move(other.pav)), paz(std::move(other.paz)),
+        : Zmogus(std::move(other.vard), std::move(other.pav)), paz(std::move(other.paz)),
           egz(other.egz), vid(other.vid), med(other.med)
     {
         other.egz = 0;
@@ -72,13 +97,12 @@ public:
         other.med = 0.0;
     }
 
-    // move assignment operatorius
+    // Move assignment operatorius
     Stud &operator=(Stud &&other) noexcept
     {
         if (this == &other)
             return *this;
-        vard = std::move(other.vard);
-        pav = std::move(other.pav);
+        Zmogus::operator=(std::move(other));
         paz = std::move(other.paz);
         egz = other.egz;
         vid = other.vid;
@@ -90,32 +114,30 @@ public:
         return *this;
     }
 
-    // getteriai
-    inline string getVardas() const { return vard; }
-    inline string getPavarde() const { return pav; }
+    // Getteriai
     inline vector<int> getPazymiai() const { return paz; }
     inline int getEgzaminas() const { return egz; }
     inline double getVidurkis() const { return vid; }
     inline double getMediana() const { return med; }
-    // setteriai
-    inline void setVardas(const string &vardas) { vard = vardas; }
-    inline void setPavarde(const string &pavarde) { pav = pavarde; }
+
+    // Setteriai
     inline void setPazymiai(const vector<int> &pazymiai) { paz = pazymiai; }
     inline void setEgzaminas(int egzaminas) { egz = egzaminas; }
     inline void setVidurkis(double vidurkis) { vid = vidurkis; }
     inline void setMediana(double mediana) { med = mediana; }
-    std::istream &Skaityti(std::istream &);
-    void Skaityti(deque<Stud> &grupe, double &TotalTime);
+
+    // Overriding the pure virtual function
+    void Skaityti(deque<Zmogus *> &grupe, double &TotalTime) override;
 };
 
-void Manual(Stud &laik, deque<Stud> &grupe);
-void Semi(Stud &laik, deque<Stud> &grupe);
-void Auto(deque<Stud> &grupe);
-void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime);
-void Skirstymas1(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
-void Skirstymas2(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
-void Skirstymas3(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
-void Faile(deque<Stud> &grupe, char gal, double &TotalTime);
-void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
+void Manual(Stud &laik, deque<Zmogus *> &grupe);
+void Semi(Stud &laik, deque<Zmogus *> &grupe);
+void Auto(deque<Zmogus *> &grupe);
+void Ekrane(deque<Zmogus *> &grupe, char gal, double &TotalTime);
+void Skirstymas1(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Skirstymas2(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
+void Skirstymas3(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+void Faile(deque<Zmogus *> &grupe, char gal, double &TotalTime);
+void Rusiuoti(deque<Zmogus *> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);
 void testRuleOfFive();
