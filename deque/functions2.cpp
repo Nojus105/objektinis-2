@@ -3,8 +3,6 @@
 Stud::~Stud()
 {
     // destruktorius
-    vard.clear();
-    pav.clear();
     paz.clear();
     egz = 0;
     vid = 0.0;
