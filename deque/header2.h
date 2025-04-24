@@ -12,6 +12,7 @@
 #include <chrono>
 #include <deque>
 #include <numeric>
+#include <cassert>
 #pragma once
 
 using std::cin;
@@ -61,7 +62,7 @@ public:
         return *this;
     }
 
-    // move konstructorius
+    // move konstruktorius
     Stud(Stud &&other) noexcept
         : vard(std::move(other.vard)), pav(std::move(other.pav)), paz(std::move(other.paz)),
           egz(other.egz), vid(other.vid), med(other.med)
@@ -117,3 +118,4 @@ void Skirstymas3(deque<Stud> &grupe, char gal, vector<Stud> &vargsiukai, vector<
 void Faile(deque<Stud> &grupe, char gal, double &TotalTime);
 void Rusiuoti(deque<Stud> &grupe, char rusiavimas, char gal, double &TotalTime);
 void GeneruotiFaila(double &TotalTime);
+void testRuleOfFive();

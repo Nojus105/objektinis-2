@@ -639,3 +639,51 @@ void GeneruotiFaila(double &TotalTime)
     std::cout << name << " studentu failo generavimo laikas: " << elapsed.count() << endl;
     TotalTime += elapsed.count();
 }
+
+void testRuleOfFive() {
+    // Test 1: copy konstruktorius
+    Stud original("Jonas", "Jonaitis", {8, 9, 10}, 9);
+    Stud copyConstructed(original);
+    assert(copyConstructed.getVardas() == "Jonas");
+    assert(copyConstructed.getPavarde() == "Jonaitis");
+    assert(copyConstructed.getPazymiai() == vector<int>({8, 9, 10}));
+    assert(copyConstructed.getEgzaminas() == 9);
+
+    // Test 2: copy assignment operatorius
+    Stud copyAssigned;
+    copyAssigned = original;
+    assert(copyAssigned.getVardas() == "Jonas");
+    assert(copyAssigned.getPavarde() == "Jonaitis");
+    assert(copyAssigned.getPazymiai() == vector<int>({8, 9, 10}));
+    assert(copyAssigned.getEgzaminas() == 9);
+
+    // Test 3: move konstruktorius
+    Stud moveConstructed(std::move(original));
+    assert(moveConstructed.getVardas() == "Jonas");
+    assert(moveConstructed.getPavarde() == "Jonaitis");
+    assert(moveConstructed.getPazymiai() == vector<int>({8, 9, 10}));
+    assert(moveConstructed.getEgzaminas() == 9);
+    assert(original.getVardas().empty());
+    assert(original.getPavarde().empty());
+    assert(original.getPazymiai().empty());
+    assert(original.getEgzaminas() == 0);
+
+    // Test 4: move assignment operatorius
+    Stud moveAssigned;
+    moveAssigned = std::move(moveConstructed);
+    assert(moveAssigned.getVardas() == "Jonas");
+    assert(moveAssigned.getPavarde() == "Jonaitis");
+    assert(moveAssigned.getPazymiai() == vector<int>({8, 9, 10}));
+    assert(moveAssigned.getEgzaminas() == 9);
+    assert(moveConstructed.getVardas().empty());
+    assert(moveConstructed.getPavarde().empty());
+    assert(moveConstructed.getPazymiai().empty());
+    assert(moveConstructed.getEgzaminas() == 0);
+
+    // Test 5: destruktorius
+    {
+        Stud temp("Petras", "Petraitis", {7, 8, 9}, 8);
+        // destruktorius automatiskai iskvieciamas
+    }
+    std::cout << "Rule of five testai sekmingi" << endl;
+}

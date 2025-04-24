@@ -2,6 +2,7 @@
 
 int main()
 {
+    testRuleOfFive();
     srand(time(0));
     deque<Stud> grupe;
     double TotalTime = 0;

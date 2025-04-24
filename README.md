@@ -8,6 +8,7 @@
 5. **v0.4** - Studentų skirstymas į pogrupius, failų generavimas.
 6. **v1.0** - Pilna versija. Sukurtas Makefile, kelios versijos su skirtingais konteineriais, optimizacija.
 7. **v1.1** - Pertvarkyta struktūrą pakeičiant į klasę.
+8. **v1.2** - Panaudotas rule of five, implementuoti jo testai.
 
 ---
 
@@ -97,16 +98,18 @@ make clean
 ### **Deque naudojant klasę (-O3)**
 | Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas (3) | Spausdinimas | Iš viso |
 |-------------------|-----------------|------------|-----------------|--------------|---------|
-| **100k**          | 0.938 s          | 0.094 s    | 0.006 s         | 0.896 s      | 1.935 s |
-| **1m**            | 7.488 s          | 1.040 s    | 0.045 s         | 8.895 s      | 17.468 s |
+| **100k**          | 0.820 s          | 0.069 s    | 0.007 s         | 0.717 s      | 1.614 s |
+| **1m**            | 6.125 s          | 0.875 s    | 0.051 s         | 7.403 s      | 14.455 s |
+
+.exe failo dydis - 190 KB
+
+---
 
 ### **Deque naudojant struct (-03)**
 | Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas (3) | Spausdinimas | Iš viso |
 |-------------------|-----------------|------------|-----------------|--------------|---------|
-| **100k**          | 0.407 s          | 0.155 s    | 0.012 s         | 0.919 s      |  s |
-| **1m**            | 7.214 s          | 1.092 s    | 0.059 s         | 8.895 s      |  s |
-
-.exe failo dydis - 190 KB
+| **100k**          | 0.709 s          | 0.155 s    | 0.012 s         | 0.919 s      | 1.493 s |
+| **1m**            | 7.214 s          | 1.092 s    | 0.059 s         | 8.895 s      | 17.260 s |
 
 ---
 
@@ -116,7 +119,7 @@ make clean
 - **Storage:** NVMe M.2 SSD 1TB
 
 ### Išvados
-**Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas.
+**Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas. Taip pat pastebime, kad **klasė** yra iki 20% spartesnė nei **struktūra**.
 
 ![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
 
