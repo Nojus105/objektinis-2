@@ -92,6 +92,8 @@ public:
         : Zmogus(std::move(other.vard), std::move(other.pav)), paz(std::move(other.paz)),
           egz(other.egz), vid(other.vid), med(other.med)
     {
+        other.vard.clear();
+        other.pav.clear();
         other.egz = 0;
         other.vid = 0.0;
         other.med = 0.0;
@@ -108,6 +110,8 @@ public:
         vid = other.vid;
         med = other.med;
 
+        other.vard.clear();
+        other.pav.clear();
         other.egz = 0;
         other.vid = 0.0;
         other.med = 0.0;

@@ -9,6 +9,7 @@
 6. **v1.0** - Pilna versija. Sukurtas Makefile, kelios versijos su skirtingais konteineriais, optimizacija.
 7. **v1.1** - Pertvarkyta struktūrą pakeičiant į klasę.
 8. **v1.2** - Panaudotas rule of five, implementuoti jo testai.
+9. **v1.2** - Klasė paskirstyta į abstrakčią ir derived klases.
 
 ---
 

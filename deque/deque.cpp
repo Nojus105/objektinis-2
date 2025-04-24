@@ -2,6 +2,8 @@
 
 int main()
 {
+    //Uzkomentuota eilute, rodanti, kad abstrakcios klases objektu kurimas negalimas
+    //Zmogus testas;
     char test;
     cout << "Ar norite testuoti? (y/n)" << endl;
     while (true)
