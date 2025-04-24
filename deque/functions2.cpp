@@ -108,7 +108,7 @@ void Manual(Stud &laik, deque<Stud> &grupe)
         else
             med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
         laik.setMediana(med);
-        grupe.push_back(laik);
+        grupe.push_back(std::move(laik));
     }
 }
 
@@ -163,7 +163,7 @@ void Semi(Stud &laik, deque<Stud> &grupe)
         else
             med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
         laik.setMediana(med);
-        grupe.push_back(laik);
+        grupe.push_back(std::move(laik));
     }
 }
 
@@ -200,7 +200,7 @@ void Auto(deque<Stud> &grupe)
         else
             med = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) / 2.0;
         laik.setMediana(med);
-        grupe.push_back(laik);
+        grupe.push_back(std::move(laik));
     }
 }
 
@@ -315,7 +315,7 @@ void Ekrane(deque<Stud> &grupe, char gal, double &TotalTime)
     for (int i = 0; i < 50; i++)
         cout << "-";
     cout << endl;
-    for (auto &n : grupe)
+    for (const auto &n : grupe)
     {
         cout << setw(19) << std::left << n.getPavarde() << setw(15) << n.getVardas();
         if (gal == '0')

@@ -129,5 +129,19 @@ Naudojant -O2 ir -O3 **Optimizavimo flag'us** matomas didelis spartos skirtumas 
 
 ---
 
+### Perdengtų metodų paaiškinimas
+
+**Manual** įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Vienu metu įvedami visi pažymiai atskirti tarpu, kurie yra saugojami vektoriuje. Įvedamas egzamino pažymys. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+**Semi** įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Randomly sugeneruojami iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+**Auto** įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Sugeneruojami iki 10 studentų (vardai, pavardės parenkami atsitiktinai iš vektorių), kiekvienas iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+**Ekrane** išvestis - ekrane atspausdina visus surūšiuotus studentus (pagal vardą/pavardę/galutinį balą) ir jų galutinį balą vidurkį/medianą pagal vartotojo pasirinkimą. Rule of five nenaudojamas, kadangi nekuriama nauja klasė (nereikia default konstruktoriaus), neperkeliami ir nekopijuojami duomenys (nereikia move/copy konstruktoriaus/operatoriaus) ir nenaikinami laikini duomenys (nereikia destruktoriaus).
+
+**Faile** išvestis - vartotojas pasirenka ar paskirstyti studentus į 2 atskirus failus pagal vidurkį. Skirstant i grupeles sukuriami 2 nauji vektoriai, į kuriuos perkeliami duomenys naudojant move konstruktorių, priklausant nuo vartotojo pasirinktos rūšiavimo strategijos. Duomenys atspausdinami faile/failuose pagal vartotojo pasirinktą rūšiavimą. Panaudojamas destruktorius, kadangi vektoriams priklausė klasės nariai.
+
+---
+
 Kilus klausimams ar pastaboms, susisiekite el. paštu: **nojus.petrusis@mif.stud.vu.lt**
 
