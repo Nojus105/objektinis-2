@@ -28,33 +28,57 @@ using std::string;
 using std::to_string;
 using std::vector;
 
-// Bazine/abstrakti klase
+/**
+ * @brief Bazinė/abstrakti klasė.
+ */
 class Zmogus
 {
 protected:
     string vard, pav;
 
 public:
-    // Default konstruktorius
+    /**
+     * @brief Default konstruktorius.
+     */
     Zmogus() : vard(""), pav("") {}
+
+    /**
+     * @brief Konstruktorius su parametrais.
+     * 
+     * @param vardas Vardas.
+     * @param pavarde Pavardė.
+     */
     Zmogus(const string &vardas, const string &pavarde) : vard(vardas), pav(pavarde) {}
 
-    // Virtualus destruktorius
+    /**
+     * @brief Virtualus destruktorius.
+     */
     virtual ~Zmogus() = default;
 
-    // Getteriai
+    /**
+     * @brief Getteriai.
+     */
     inline string getVardas() const { return vard; }
     inline string getPavarde() const { return pav; }
 
-    // Setteriai
+    /**
+     * @brief Setteriai.
+     */
     inline void setVardas(const string &vardas) { vard = vardas; }
     inline void setPavarde(const string &pavarde) { pav = pavarde; }
 
-    // Pure virtual function to enforce implementation in derived classes
+    /**
+     * @brief Grynoji virtuali funkcija, kurią reikia įgyvendinti išvestinėse klasėse.
+     * 
+     * @param grupe Studentų grupė.
+     * @param TotalTime Bendras operacijos laikas.
+     */
     virtual void Skaityti(deque<Zmogus *> &grupe, double &TotalTime) = 0;
 };
 
-// Derived klase
+/**
+ * @brief Išvestinė klasė.
+ */
 class Stud : public Zmogus
 {
 private:
@@ -64,17 +88,41 @@ private:
     double med;
 
 public:
-    // Default konstruktorius
+    /**
+     * @brief Numatytasis konstruktorius.
+     */
     Stud() : Zmogus(), egz(0), vid(0.0), med(0.0) {}
+
+    /**
+     * @brief Konstruktorius su parametrais.
+     * 
+     * @param vardas Vardas.
+     * @param pavarde Pavardė.
+     * @param pazymiai Pažymiai.
+     * @param egzaminas Egzamino rezultatas.
+     */
     Stud(const string &vardas, const string &pavarde, const vector<int> &pazymiai, int egzaminas)
         : Zmogus(vardas, pavarde), paz(pazymiai), egz(egzaminas), vid(0.0), med(0.0) {}
+
+    /**
+     * @brief Destruktorius.
+     */
     ~Stud();
 
-    // Copy konstruktorius
+    /**
+     * @brief Copy konstruktorius.
+     * 
+     * @param other Kitas objektas.
+     */
     Stud(const Stud &other)
         : Zmogus(other.vard, other.pav), paz(other.paz), egz(other.egz), vid(other.vid), med(other.med) {}
 
-    // Copy assignment operatorius
+    /**
+     * @brief Copy priskyrimo operatorius.
+     * 
+     * @param other Kitas objektas.
+     * @return Stud& 
+     */
     Stud &operator=(const Stud &other)
     {
         if (this == &other)
@@ -87,7 +135,11 @@ public:
         return *this;
     }
 
-    // Move konstruktorius
+    /**
+     * @brief Move konstruktorius.
+     * 
+     * @param other Kitas objektas.
+     */
     Stud(Stud &&other) noexcept
         : Zmogus(std::move(other.vard), std::move(other.pav)), paz(std::move(other.paz)),
           egz(other.egz), vid(other.vid), med(other.med)
@@ -99,7 +151,12 @@ public:
         other.med = 0.0;
     }
 
-    // Move assignment operatorius
+    /**
+     * @brief Move priskyrimo operatorius.
+     * 
+     * @param other Kitas objektas.
+     * @return Stud& 
+     */
     Stud &operator=(Stud &&other) noexcept
     {
         if (this == &other)
@@ -118,30 +175,122 @@ public:
         return *this;
     }
 
-    // Getteriai
+    /**
+     * @brief Getteriai.
+     */
     inline vector<int> getPazymiai() const { return paz; }
     inline int getEgzaminas() const { return egz; }
     inline double getVidurkis() const { return vid; }
     inline double getMediana() const { return med; }
 
-    // Setteriai
+    /**
+     * @brief Setteriai.
+     */
     inline void setPazymiai(const vector<int> &pazymiai) { paz = pazymiai; }
     inline void setEgzaminas(int egzaminas) { egz = egzaminas; }
     inline void setVidurkis(double vidurkis) { vid = vidurkis; }
     inline void setMediana(double mediana) { med = mediana; }
 
-    // Overriding the pure virtual function
+    /**
+     * @brief Perrašoma grynoji virtuali funkcija.
+     * 
+     * @param grupe Studentų grupė.
+     * @param TotalTime Bendras operacijos laikas.
+     */
     void Skaityti(deque<Zmogus *> &grupe, double &TotalTime) override;
 };
 
+/**
+ * @brief Funkcija studentų duomenų įvedimui rankiniu būdu.
+ * 
+ * @param laik Laikinas studento objektas.
+ * @param grupe Studentų grupė.
+ */
 void Manual(Stud &laik, deque<Zmogus *> &grupe);
+
+/**
+ * @brief Funkcija studentų duomenų įvedimui pusiau automatiniu būdu.
+ * 
+ * @param laik Laikinas studento objektas.
+ * @param grupe Studentų grupė.
+ */
 void Semi(Stud &laik, deque<Zmogus *> &grupe);
+
+/**
+ * @brief Funkcija studentų duomenų generavimui automatiškai.
+ * 
+ * @param grupe Studentų grupė.
+ */
 void Auto(deque<Zmogus *> &grupe);
+
+/**
+ * @brief Funkcija studentų duomenų išvedimui į ekraną.
+ * 
+ * @param grupe Studentų grupė.
+ * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void Ekrane(deque<Zmogus *> &grupe, char gal, double &TotalTime);
+
+/**
+ * @brief Funkcija studentų skirstymui į dvi grupes pagal vidurkį arba medianą.
+ * 
+ * @param grupe Studentų grupė.
+ * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
+ * @param vargsiukai Grupė studentų, kurių rezultatai mažesni nei 5.
+ * @param galvociai Grupė studentų, kurių rezultatai didesni arba lygūs 5.
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void Skirstymas1(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+
+/**
+ * @brief Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės.
+ * 
+ * @param grupe Studentų grupė.
+ * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
+ * @param vargsiukai Grupė studentų, kurių rezultatai mažesni nei 5.
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void Skirstymas2(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, double &TotalTime);
+
+/**
+ * @brief Funkcija studentų skirstymui į dvi grupes naudojant `std::partition`.
+ * 
+ * @param grupe Studentų grupė.
+ * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
+ * @param vargsiukai Grupė studentų, kurių rezultatai mažesni nei 5.
+ * @param galvociai Grupė studentų, kurių rezultatai didesni arba lygūs 5.
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void Skirstymas3(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vector<Stud> &galvociai, double &TotalTime);
+
+/**
+ * @brief Funkcija studentų duomenų išvedimui į failą.
+ * 
+ * @param grupe Studentų grupė.
+ * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void Faile(deque<Zmogus *> &grupe, char gal, double &TotalTime);
+
+/**
+ * @brief Funkcija studentų rikiavimui pagal pasirinktą kriterijų.
+ * 
+ * @param grupe Studentų grupė.
+ * @param rusiavimas Rikiavimo kriterijus ('v' - vardas, 'p' - pavardė, 'g' - galutinis rezultatas).
+ * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void Rusiuoti(deque<Zmogus *> &grupe, char rusiavimas, char gal, double &TotalTime);
+
+/**
+ * @brief Funkcija studentų failo generavimui.
+ * 
+ * @param TotalTime Bendras operacijos laikas.
+ */
 void GeneruotiFaila(double &TotalTime);
+
+/**
+ * @brief Funkcija Rule of Five taisyklės testavimui.
+ */
 void testRuleOfFive();

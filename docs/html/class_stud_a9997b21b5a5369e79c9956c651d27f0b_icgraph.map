@@ -1,0 +1,16 @@
+<map id="Stud::getEgzaminas" name="Stud::getEgzaminas">
+<area shape="rect" id="Node000001" title=" " alt="" coords="260,81,399,108"/>
+<area shape="rect" id="Node000002" href="$functions2_8cpp.html#a6fb6b62faee8d260050efc41740278f1" title="Funkcija studentų duomenų generavimui automatiškai." alt="" coords="133,5,182,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="282,77,181,32,183,27,285,72"/>
+<area shape="rect" id="Node000004" href="$functions2_8cpp.html#a60b8c0abab2fbe4e964d7b55e533cf45" title="Funkcija studentų duomenų įvedimui rankiniu būdu." alt="" coords="126,56,189,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="244,85,189,77,190,71,245,80"/>
+<area shape="rect" id="Node000005" href="$functions2_8cpp.html#a8097ebce8d3ec7b8ef9d615443ae081b" title="Funkcija studentų duomenų įvedimui pusiau automatiniu būdu." alt="" coords="132,107,183,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="245,110,184,119,183,114,245,104"/>
+<area shape="rect" id="Node000006" href="$functions2_8cpp.html#a49ee3f6d9717457a62ff562e1048bc64" title="Funkcija Rule of Five taisyklės testavimui." alt="" coords="103,157,212,184"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="285,117,191,159,188,154,282,112"/>
+<area shape="rect" id="Node000003" href="$deque_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Pagrindinė programos funkcija." alt="" coords="5,81,55,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,37,104,46,50,83,47,79,101,42,118,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="111,81,56,92,55,87,110,76"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="116,115,55,102,56,97,117,109"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="110,152,101,148,47,111,50,106,104,143,112,148"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Faile" name="Faile">
+<area shape="rect" id="Node000001" title="Funkcija studentų duomenų išvedimui į failą." alt="" coords="5,56,55,83"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html#aa990fce8d5c474d8a9b316df7c53c995" title="Funkcija studentų skirstymui į dvi grupes pagal vidurkį arba medianą." alt="" coords="103,5,197,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,57,102,36,104,41,56,62"/>
+<area shape="rect" id="Node000003" href="$functions_8cpp.html#a3f7318dcaec2f5cc9745370e56610cff" title="Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės." alt="" coords="103,56,197,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,67,87,67,87,72,55,72"/>
+<area shape="rect" id="Node000004" href="$functions_8cpp.html#afcf85a28f675dc3970088f205a9fd626" title=" " alt="" coords="103,107,197,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="56,77,104,98,102,103,54,82"/>
+</map>

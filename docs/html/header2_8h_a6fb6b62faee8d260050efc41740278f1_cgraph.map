@@ -1,0 +1,15 @@
+<map id="Auto" name="Auto">
+<area shape="rect" id="Node000001" title="Funkcija studentų duomenų generavimui automatiškai." alt="" coords="5,132,54,159"/>
+<area shape="rect" id="Node000002" href="$class_stud.html#a9997b21b5a5369e79c9956c651d27f0b" title=" " alt="" coords="103,5,242,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="35,130,59,87,78,63,100,42,107,37,110,42,103,46,82,67,64,90,39,133"/>
+<area shape="rect" id="Node000003" href="$class_stud.html#a023e84820551054ac6107eae392e780f" title=" " alt="" coords="103,56,242,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="46,129,100,92,112,87,115,91,103,97,49,134"/>
+<area shape="rect" id="Node000004" href="$class_stud.html#ac552c6d71e5e8089da8d38fc9b9c7d36" title=" " alt="" coords="111,107,234,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="54,139,95,131,96,136,55,144"/>
+<area shape="rect" id="Node000005" href="$class_zmogus.html#a62917788bf59c7c9551a488eedc07cc7" title=" " alt="" coords="102,157,244,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="55,147,87,153,86,158,54,152"/>
+<area shape="rect" id="Node000006" href="$class_zmogus.html#ae34cc0ef98655279a3f654aa485b76be" title="Setteriai." alt="" coords="106,208,240,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="49,157,103,194,115,199,112,204,100,198,46,161"/>
+<area shape="rect" id="Node000007" href="$class_stud.html#a88bb9e070377c5fc3c47f4d225fbee76" title=" " alt="" coords="112,259,234,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="39,158,64,201,82,224,103,245,110,249,107,253,100,249,78,228,59,203,35,160"/>
+</map>

@@ -1,0 +1,65 @@
+\doxysection{header.\+h}
+\hypertarget{header_8h_source}{}\label{header_8h_source}\index{vector/header.h@{vector/header.h}}
+\mbox{\hyperlink{header_8h}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <conio.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ }std::ifstream;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ }std::ofstream;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ }std::to\_string;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{class_stud}{Stud}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_stud_a64434251d68887709ac24be0dd7254ee}{vard}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_stud_a5100b70a0b7e9822f900c472a2184160}{pav}};\ \ }
+\DoxyCodeLine{00036\ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_stud_a24d68b89dbf25923be2780f9f35c23e2}{paz}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_stud_a888ec71dda6c6b3f9390d2141dc7ef17}{egz}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_stud_adedd35f71aa626e276cbb14d3fe4b1c3}{vid}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_stud_a0b6b9dbd39416e475e7531a224e16e93}{med}};\ }
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a1d2292eb0f1c7bd2cd5e07337c6a49dd}{Manual}}(\mbox{\hyperlink{class_stud}{Stud}}\ \&laik,\ vector<Stud>\ \&grupe);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a496eca805e04a79fe9ebcb4caa863cef}{Semi}}(\mbox{\hyperlink{class_stud}{Stud}}\ \&laik,\ vector<Stud>\ \&grupe);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a91c386d59387988863b05ac3f9c79ef0}{Auto}}(vector<Stud>\ \&grupe);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_aea5b80e93962d243431422bceef57111}{Skaityti}}(\mbox{\hyperlink{class_stud}{Stud}}\ \&laik,\ vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_aa97d23531b147a86e314f2f770547816}{Ekrane}}(vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{char}\ gal,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_aa990fce8d5c474d8a9b316df7c53c995}{Skirstymas1}}(vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{char}\ gal,\ vector<Stud>\ \&vargsiukai,\ vector<Stud>\ \&galvociai,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a3f7318dcaec2f5cc9745370e56610cff}{Skirstymas2}}(vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{char}\ gal,\ vector<Stud>\ \&vargsiukai,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_afe0eb826d9efa020edd4406fe4f3febd}{skirstymas3}}(vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{char}\ gal,\ vector<Stud>\ \&vargsiukai,\ vector<Stud>\ \&galvociai,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a97996a8a56967a5cefea234e5ff7a73f}{Faile}}(vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{char}\ gal,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a42ffe629a7ef3a0de9d8f575857faed1}{Rusiuoti}}(vector<Stud>\ \&grupe,\ \textcolor{keywordtype}{char}\ rusiavimas,\ \textcolor{keywordtype}{char}\ gal,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59}{GeneruotiFaila}}(\textcolor{keywordtype}{double}\ \&TotalTime);}
+
+\end{DoxyCode}

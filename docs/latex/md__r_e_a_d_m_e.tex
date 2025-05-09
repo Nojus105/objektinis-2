@@ -1,0 +1,209 @@
+\chapter{Programos versijos}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Programos versijos@{Programos versijos}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{\texorpdfstring{Versijos istorija\+:}{Versijos istorija\+:}}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{v.\+pradine}} -\/ Pradinė versija. Duomenų įvedimas ranka, surūšiuota išvestis ekrane.
+\item {\bfseries{v0.\+1}} -\/ Studentų ir pažymių generavimas, galimybė pasirinkti tarp vektoriaus ir masyvo naudojimo.
+\item {\bfseries{v0.\+2}} -\/ Failo skaitymas, išvestis į failą, rūšiavimas pagal naudotojo pasirinkimą.
+\item {\bfseries{v0.\+3}} -\/ Geresnė programavimo praktika, pridėtas klaidų apdorojimas (exception handling).
+\item {\bfseries{v0.\+4}} -\/ Studentų skirstymas į pogrupius, failų generavimas.
+\item {\bfseries{v1.\+0}} -\/ Pilna versija. Sukurtas Makefile, kelios versijos su skirtingais konteineriais, optimizacija.
+\item {\bfseries{v1.\+1}} -\/ Pertvarkyta struktūrą pakeičiant į klasę.
+\item {\bfseries{v1.\+2}} -\/ Panaudotas rule of five, implementuoti jo testai.
+\item {\bfseries{v1.\+2}} -\/ Klasė paskirstyta į abstrakčią ir derived klases.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Naudojimo instrukcija}{Naudojimo instrukcija}}\label{md__r_e_a_d_m_e_autotoc_md3}
+{\bfseries{Viskas vykdoma terminale.}}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{Failų generavimas\+:}{Failų generavimas\+:}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ all}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{Failų paleidimas\+:}{Failų paleidimas\+:}}\label{md__r_e_a_d_m_e_autotoc_md5}
+Pereikite į vykdomųjų failų direktoriją\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ bin}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item {\bfseries{Vektoriai\+:}} {\ttfamily ./vector\+\_\+program}
+\item {\bfseries{List\+:}} {\ttfamily ./list\+\_\+program}
+\item {\bfseries{Deque\+:}} {\ttfamily ./deque\+\_\+program}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{Sugeneruotų failų ištrynimas\+:}{Sugeneruotų failų ištrynimas\+:}}\label{md__r_e_a_d_m_e_autotoc_md6}
+Grįžkite į pradinę direktoriją\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ ..}
+
+\end{DoxyCode}
+ Valymo komanda\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{Naudojimo pavyzdžiai\+:}{Naudojimo pavyzdžiai\+:}}\label{md__r_e_a_d_m_e_autotoc_md7}
+  
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{Spartos analizė}{Spartos analizė}}\label{md__r_e_a_d_m_e_autotoc_md9}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{{\bfseries{Vector}}}{{\bfseries{Vector}}}}\label{md__r_e_a_d_m_e_autotoc_md10}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{9}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo kūrimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (2)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)    }\\\cline{1-9}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo kūrimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (2)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)    }\\\cline{1-9}
+\endhead
+{\bfseries{1k}}   &0.\+035 s   &0.\+015 s   &0 s   &0 s   &0.\+011 s   &0.\+061 s   &0.\+028 s   &0 s    \\\cline{1-9}
+{\bfseries{10k}}   &0.\+219 s   &0.\+105 s   &0.\+017 s   &0.\+004 s   &0.\+077 s   &0.\+422 s   &0.\+076 s   &0.\+001 s    \\\cline{1-9}
+{\bfseries{100k}}   &1.\+798 s   &0.\+392 s   &0.\+138 s   &0.\+021 s   &0.\+771 s   &3.\+120 s   &180.\+122 s   &0.\+012 s    \\\cline{1-9}
+{\bfseries{1m}}   &16.\+223 s   &7.\+795 s   &0.\+996 s   &0.\+098 s   &9.\+040 s   &34.\+152 s   &\texorpdfstring{$>$}{>}5 min   &0.\+048 s    \\\cline{1-9}
+{\bfseries{10m}}   &167.\+577 s   &87.\+541   &12.\+792   &crash   &88.\+551   &356.\+461   &crash   &crash   \\\cline{1-9}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{\texorpdfstring{{\bfseries{List}}}{{\bfseries{List}}}}\label{md__r_e_a_d_m_e_autotoc_md11}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{8}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (2)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)    }\\\cline{1-8}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (2)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)    }\\\cline{1-8}
+\endhead
+{\bfseries{1k}}   &0.\+012 s   &0 s   &0 s   &0.\+026 s   &0.\+039 s   &0 s   &0 s    \\\cline{1-8}
+{\bfseries{10k}}   &0.\+117 s   &0.\+013 s   &0.\+006 s   &0.\+107 s   &0.\+244 s   &0 s   &0.\+001 s    \\\cline{1-8}
+{\bfseries{100k}}   &0.\+422 s   &0.\+114 s   &0.\+025 s   &0.\+923 s   &1.\+483 s   &0.\+024 s   &0.\+015 s    \\\cline{1-8}
+{\bfseries{1m}}   &7.\+131 s   &0.\+579 s   &0.\+216 s   &9.\+120 s   &17.\+046 s   &0.\+182 s   &0.\+397 s    \\\cline{1-8}
+{\bfseries{10m}}   &86.\+119 s   &10.\+844 s   &crash   &89.\+815 s   &188.\+504 s   &1.\+726 s   &4.\+288 s   \\\cline{1-8}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{{\bfseries{Deque}}}{{\bfseries{Deque}}}}\label{md__r_e_a_d_m_e_autotoc_md12}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{8}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (2)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)    }\\\cline{1-8}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (2)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)    }\\\cline{1-8}
+\endhead
+{\bfseries{1k}}   &0.\+015 s   &0 s   &0.\+002 s   &0.\+029 s   &0.\+046 s   &0 s   &0 s    \\\cline{1-8}
+{\bfseries{10k}}   &0.\+108 s   &0.\+014 s   &0.\+008 s   &0.\+097 s   &0.\+227 s   &0 s   &0.\+003 s    \\\cline{1-8}
+{\bfseries{100k}}   &0.\+407 s   &0.\+155 s   &0.\+029 s   &0.\+919 s   &1.\+510 s   &0.\+025 s   &0.\+012 s    \\\cline{1-8}
+{\bfseries{1m}}   &7.\+214 s   &1.\+092 s   &0.\+102 s   &9.\+293 s   &17.\+701 s   &0.\+059 s   &0.\+059 s    \\\cline{1-8}
+{\bfseries{10m}}   &85.\+353 s   &12.\+767 s   &crash   &89.\+707 s   &188.\+283 s   &0.\+456 s   &0.\+470 s   \\\cline{1-8}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{\texorpdfstring{{\bfseries{Deque naudojant klasę (be flag)}}}{{\bfseries{Deque naudojant klasę (be flag)}}}}\label{md__r_e_a_d_m_e_autotoc_md13}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endhead
+{\bfseries{100k}}   &1.\+231 s   &0.\+367 s   &0.\+031 s   &0.\+944 s   &2.\+574 s    \\\cline{1-6}
+{\bfseries{1m}}   &9.\+717 s   &4.\+968 s   &0.\+251 s   &9.\+448 s   &24.\+384 s   \\\cline{1-6}
+\end{longtabu}
+
+
+.exe failo dydis -\/ 372 KB
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{\texorpdfstring{{\bfseries{Deque naudojant klasę (-\/O2)}}}{{\bfseries{Deque naudojant klasę (-\/O2)}}}}\label{md__r_e_a_d_m_e_autotoc_md15}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endhead
+{\bfseries{100k}}   &0.\+954 s   &0.\+100 s   &0.\+007 s   &0.\+892 s   &1.\+954 s    \\\cline{1-6}
+{\bfseries{1m}}   &7.\+641 s   &1.\+027 s   &0.\+042 s   &9.\+015 s   &17.\+725 s   \\\cline{1-6}
+\end{longtabu}
+
+
+.exe failo dydis -\/ 195 KB
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{\texorpdfstring{{\bfseries{Deque naudojant klasę (-\/O3)}}}{{\bfseries{Deque naudojant klasę (-\/O3)}}}}\label{md__r_e_a_d_m_e_autotoc_md17}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endhead
+{\bfseries{100k}}   &0.\+820 s   &0.\+069 s   &0.\+007 s   &0.\+717 s   &1.\+614 s    \\\cline{1-6}
+{\bfseries{1m}}   &6.\+125 s   &0.\+875 s   &0.\+051 s   &7.\+403 s   &14.\+455 s   \\\cline{1-6}
+\end{longtabu}
+
+
+.exe failo dydis -\/ 190 KB
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{{\bfseries{Deque naudojant struct (-\/03)}}}{{\bfseries{Deque naudojant struct (-\/03)}}}}\label{md__r_e_a_d_m_e_autotoc_md19}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentų skaičius   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Failo skaitymas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rūšiavimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirstymas (3)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Spausdinimas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Iš viso    }\\\cline{1-6}
+\endhead
+{\bfseries{100k}}   &0.\+709 s   &0.\+155 s   &0.\+012 s   &0.\+919 s   &1.\+493 s    \\\cline{1-6}
+{\bfseries{1m}}   &7.\+214 s   &1.\+092 s   &0.\+059 s   &8.\+895 s   &17.\+260 s   \\\cline{1-6}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysection{\texorpdfstring{Sistemos parametrai}{Sistemos parametrai}}\label{md__r_e_a_d_m_e_autotoc_md21}
+
+\begin{DoxyItemize}
+\item {\bfseries{CPU\+:}} i7-\/13650\+HX
+\item {\bfseries{RAM\+:}} 24GB 4800MHz
+\item {\bfseries{Storage\+:}} NVMe M.\+2 SSD 1TB
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysection{\texorpdfstring{Išvados}{Išvados}}\label{md__r_e_a_d_m_e_autotoc_md22}
+{\bfseries{Vektoriai}} veikė prasčiausiai atminties atžvilgiu, crashino. {\bfseries{1 strategija}} pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). {\bfseries{2 strategija}} pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp {\bfseries{deque ir list konteinerių}} kito minimaliai, todėl spartos atžvilgiu {\bfseries{deque konteineris su strategija Nr. 2}} yra geriausias pasirinkimas. Taip pat pastebime, kad {\bfseries{klasė}} yra iki 20\% spartesnė nei {\bfseries{struktūra}}.
+
+
+
+{\bfseries{Klasės konteineris}} užtrunka šiek tiek ilgiau skaitymo funkcijoje, tačiau visas kitas funkcijas atlieka greičiau (skirtumas nėra didelis).
+
+Naudojant -\/O2 ir -\/O3 {\bfseries{Optimizavimo flag\textquotesingle{}us}} matomas didelis spartos skirtumas palyginus be flag\textquotesingle{}o. Skirtumas tarp -\/O2 ir -\/O3 yra minimalus, bet vistiek pastebime, kad -\/O3 veikia sparčiausiai. Su -\/O1 flag\textquotesingle{}u kilo problemų, yra errorų tarp naudojamos mingw32 versijos ir -\/O1 flag.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysection{\texorpdfstring{Perdengtų metodų paaiškinimas}{Perdengtų metodų paaiškinimas}}\label{md__r_e_a_d_m_e_autotoc_md24}
+{\bfseries{Manual}} įvestis -\/ sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "{}stop"{}, kad užbaigtų įvedimą (nėra case sensitive). Vienu metu įvedami visi pažymiai atskirti tarpu, kurie yra saugojami vektoriuje. Įvedamas egzamino pažymys. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+{\bfseries{Semi}} įvestis -\/ sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "{}stop"{}, kad užbaigtų įvedimą (nėra case sensitive). Randomly sugeneruojami iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+{\bfseries{Auto}} įvestis -\/ sukuriama laikina klasė, panaudojamas default konstruktorius. Sugeneruojami iki 10 studentų (vardai, pavardės parenkami atsitiktinai iš vektorių), kiekvienas iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+{\bfseries{Ekrane}} išvestis -\/ ekrane atspausdina visus surūšiuotus studentus (pagal vardą/pavardę/galutinį balą) ir jų galutinį balą vidurkį/medianą pagal vartotojo pasirinkimą. Rule of five nenaudojamas, kadangi nekuriama nauja klasė (nereikia default konstruktoriaus), neperkeliami ir nekopijuojami duomenys (nereikia move/copy konstruktoriaus/operatoriaus) ir nenaikinami laikini duomenys (nereikia destruktoriaus).
+
+{\bfseries{Faile}} išvestis -\/ vartotojas pasirenka ar paskirstyti studentus į 2 atskirus failus pagal vidurkį. Skirstant i grupeles sukuriami 2 nauji vektoriai, į kuriuos perkeliami duomenys naudojant move konstruktorių, priklausant nuo vartotojo pasirinktos rūšiavimo strategijos. Duomenys atspausdinami faile/failuose pagal vartotojo pasirinktą rūšiavimą. Panaudojamas destruktorius, kadangi vektoriams priklausė klasės nariai.
+
+\DoxyHorRuler{0}
+
+
+Kilus klausimams ar pastaboms, susisiekite el. paštu\+: \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}nojus\href{mailto:.petrusis@mif.stud.vu.lt}{\texttt{ .\+petrusis@mif.\+stud.\+vu.\+lt}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} 

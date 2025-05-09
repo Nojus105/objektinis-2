@@ -1,0 +1,306 @@
+\doxysection{vector/header.h Failo Nuoroda}
+\hypertarget{header_8h}{}\label{header_8h}\index{vector/header.h@{vector/header.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$future$>$}\newline
+Įtraukimo priklausomybių diagrama header.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{header_8h__incl}
+\end{center}
+\end{figure}
+Šis grafas rodo, kuris failas tiesiogiai ar netiesiogiai įtraukia šį failą\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{header_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{class_stud}{Stud}}
+\begin{DoxyCompactList}\small\item\em Išvestinė klasė. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{header_8h_a1d2292eb0f1c7bd2cd5e07337c6a49dd}{Manual}} (\mbox{\hyperlink{class_stud}{Stud}} \&laik, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų įvedimui rankiniu būdu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a496eca805e04a79fe9ebcb4caa863cef}{Semi}} (\mbox{\hyperlink{class_stud}{Stud}} \&laik, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų įvedimui pusiau automatiniu būdu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a91c386d59387988863b05ac3f9c79ef0}{Auto}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų generavimui automatiškai. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_aea5b80e93962d243431422bceef57111}{Skaityti}} (\mbox{\hyperlink{class_stud}{Stud}} \&laik, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų skaitymui iš failo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_aa97d23531b147a86e314f2f770547816}{Ekrane}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, char gal, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų išvedimui į ekraną. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_aa990fce8d5c474d8a9b316df7c53c995}{Skirstymas1}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, char gal, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&galvociai, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes pagal vidurkį arba medianą. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a3f7318dcaec2f5cc9745370e56610cff}{Skirstymas2}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, char gal, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_afe0eb826d9efa020edd4406fe4f3febd}{skirstymas3}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, char gal, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&galvociai, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes naudojant {\ttfamily std\+::partition}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a97996a8a56967a5cefea234e5ff7a73f}{Faile}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, char gal, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų išvedimui į failą. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a42ffe629a7ef3a0de9d8f575857faed1}{Rusiuoti}} (vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&grupe, char rusiavimas, char gal, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų rikiavimui pagal pasirinktą kriterijų. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59}{Generuoti\+Faila}} (double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija studentų failo generavimui. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{header_8h_a91c386d59387988863b05ac3f9c79ef0}\index{header.h@{header.h}!Auto@{Auto}}
+\index{Auto@{Auto}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Auto()}{Auto()}}
+{\footnotesize\ttfamily \label{header_8h_a91c386d59387988863b05ac3f9c79ef0} 
+void Auto (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų duomenų generavimui automatiškai. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{header_8h_aa97d23531b147a86e314f2f770547816}\index{header.h@{header.h}!Ekrane@{Ekrane}}
+\index{Ekrane@{Ekrane}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Ekrane()}{Ekrane()}}
+{\footnotesize\ttfamily \label{header_8h_aa97d23531b147a86e314f2f770547816} 
+void Ekrane (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų duomenų išvedimui į ekraną. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{header_8h_a97996a8a56967a5cefea234e5ff7a73f}\index{header.h@{header.h}!Faile@{Faile}}
+\index{Faile@{Faile}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Faile()}{Faile()}}
+{\footnotesize\ttfamily \label{header_8h_a97996a8a56967a5cefea234e5ff7a73f} 
+void Faile (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų duomenų išvedimui į failą. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+Funkcijos kvietimo grafas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{header_8h_a97996a8a56967a5cefea234e5ff7a73f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59}\index{header.h@{header.h}!GeneruotiFaila@{GeneruotiFaila}}
+\index{GeneruotiFaila@{GeneruotiFaila}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{GeneruotiFaila()}{GeneruotiFaila()}}
+{\footnotesize\ttfamily \label{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59} 
+void Generuoti\+Faila (\begin{DoxyParamCaption}\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų failo generavimui. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{header_8h_a1d2292eb0f1c7bd2cd5e07337c6a49dd}\index{header.h@{header.h}!Manual@{Manual}}
+\index{Manual@{Manual}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Manual()}{Manual()}}
+{\footnotesize\ttfamily \label{header_8h_a1d2292eb0f1c7bd2cd5e07337c6a49dd} 
+void Manual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_stud}{Stud}} \&}]{laik}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų duomenų įvedimui rankiniu būdu. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em laik} & Laikinas studento objektas. \\
+\hline
+{\em grupe} & Studentų grupė. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{header_8h_a42ffe629a7ef3a0de9d8f575857faed1}\index{header.h@{header.h}!Rusiuoti@{Rusiuoti}}
+\index{Rusiuoti@{Rusiuoti}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Rusiuoti()}{Rusiuoti()}}
+{\footnotesize\ttfamily \label{header_8h_a42ffe629a7ef3a0de9d8f575857faed1} 
+void Rusiuoti (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{char}]{rusiavimas}{, }\item[{char}]{gal}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų rikiavimui pagal pasirinktą kriterijų. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em rusiavimas} & Rikiavimo kriterijus (\textquotesingle{}v\textquotesingle{} -\/ vardas, \textquotesingle{}p\textquotesingle{} -\/ pavardė, \textquotesingle{}g\textquotesingle{} -\/ galutinis rezultatas). \\
+\hline
+{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{header_8h_a496eca805e04a79fe9ebcb4caa863cef}\index{header.h@{header.h}!Semi@{Semi}}
+\index{Semi@{Semi}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Semi()}{Semi()}}
+{\footnotesize\ttfamily \label{header_8h_a496eca805e04a79fe9ebcb4caa863cef} 
+void Semi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_stud}{Stud}} \&}]{laik}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų duomenų įvedimui pusiau automatiniu būdu. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em laik} & Laikinas studento objektas. \\
+\hline
+{\em grupe} & Studentų grupė. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{header_8h_aea5b80e93962d243431422bceef57111}\index{header.h@{header.h}!Skaityti@{Skaityti}}
+\index{Skaityti@{Skaityti}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Skaityti()}{Skaityti()}}
+{\footnotesize\ttfamily \label{header_8h_aea5b80e93962d243431422bceef57111} 
+void Skaityti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_stud}{Stud}} \&}]{laik}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų duomenų skaitymui iš failo. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em laik} & Laikinas studento objektas. \\
+\hline
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{header_8h_aa990fce8d5c474d8a9b316df7c53c995}\index{header.h@{header.h}!Skirstymas1@{Skirstymas1}}
+\index{Skirstymas1@{Skirstymas1}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Skirstymas1()}{Skirstymas1()}}
+{\footnotesize\ttfamily \label{header_8h_aa990fce8d5c474d8a9b316df7c53c995} 
+void Skirstymas1 (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{vargsiukai}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{galvociai}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų skirstymui į dvi grupes pagal vidurkį arba medianą. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
+\hline
+{\em vargsiukai} & Grupė studentų, kurių rezultatai mažesni nei 5. \\
+\hline
+{\em galvociai} & Grupė studentų, kurių rezultatai didesni arba lygūs 5. \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{header_8h_aa990fce8d5c474d8a9b316df7c53c995_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{header_8h_a3f7318dcaec2f5cc9745370e56610cff}\index{header.h@{header.h}!Skirstymas2@{Skirstymas2}}
+\index{Skirstymas2@{Skirstymas2}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Skirstymas2()}{Skirstymas2()}}
+{\footnotesize\ttfamily \label{header_8h_a3f7318dcaec2f5cc9745370e56610cff} 
+void Skirstymas2 (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{vargsiukai}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
+\hline
+{\em vargsiukai} & Grupė studentų, kurių rezultatai mažesni nei 5. \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{header_8h_a3f7318dcaec2f5cc9745370e56610cff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{header_8h_afe0eb826d9efa020edd4406fe4f3febd}\index{header.h@{header.h}!skirstymas3@{skirstymas3}}
+\index{skirstymas3@{skirstymas3}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{skirstymas3()}{skirstymas3()}}
+{\footnotesize\ttfamily \label{header_8h_afe0eb826d9efa020edd4406fe4f3febd} 
+void skirstymas3 (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{vargsiukai}{, }\item[{vector$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&}]{galvociai}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Funkcija studentų skirstymui į dvi grupes naudojant {\ttfamily std\+::partition}. 
+
+
+\begin{DoxyParams}{Parametrai}
+{\em grupe} & Studentų grupė. \\
+\hline
+{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
+\hline
+{\em vargsiukai} & Grupė studentų, kurių rezultatai mažesni nei 5. \\
+\hline
+{\em galvociai} & Grupė studentų, kurių rezultatai didesni arba lygūs 5. \\
+\hline
+{\em Total\+Time} & Bendras operacijos laikas. \\
+\hline
+\end{DoxyParams}

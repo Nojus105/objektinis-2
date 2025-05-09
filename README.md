@@ -9,7 +9,8 @@
 6. **v1.0** - Pilna versija. Sukurtas Makefile, kelios versijos su skirtingais konteineriais, optimizacija.
 7. **v1.1** - Pertvarkyta struktūrą pakeičiant į klasę.
 8. **v1.2** - Panaudotas rule of five, implementuoti jo testai.
-9. **v1.2** - Klasė paskirstyta į abstrakčią ir derived klases.
+9. **v1.5** - Klasė paskirstyta į abstrakčią ir derived klases.
+10. **v2.0** - dokumentacija, unit testai.
 
 ---
 
@@ -119,7 +120,7 @@ make clean
 - **RAM:** 24GB 4800MHz
 - **Storage:** NVMe M.2 SSD 1TB
 
-### Išvados
+## Išvados
 **Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas. Taip pat pastebime, kad **klasė** yra iki 20% spartesnė nei **struktūra**.
 
 ![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
@@ -130,7 +131,7 @@ Naudojant -O2 ir -O3 **Optimizavimo flag'us** matomas didelis spartos skirtumas 
 
 ---
 
-### Perdengtų metodų paaiškinimas
+## Perdengtų metodų paaiškinimas
 
 **Manual** įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Vienu metu įvedami visi pažymiai atskirti tarpu, kurie yra saugojami vektoriuje. Įvedamas egzamino pažymys. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
 

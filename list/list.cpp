@@ -1,11 +1,23 @@
 #include "header1.h"
 
+/**
+ * @brief Pagrindinė programos funkcija.
+ * 
+ * Ši funkcija leidžia vartotojui pasirinkti įvairias operacijas, tokias kaip studentų duomenų generavimas, 
+ * įvedimas, rikiavimas, skirstymas ir išvedimas į ekraną arba failą.
+ * 
+ * @return int Programos vykdymo rezultatas.
+ */
 int main()
 {
     srand(time(0));
     list<Stud> grupe;
     double TotalTime = 0;
     Stud laik;
+
+    /**
+     * @brief Tikrinama, ar vartotojas nori sugeneruoti studentų failą.
+     */
     cout << "Sugeneruoti studentu faila?" << endl;
     cout << "0 - Ne, 1 - Taip" << endl;
     while (true)
@@ -21,6 +33,10 @@ int main()
         else
             cout << "Neteisingas pasirinkimas" << endl;
     }
+
+    /**
+     * @brief Leidžiama pasirinkti studentų duomenų įvedimo būdą.
+     */
     cout << "1 - manual ivedimas, 2 - generuoti pazymius, 3 - generuoti pazymius, vardus, pavardes, 4 - skaityti faila" << endl;
     while (true)
     {
@@ -48,6 +64,10 @@ int main()
         else
             cout << "Neteisingas pasirinkimas" << endl;
     }
+
+    /**
+     * @brief Pasirenkama, ar naudoti vidurkį, ar medianą.
+     */
     cout << "0 - Vidurkis, 1 - Mediana" << endl;
     char gal;
     while (true)
@@ -67,6 +87,10 @@ int main()
             goto Pasirinkimas;
         }
     }
+
+    /**
+     * @brief Pasirenkamas rikiavimo kriterijus.
+     */
     cout << "Rusiavimas pagal varda (v), pavarde(p), galutini bala (g)" << endl;
     while (true)
     {
@@ -88,6 +112,10 @@ int main()
             goto Pasirinkimas2;
         }
     }
+
+    /**
+     * @brief Pasirenkama, ar duomenis išvesti į ekraną, ar į failą.
+     */
     cout << "0 - ekrane, 1 - faile" << endl;
     char pasirinkimas = getch();
     while (pasirinkimas != '0' && pasirinkimas != '1')
@@ -101,6 +129,10 @@ int main()
         Faile(grupe, gal, TotalTime);
     else
         throw std::exception();
+
+    /**
+     * @brief Išvedamas bendras programos veikimo laikas.
+     */
     cout << "Programa veike: " << TotalTime << " s" << endl;
 
     return 0;

@@ -1,0 +1,15 @@
+<map id="Stud::Stud" name="Stud::Stud">
+<area shape="rect" id="Node000001" title="Numatytasis konstruktorius." alt="" coords="262,107,345,133"/>
+<area shape="rect" id="Node000002" href="$class_stud.html#a311ba01abe5e734694bd281a9653226f" title="Copy priskyrimo operatorius." alt="" coords="103,5,214,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,98,247,72,213,46,192,35,194,30,215,42,250,68,280,94"/>
+<area shape="rect" id="Node000003" href="$class_stud.html#a5d0e079824920b39953f50b2bd543819" title="Move priskyrimo operatorius." alt="" coords="103,56,214,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,104,198,86,200,81,250,98"/>
+<area shape="rect" id="Node000004" href="$class_stud.html#ac1405dac10eb5ca06803f59ecfccedfb" title="Perrašoma grynoji virtuali funkcija." alt="" coords="108,107,208,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="246,123,209,123,209,117,246,117"/>
+<area shape="rect" id="Node000006" href="$class_stud.html#ad473232271f7e160f811c6ae206d326c" title="Copy konstruktorius." alt="" coords="117,157,200,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="250,142,200,159,198,154,248,136"/>
+<area shape="rect" id="Node000007" href="$class_stud.html#a3ddb538bd2b699c964ae8a8491b3e87e" title="Move konstruktorius." alt="" coords="117,208,200,235"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="280,146,250,172,215,198,194,210,192,205,213,194,247,168,277,142"/>
+<area shape="rect" id="Node000005" href="$deque_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Pagrindinė programos funkcija." alt="" coords="5,107,55,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="93,123,55,123,55,117,93,117"/>
+</map>

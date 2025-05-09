@@ -1,0 +1,7 @@
+<map id="Stud::Stud" name="Stud::Stud">
+<area shape="rect" id="Node000001" title="Move konstruktorius." alt="" coords="5,5,89,32"/>
+<area shape="rect" id="Node000002" href="$class_stud.html#a97585839898d45dc9fc815d5b36e2b69" title="Numatytasis konstruktorius." alt="" coords="137,5,220,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,16,121,16,121,21,89,21"/>
+<area shape="rect" id="Node000003" href="$class_zmogus.html#aa7a8ba4d3c4778f9b35d59eef3e72574" title="Default konstruktorius." alt="" coords="268,5,391,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,16,253,16,253,21,220,21"/>
+</map>

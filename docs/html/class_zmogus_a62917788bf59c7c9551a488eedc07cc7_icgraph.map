@@ -1,0 +1,16 @@
+<map id="Zmogus::setPavarde" name="Zmogus::setPavarde">
+<area shape="rect" id="Node000001" title=" " alt="" coords="251,81,393,108"/>
+<area shape="rect" id="Node000002" href="$functions2_8cpp.html#a6fb6b62faee8d260050efc41740278f1" title="Funkcija studentų duomenų generavimui automatiškai." alt="" coords="129,5,177,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,77,176,32,179,27,278,72"/>
+<area shape="rect" id="Node000004" href="$functions2_8cpp.html#a60b8c0abab2fbe4e964d7b55e533cf45" title="Funkcija studentų duomenų įvedimui rankiniu būdu." alt="" coords="121,56,184,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,84,184,77,185,71,236,79"/>
+<area shape="rect" id="Node000005" href="$functions2_8cpp.html#a8097ebce8d3ec7b8ef9d615443ae081b" title="Funkcija studentų duomenų įvedimui pusiau automatiniu būdu." alt="" coords="127,107,178,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="236,110,179,119,179,114,235,105"/>
+<area shape="rect" id="Node000006" href="$class_stud.html#ac1405dac10eb5ca06803f59ecfccedfb" title="Perrašoma grynoji virtuali funkcija." alt="" coords="103,157,203,184"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="277,117,186,159,183,154,275,113"/>
+<area shape="rect" id="Node000003" href="$deque_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Pagrindinė programos funkcija." alt="" coords="5,81,55,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,39,104,46,51,83,48,79,101,42,114,35"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="106,82,56,92,54,87,105,76"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="111,114,54,102,56,97,112,109"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="109,152,101,148,48,110,51,106,104,143,112,147"/>
+</map>
