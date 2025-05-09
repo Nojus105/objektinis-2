@@ -4,6 +4,7 @@ CXXFLAGS = -O3 -Wall -std=c++17
 VECTOR_SRCS = $(wildcard vector/*.cpp)
 DEQUE_SRCS = $(wildcard deque/*.cpp)
 LIST_SRCS = $(wildcard list/*.cpp)
+TEST_SRCS = $(wildcard test/*.cpp)
 
 BIN_DIR = bin
 
@@ -20,6 +21,11 @@ $(BIN_DIR)/deque_program: $(DEQUE_SRCS) | $(BIN_DIR)
 
 $(BIN_DIR)/list_program: $(LIST_SRCS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $(LIST_SRCS)
+
+test: $(BIN_DIR)/test_program
+
+$(BIN_DIR)/test_program: test/test.cpp deque/functions2.cpp test/catch.hpp | $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ test/test.cpp deque/functions2.cpp
 
 clean:
 	if exist $(BIN_DIR) rmdir /S /Q $(BIN_DIR)

@@ -44,7 +44,7 @@ public:
 
     /**
      * @brief Konstruktorius su parametrais.
-     * 
+     *
      * @param vardas Vardas.
      * @param pavarde Pavardė.
      */
@@ -69,7 +69,7 @@ public:
 
     /**
      * @brief Grynoji virtuali funkcija, kurią reikia įgyvendinti išvestinėse klasėse.
-     * 
+     *
      * @param grupe Studentų grupė.
      * @param TotalTime Bendras operacijos laikas.
      */
@@ -95,7 +95,7 @@ public:
 
     /**
      * @brief Konstruktorius su parametrais.
-     * 
+     *
      * @param vardas Vardas.
      * @param pavarde Pavardė.
      * @param pazymiai Pažymiai.
@@ -111,7 +111,7 @@ public:
 
     /**
      * @brief Copy konstruktorius.
-     * 
+     *
      * @param other Kitas objektas.
      */
     Stud(const Stud &other)
@@ -119,9 +119,9 @@ public:
 
     /**
      * @brief Copy priskyrimo operatorius.
-     * 
+     *
      * @param other Kitas objektas.
-     * @return Stud& 
+     * @return Stud&
      */
     Stud &operator=(const Stud &other)
     {
@@ -137,7 +137,7 @@ public:
 
     /**
      * @brief Move konstruktorius.
-     * 
+     *
      * @param other Kitas objektas.
      */
     Stud(Stud &&other) noexcept
@@ -153,9 +153,9 @@ public:
 
     /**
      * @brief Move priskyrimo operatorius.
-     * 
+     *
      * @param other Kitas objektas.
-     * @return Stud& 
+     * @return Stud&
      */
     Stud &operator=(Stud &&other) noexcept
     {
@@ -193,7 +193,7 @@ public:
 
     /**
      * @brief Perrašoma grynoji virtuali funkcija.
-     * 
+     *
      * @param grupe Studentų grupė.
      * @param TotalTime Bendras operacijos laikas.
      */
@@ -202,7 +202,7 @@ public:
 
 /**
  * @brief Funkcija studentų duomenų įvedimui rankiniu būdu.
- * 
+ *
  * @param laik Laikinas studento objektas.
  * @param grupe Studentų grupė.
  */
@@ -210,7 +210,7 @@ void Manual(Stud &laik, deque<Zmogus *> &grupe);
 
 /**
  * @brief Funkcija studentų duomenų įvedimui pusiau automatiniu būdu.
- * 
+ *
  * @param laik Laikinas studento objektas.
  * @param grupe Studentų grupė.
  */
@@ -218,14 +218,14 @@ void Semi(Stud &laik, deque<Zmogus *> &grupe);
 
 /**
  * @brief Funkcija studentų duomenų generavimui automatiškai.
- * 
+ *
  * @param grupe Studentų grupė.
  */
 void Auto(deque<Zmogus *> &grupe);
 
 /**
  * @brief Funkcija studentų duomenų išvedimui į ekraną.
- * 
+ *
  * @param grupe Studentų grupė.
  * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
  * @param TotalTime Bendras operacijos laikas.
@@ -234,7 +234,7 @@ void Ekrane(deque<Zmogus *> &grupe, char gal, double &TotalTime);
 
 /**
  * @brief Funkcija studentų skirstymui į dvi grupes pagal vidurkį arba medianą.
- * 
+ *
  * @param grupe Studentų grupė.
  * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
  * @param vargsiukai Grupė studentų, kurių rezultatai mažesni nei 5.
@@ -245,7 +245,7 @@ void Skirstymas1(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vec
 
 /**
  * @brief Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės.
- * 
+ *
  * @param grupe Studentų grupė.
  * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
  * @param vargsiukai Grupė studentų, kurių rezultatai mažesni nei 5.
@@ -255,7 +255,7 @@ void Skirstymas2(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, dou
 
 /**
  * @brief Funkcija studentų skirstymui į dvi grupes naudojant `std::partition`.
- * 
+ *
  * @param grupe Studentų grupė.
  * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
  * @param vargsiukai Grupė studentų, kurių rezultatai mažesni nei 5.
@@ -266,7 +266,7 @@ void Skirstymas3(deque<Zmogus *> &grupe, char gal, vector<Stud> &vargsiukai, vec
 
 /**
  * @brief Funkcija studentų duomenų išvedimui į failą.
- * 
+ *
  * @param grupe Studentų grupė.
  * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
  * @param TotalTime Bendras operacijos laikas.
@@ -275,7 +275,7 @@ void Faile(deque<Zmogus *> &grupe, char gal, double &TotalTime);
 
 /**
  * @brief Funkcija studentų rikiavimui pagal pasirinktą kriterijų.
- * 
+ *
  * @param grupe Studentų grupė.
  * @param rusiavimas Rikiavimo kriterijus ('v' - vardas, 'p' - pavardė, 'g' - galutinis rezultatas).
  * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
@@ -285,7 +285,7 @@ void Rusiuoti(deque<Zmogus *> &grupe, char rusiavimas, char gal, double &TotalTi
 
 /**
  * @brief Funkcija studentų failo generavimui.
- * 
+ *
  * @param TotalTime Bendras operacijos laikas.
  */
 void GeneruotiFaila(double &TotalTime);
