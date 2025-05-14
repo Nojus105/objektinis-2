@@ -1,4 +1,5 @@
 #include "header.h"
+#include "vector.h"
 
 /**
  * @brief Pagrindinė programos funkcija.
@@ -10,8 +11,29 @@
  */
 int main()
 {
+    // Uzkomentuota eilutė, rodanti, kad abstrakčios klasės objektų kūrimas negalimas
+    // Zmogus testas;
+
+    /**
+     * @brief Tikrinama, ar vartotojas nori testuoti Rule of Five taisyklę.
+     */
+    char test;
+    cout << "Ar norite testuoti? (y/n)" << endl;
+    while (true)
+    {
+        test = getch();
+        if (test == 'y' || test == 'n')
+            break;
+        else
+            cout << "Neteisingas pasirinkimas" << endl;
+    }
+    if (test == 'y')
+    {
+        testRuleOfFive();
+    }
+
     srand(time(0));
-    vector<Stud> grupe;
+    Vektorius<Zmogus *> grupe;
     double TotalTime = 0;
     Stud laik;
 
@@ -58,7 +80,7 @@ int main()
         }
         else if (pasirinkimas == '4')
         {
-            Skaityti(laik, grupe, TotalTime);
+            laik.Skaityti(grupe, TotalTime);
             break;
         }
         else

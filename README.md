@@ -11,6 +11,7 @@
 8. **v1.2** - Panaudotas rule of five, implementuoti jo testai.
 9. **v1.5** - Klasė paskirstyta į abstrakčią ir derived klases.
 10. **v2.0** - dokumentacija, unit testai.
+11. **v3.0** - pilnai realizuota klasė (turi beveik pilną std::vector funkcionalumą)
 
 ---
 
