@@ -1,0 +1,7 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,105,57"/>
+<area shape="rect" id="Node000002" href="$class_vektorius.html#a2fd6349a8f3438950c669addc8c997cc" title=" " alt="" coords="153,5,267,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,33,137,28,138,33,106,38"/>
+<area shape="rect" id="Node000003" href="$class_vektorius.html#a69cf29702fe199d7a7cbe6a53cb22440" title=" " alt="" coords="158,56,262,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,50,143,56,142,61,105,55"/>
+</map>

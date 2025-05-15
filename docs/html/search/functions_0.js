@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['auto_0',['Auto',['../functions2_8cpp.html#a6fb6b62faee8d260050efc41740278f1',1,'Auto(deque&lt; Zmogus * &gt; &amp;grupe):&#160;functions2.cpp'],['../header2_8h.html#a6fb6b62faee8d260050efc41740278f1',1,'Auto(deque&lt; Zmogus * &gt; &amp;grupe):&#160;functions2.cpp'],['../functions1_8cpp.html#a59645506c55852b144a96f62408ba0c6',1,'Auto(list&lt; Stud &gt; &amp;grupe):&#160;functions1.cpp'],['../header1_8h.html#a59645506c55852b144a96f62408ba0c6',1,'Auto(list&lt; Stud &gt; &amp;grupe):&#160;functions1.cpp'],['../functions_8cpp.html#a91c386d59387988863b05ac3f9c79ef0',1,'Auto(vector&lt; Stud &gt; &amp;grupe):&#160;functions.cpp'],['../header_8h.html#a91c386d59387988863b05ac3f9c79ef0',1,'Auto(vector&lt; Stud &gt; &amp;grupe):&#160;functions.cpp']]]
+  ['at_0',['at',['../class_vektorius.html#a1b2958acea63464d6b62429e81171617',1,'Vektorius::at(size_type index)'],['../class_vektorius.html#ac0594151ca3cd347137595b4f4604ad8',1,'Vektorius::at(size_type index) const']]],
+  ['auto_1',['Auto',['../functions_8cpp.html#ad7f15d507fc79746ac0015fe2e8645df',1,'Auto(Vektorius&lt; Zmogus * &gt; &amp;grupe):&#160;functions.cpp'],['../header_8h.html#ad7f15d507fc79746ac0015fe2e8645df',1,'Auto(Vektorius&lt; Zmogus * &gt; &amp;grupe):&#160;functions.cpp']]]
 ];

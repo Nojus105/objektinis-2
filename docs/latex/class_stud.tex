@@ -1,4 +1,4 @@
-\doxysection{Stud Struktūra}
+\doxysection{Stud Klasė}
 \hypertarget{class_stud}{}\label{class_stud}\index{Stud@{Stud}}
 
 
@@ -7,7 +7,7 @@ Išvestinė klasė.
 
 
 
-{\ttfamily \#include $<$header2.\+h$>$}
+{\ttfamily \#include $<$header.\+h$>$}
 
 
 
@@ -26,7 +26,7 @@ Bendradarbiavimo diagrama Stud\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=131pt]{class_stud__coll__graph}
+\includegraphics[width=234pt]{class_stud__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Vieši Metodai}
@@ -34,7 +34,7 @@ Bendradarbiavimo diagrama Stud\+:
 \item 
 \mbox{\hyperlink{class_stud_a97585839898d45dc9fc815d5b36e2b69}{Stud}} ()
 \begin{DoxyCompactList}\small\item\em Numatytasis konstruktorius. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_stud_a26d021266551e8a47e3a6bb3cd028197}{Stud}} (const string \&vardas, const string \&pavarde, const vector$<$ int $>$ \&pazymiai, int egzaminas)
+\mbox{\hyperlink{class_stud_a394773c3fd2fd2d469c8a9e777a4d5b4}{Stud}} (const string \&vardas, const string \&pavarde, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ \&pazymiai, int egzaminas)
 \begin{DoxyCompactList}\small\item\em Konstruktorius su parametrais. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_stud_aa1c38d670d1f269ebd48588c40ad58db}{\texorpdfstring{$\sim$}{\string~}\+Stud}} ()
 \begin{DoxyCompactList}\small\item\em Destruktorius. \end{DoxyCompactList}\item 
@@ -46,7 +46,7 @@ Bendradarbiavimo diagrama Stud\+:
 \begin{DoxyCompactList}\small\item\em Move konstruktorius. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_stud}{Stud}} \& \mbox{\hyperlink{class_stud_a5d0e079824920b39953f50b2bd543819}{operator=}} (\mbox{\hyperlink{class_stud}{Stud}} \&\&other) noexcept
 \begin{DoxyCompactList}\small\item\em Move priskyrimo operatorius. \end{DoxyCompactList}\item 
-vector$<$ int $>$ \mbox{\hyperlink{class_stud_a242b46996a7790866cc960d3245701c2}{get\+Pazymiai}} () const
+\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ \mbox{\hyperlink{class_stud_a8ea0274d1700f08046395f675c4899ff}{get\+Pazymiai}} () const
 \begin{DoxyCompactList}\small\item\em Getteriai. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_stud_a9997b21b5a5369e79c9956c651d27f0b}{get\+Egzaminas}} () const
 \item 
@@ -54,7 +54,7 @@ double \mbox{\hyperlink{class_stud_ac5bf730e9827a5cdd641ed50fd0a1d1e}{get\+Vidur
 \item 
 double \mbox{\hyperlink{class_stud_af710a46895b765c709527a5036e6e084}{get\+Mediana}} () const
 \item 
-void \mbox{\hyperlink{class_stud_a40b81ffe1770b2a77948519142b8cf71}{set\+Pazymiai}} (const vector$<$ int $>$ \&pazymiai)
+void \mbox{\hyperlink{class_stud_a0da1b5479070e2e8da712f86aeca8a27}{set\+Pazymiai}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ \&pazymiai)
 \begin{DoxyCompactList}\small\item\em Setteriai. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_stud_a023e84820551054ac6107eae392e780f}{set\+Egzaminas}} (int egzaminas)
 \item 
@@ -62,7 +62,7 @@ void \mbox{\hyperlink{class_stud_a88bb9e070377c5fc3c47f4d225fbee76}{set\+Vidurki
 \item 
 void \mbox{\hyperlink{class_stud_ac552c6d71e5e8089da8d38fc9b9c7d36}{set\+Mediana}} (double mediana)
 \item 
-void \mbox{\hyperlink{class_stud_ac1405dac10eb5ca06803f59ecfccedfb}{Skaityti}} (deque$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, double \&Total\+Time) override
+void \mbox{\hyperlink{class_stud_a702e9112e4e8e4b710eb2ac6044036c7}{Skaityti}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, double \&Total\+Time) override
 \begin{DoxyCompactList}\small\item\em Perrašoma grynoji virtuali funkcija. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Vieši Metodai inherited from \mbox{\hyperlink{class_zmogus}{Zmogus}}}
 \begin{DoxyCompactItemize}
@@ -81,17 +81,10 @@ void \mbox{\hyperlink{class_zmogus_ae34cc0ef98655279a3f654aa485b76be}{set\+Varda
 \begin{DoxyCompactList}\small\item\em Setteriai. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_zmogus_a62917788bf59c7c9551a488eedc07cc7}{set\+Pavarde}} (const string \&pavarde)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Vieši Atributai}
-\begin{DoxyCompactItemize}
-\item 
-string \mbox{\hyperlink{class_stud_a64434251d68887709ac24be0dd7254ee}{vard}}
-\item 
-string \mbox{\hyperlink{class_stud_a5100b70a0b7e9822f900c472a2184160}{pav}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Privatūs Atributai}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ int $>$ \mbox{\hyperlink{class_stud_a24d68b89dbf25923be2780f9f35c23e2}{paz}}
+\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ \mbox{\hyperlink{class_stud_a02a86a44ae922b7f240d0ffc1dedf668}{paz}}
 \item 
 int \mbox{\hyperlink{class_stud_a888ec71dda6c6b3f9390d2141dc7ef17}{egz}}
 \item 
@@ -111,8 +104,6 @@ string \mbox{\hyperlink{class_zmogus_ab80a99f04209e53782005784384cb9d7}{pav}}
 
 \doxysubsection{Smulkus aprašymas}
 Išvestinė klasė. 
-
-Struktūra, aprašanti studento duomenis. 
 
 \doxysubsection{Konstruktoriaus ir Destruktoriaus Dokumentacija}
 \Hypertarget{class_stud_a97585839898d45dc9fc815d5b36e2b69}\index{Stud@{Stud}!Stud@{Stud}}
@@ -141,11 +132,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=335pt]{class_stud_a97585839898d45dc9fc815d5b36e2b69_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_stud_a26d021266551e8a47e3a6bb3cd028197}\index{Stud@{Stud}!Stud@{Stud}}
+\Hypertarget{class_stud_a394773c3fd2fd2d469c8a9e777a4d5b4}\index{Stud@{Stud}!Stud@{Stud}}
 \index{Stud@{Stud}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{Stud()}{Stud()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \label{class_stud_a26d021266551e8a47e3a6bb3cd028197} 
-Stud\+::\+Stud (\begin{DoxyParamCaption}\item[{const string \&}]{vardas}{, }\item[{const string \&}]{pavarde}{, }\item[{const vector$<$ int $>$ \&}]{pazymiai}{, }\item[{int}]{egzaminas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_stud_a394773c3fd2fd2d469c8a9e777a4d5b4} 
+Stud\+::\+Stud (\begin{DoxyParamCaption}\item[{const string \&}]{vardas}{, }\item[{const string \&}]{pavarde}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ \&}]{pazymiai}{, }\item[{int}]{egzaminas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -167,7 +158,7 @@ Funkcijos kvietimo grafas\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=271pt]{class_stud_a26d021266551e8a47e3a6bb3cd028197_cgraph}
+\includegraphics[width=271pt]{class_stud_a394773c3fd2fd2d469c8a9e777a4d5b4_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_stud_aa1c38d670d1f269ebd48588c40ad58db}\index{Stud@{Stud}!````~Stud@{\texorpdfstring{$\sim$}{\string~}Stud}}
@@ -257,11 +248,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_stud_af710a46895b765c709527a5036e6e084_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_stud_a242b46996a7790866cc960d3245701c2}\index{Stud@{Stud}!getPazymiai@{getPazymiai}}
+\Hypertarget{class_stud_a8ea0274d1700f08046395f675c4899ff}\index{Stud@{Stud}!getPazymiai@{getPazymiai}}
 \index{getPazymiai@{getPazymiai}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{getPazymiai()}{getPazymiai()}}
-{\footnotesize\ttfamily \label{class_stud_a242b46996a7790866cc960d3245701c2} 
-vector$<$ int $>$ Stud\+::get\+Pazymiai (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_stud_a8ea0274d1700f08046395f675c4899ff} 
+\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ Stud\+::get\+Pazymiai (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -272,7 +263,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_stud_a242b46996a7790866cc960d3245701c2_icgraph}
+\includegraphics[width=350pt]{class_stud_a8ea0274d1700f08046395f675c4899ff_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_stud_ac5bf730e9827a5cdd641ed50fd0a1d1e}\index{Stud@{Stud}!getVidurkis@{getVidurkis}}
@@ -361,11 +352,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_stud_ac552c6d71e5e8089da8d38fc9b9c7d36_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_stud_a40b81ffe1770b2a77948519142b8cf71}\index{Stud@{Stud}!setPazymiai@{setPazymiai}}
+\Hypertarget{class_stud_a0da1b5479070e2e8da712f86aeca8a27}\index{Stud@{Stud}!setPazymiai@{setPazymiai}}
 \index{setPazymiai@{setPazymiai}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{setPazymiai()}{setPazymiai()}}
-{\footnotesize\ttfamily \label{class_stud_a40b81ffe1770b2a77948519142b8cf71} 
-void Stud\+::set\+Pazymiai (\begin{DoxyParamCaption}\item[{const vector$<$ int $>$ \&}]{pazymiai}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_stud_a0da1b5479070e2e8da712f86aeca8a27} 
+void Stud\+::set\+Pazymiai (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ int $>$ \&}]{pazymiai}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -385,11 +376,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_stud_a88bb9e070377c5fc3c47f4d225fbee76_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_stud_ac1405dac10eb5ca06803f59ecfccedfb}\index{Stud@{Stud}!Skaityti@{Skaityti}}
+\Hypertarget{class_stud_a702e9112e4e8e4b710eb2ac6044036c7}\index{Stud@{Stud}!Skaityti@{Skaityti}}
 \index{Skaityti@{Skaityti}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{Skaityti()}{Skaityti()}}
-{\footnotesize\ttfamily \label{class_stud_ac1405dac10eb5ca06803f59ecfccedfb} 
-void Stud\+::\+Skaityti (\begin{DoxyParamCaption}\item[{deque$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&}]{grupe}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_stud_a702e9112e4e8e4b710eb2ac6044036c7} 
+void Stud\+::\+Skaityti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&}]{grupe}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -404,14 +395,14 @@ Perrašoma grynoji virtuali funkcija.
 \end{DoxyParams}
 
 
-Realizuoja \mbox{\hyperlink{class_zmogus_a9da9739d1dc901e56b5063df3986ca1b}{Zmogus}}.
+Realizuoja \mbox{\hyperlink{class_zmogus_aaaee026c6a7c2deb28671660d0ebdf13}{Zmogus}}.
 
 Funkcijos kvietimo grafas\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_stud_ac1405dac10eb5ca06803f59ecfccedfb_cgraph}
+\includegraphics[width=350pt]{class_stud_a702e9112e4e8e4b710eb2ac6044036c7_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -419,7 +410,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{class_stud_ac1405dac10eb5ca06803f59ecfccedfb_icgraph}
+\includegraphics[width=228pt]{class_stud_a702e9112e4e8e4b710eb2ac6044036c7_icgraph}
 \end{center}
 \end{figure}
 
@@ -431,41 +422,27 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_stud_a888ec71dda6c6b3f9390d2141dc7ef17} 
 int Stud\+::egz\hspace{0.3cm}{\ttfamily [private]}}
 
-Egzamino rezultatas. \Hypertarget{class_stud_a0b6b9dbd39416e475e7531a224e16e93}\index{Stud@{Stud}!med@{med}}
+\Hypertarget{class_stud_a0b6b9dbd39416e475e7531a224e16e93}\index{Stud@{Stud}!med@{med}}
 \index{med@{med}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{med}{med}}
 {\footnotesize\ttfamily \label{class_stud_a0b6b9dbd39416e475e7531a224e16e93} 
 double Stud\+::med\hspace{0.3cm}{\ttfamily [private]}}
 
-Galutinis rezultatas pagal medianą. \Hypertarget{class_stud_a5100b70a0b7e9822f900c472a2184160}\index{Stud@{Stud}!pav@{pav}}
-\index{pav@{pav}!Stud@{Stud}}
-\doxysubsubsection{\texorpdfstring{pav}{pav}}
-{\footnotesize\ttfamily \label{class_stud_a5100b70a0b7e9822f900c472a2184160} 
-string Stud\+::pav}
-
-Studentų pavardė. \Hypertarget{class_stud_a24d68b89dbf25923be2780f9f35c23e2}\index{Stud@{Stud}!paz@{paz}}
+\Hypertarget{class_stud_a02a86a44ae922b7f240d0ffc1dedf668}\index{Stud@{Stud}!paz@{paz}}
 \index{paz@{paz}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{paz}{paz}}
-{\footnotesize\ttfamily \label{class_stud_a24d68b89dbf25923be2780f9f35c23e2} 
-vector$<$ int $>$ Stud\+::paz\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_stud_a02a86a44ae922b7f240d0ffc1dedf668} 
+\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$int$>$ Stud\+::paz\hspace{0.3cm}{\ttfamily [private]}}
 
-Studentų pažymiai. \Hypertarget{class_stud_a64434251d68887709ac24be0dd7254ee}\index{Stud@{Stud}!vard@{vard}}
-\index{vard@{vard}!Stud@{Stud}}
-\doxysubsubsection{\texorpdfstring{vard}{vard}}
-{\footnotesize\ttfamily \label{class_stud_a64434251d68887709ac24be0dd7254ee} 
-string Stud\+::vard}
-
-Studentų vardas. \Hypertarget{class_stud_adedd35f71aa626e276cbb14d3fe4b1c3}\index{Stud@{Stud}!vid@{vid}}
+\Hypertarget{class_stud_adedd35f71aa626e276cbb14d3fe4b1c3}\index{Stud@{Stud}!vid@{vid}}
 \index{vid@{vid}!Stud@{Stud}}
 \doxysubsubsection{\texorpdfstring{vid}{vid}}
 {\footnotesize\ttfamily \label{class_stud_adedd35f71aa626e276cbb14d3fe4b1c3} 
 double Stud\+::vid\hspace{0.3cm}{\ttfamily [private]}}
 
-Galutinis rezultatas pagal vidurkį. 
 
-Dokumentacija šiai struktūrai sugeneruota iš šių failų\+:\begin{DoxyCompactItemize}
+
+Dokumentacija šiai klasei sugeneruota iš šių failų\+:\begin{DoxyCompactItemize}
 \item 
-deque/\mbox{\hyperlink{header2_8h}{header2.\+h}}\item 
-list/\mbox{\hyperlink{header1_8h}{header1.\+h}}\item 
 vector/\mbox{\hyperlink{header_8h}{header.\+h}}\item 
-deque/\mbox{\hyperlink{functions2_8cpp}{functions2.\+cpp}}\end{DoxyCompactItemize}
+vector/\mbox{\hyperlink{functions_8cpp}{functions.\+cpp}}\end{DoxyCompactItemize}

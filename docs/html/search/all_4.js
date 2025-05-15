@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['egz_0',['egz',['../class_stud.html#a888ec71dda6c6b3f9390d2141dc7ef17',1,'Stud']]],
-  ['ekrane_1',['Ekrane',['../functions2_8cpp.html#a821bd2d3fcee62ae703cbf9fcd109fe1',1,'Ekrane(deque&lt; Zmogus * &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions2.cpp'],['../header2_8h.html#a821bd2d3fcee62ae703cbf9fcd109fe1',1,'Ekrane(deque&lt; Zmogus * &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions2.cpp'],['../functions1_8cpp.html#ae811dcf0d8191155a38e8c96243a8495',1,'Ekrane(list&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions1.cpp'],['../header1_8h.html#ae811dcf0d8191155a38e8c96243a8495',1,'Ekrane(list&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions1.cpp'],['../functions_8cpp.html#aa97d23531b147a86e314f2f770547816',1,'Ekrane(vector&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions.cpp'],['../header_8h.html#aa97d23531b147a86e314f2f770547816',1,'Ekrane(vector&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions.cpp']]]
+  ['data_5f_0',['data_',['../class_vektorius.html#a474935b3f2c0105a9bd5ca2d3aecaf8e',1,'Vektorius']]],
+  ['deque_20naudojant_20klasę_20be_20flag_20strong_1',['&lt;strong&gt;Deque naudojant klasę (be flag)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md14',1,'']]],
+  ['deque_20naudojant_20klasę_20o2_20strong_2',['&lt;strong&gt;Deque naudojant klasę (-O2)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
+  ['deque_20naudojant_20klasę_20o3_20strong_3',['&lt;strong&gt;Deque naudojant klasę (-O3)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md18',1,'']]],
+  ['deque_20naudojant_20struct_2003_20strong_4',['&lt;strong&gt;Deque naudojant struct (-03)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['deque_20strong_5',['&lt;strong&gt;Deque&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]]
 ];

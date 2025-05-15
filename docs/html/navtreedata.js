@@ -35,16 +35,18 @@ var NAVTREE =
       ] ],
       [ "Spartos analizė", "md__r_e_a_d_m_e.html#autotoc_md9", [
         [ "Vector", "md__r_e_a_d_m_e.html#autotoc_md10", null ],
-        [ "List", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
-        [ "Deque", "md__r_e_a_d_m_e.html#autotoc_md12", null ],
-        [ "Deque naudojant klasę (be flag)", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
-        [ "Deque naudojant klasę (-O2)", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
-        [ "Deque naudojant klasę (-O3)", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
-        [ "Deque naudojant struct (-03)", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
+        [ "Klasė \"Vektorius\"", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
+        [ "List", "md__r_e_a_d_m_e.html#autotoc_md12", null ],
+        [ "Deque", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
+        [ "Deque naudojant klasę (be flag)", "md__r_e_a_d_m_e.html#autotoc_md14", null ],
+        [ "Deque naudojant klasę (-O2)", "md__r_e_a_d_m_e.html#autotoc_md16", null ],
+        [ "Deque naudojant klasę (-O3)", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
+        [ "Deque naudojant struct (-03)", "md__r_e_a_d_m_e.html#autotoc_md20", null ],
+        [ "Vektorių pildymo spartos analizė", "md__r_e_a_d_m_e.html#autotoc_md22", null ]
       ] ],
-      [ "Sistemos parametrai", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
-      [ "Išvados", "md__r_e_a_d_m_e.html#autotoc_md22", null ],
-      [ "Perdengtų metodų paaiškinimas", "md__r_e_a_d_m_e.html#autotoc_md24", null ]
+      [ "Sistemos parametrai", "md__r_e_a_d_m_e.html#autotoc_md24", null ],
+      [ "Išvados", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
+      [ "Perdengtų metodų paaiškinimas", "md__r_e_a_d_m_e.html#autotoc_md27", null ]
     ] ],
     [ "Klasės", "annotated.html", [
       [ "Klasės", "annotated.html", "annotated_dup" ],
@@ -53,14 +55,16 @@ var NAVTREE =
       [ "Klasių Nariai", "functions.html", [
         [ "Visi", "functions.html", null ],
         [ "Funkcijos", "functions_func.html", null ],
-        [ "Kintamieji", "functions_vars.html", null ]
+        [ "Kintamieji", "functions_vars.html", null ],
+        [ "Tipų apibrėžimai", "functions_type.html", null ]
       ] ]
     ] ],
     [ "Failai", "files.html", [
       [ "Failai", "files.html", "files_dup" ],
       [ "Failų Nariai", "globals.html", [
         [ "Visi", "globals.html", null ],
-        [ "Funkcijos", "globals_func.html", null ]
+        [ "Funkcijos", "globals_func.html", null ],
+        [ "Apibrėžimai", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]

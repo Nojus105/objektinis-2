@@ -1,5 +1,14 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['rusiuoti_1',['Rusiuoti',['../functions2_8cpp.html#affee2e883d7101182da4a93862c86d48',1,'Rusiuoti(deque&lt; Zmogus * &gt; &amp;grupe, char rusiavimas, char gal, double &amp;TotalTime):&#160;functions2.cpp'],['../header2_8h.html#affee2e883d7101182da4a93862c86d48',1,'Rusiuoti(deque&lt; Zmogus * &gt; &amp;grupe, char rusiavimas, char gal, double &amp;TotalTime):&#160;functions2.cpp'],['../functions1_8cpp.html#a04cbe46fc6b7dbd85d1c557310bf88f2',1,'Rusiuoti(list&lt; Stud &gt; &amp;grupe, char rusiavimas, char gal, double &amp;TotalTime):&#160;functions1.cpp'],['../header1_8h.html#a04cbe46fc6b7dbd85d1c557310bf88f2',1,'Rusiuoti(list&lt; Stud &gt; &amp;grupe, char rusiavimas, char gal, double &amp;TotalTime):&#160;functions1.cpp'],['../functions_8cpp.html#a42ffe629a7ef3a0de9d8f575857faed1',1,'Rusiuoti(vector&lt; Stud &gt; &amp;grupe, char rusiavimas, char gal, double &amp;TotalTime):&#160;functions.cpp'],['../header_8h.html#a42ffe629a7ef3a0de9d8f575857faed1',1,'Rusiuoti(vector&lt; Stud &gt; &amp;grupe, char rusiavimas, char gal, double &amp;TotalTime):&#160;functions.cpp']]]
+  ['paaiškinimas_0',['Perdengtų metodų paaiškinimas',['../md__r_e_a_d_m_e.html#autotoc_md27',1,'']]],
+  ['paleidimas_3a_1',['Failų paleidimas:',['../md__r_e_a_d_m_e.html#autotoc_md5',1,'']]],
+  ['parametrai_2',['Sistemos parametrai',['../md__r_e_a_d_m_e.html#autotoc_md24',1,'']]],
+  ['pav_3',['pav',['../class_zmogus.html#ab80a99f04209e53782005784384cb9d7',1,'Zmogus']]],
+  ['pavyzdžiai_3a_4',['Naudojimo pavyzdžiai:',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
+  ['paz_5',['paz',['../class_stud.html#a02a86a44ae922b7f240d0ffc1dedf668',1,'Stud']]],
+  ['perdengtų_20metodų_20paaiškinimas_6',['Perdengtų metodų paaiškinimas',['../md__r_e_a_d_m_e.html#autotoc_md27',1,'']]],
+  ['pildymo_20spartos_20analizė_20strong_7',['&lt;strong&gt;Vektorių pildymo spartos analizė&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
+  ['pop_5fback_8',['pop_back',['../class_vektorius.html#a7104b7f80edddda1963a09e6a3a6090a',1,'Vektorius']]],
+  ['programos_20versijos_9',['Programos versijos',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['push_5fback_10',['push_back',['../class_vektorius.html#a75b241127fe5ad5628b1499185dad347',1,'Vektorius']]]
 ];

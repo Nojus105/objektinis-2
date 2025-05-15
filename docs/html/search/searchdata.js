@@ -1,11 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "0abdefghiklmnoprstvz~",
-  1: "sz",
-  2: "dfhlrv",
-  3: "aefgmorstz~",
-  4: "empv",
-  5: "pv"
+  0: "0abcdefghiklmnoprstvz~",
+  1: "svz",
+  2: "fhrtv",
+  3: "abcefgmoprstvz~",
+  4: "cdempsv",
+  5: "cisv",
+  6: "c",
+  7: "pv"
 };
 
 var indexSectionNames =
@@ -15,7 +17,9 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "pages"
+  5: "typedefs",
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +29,8 @@ var indexSectionLabels =
   2: "Failai",
   3: "Funkcijos",
   4: "Kintamieji",
-  5: "Puslapiai"
+  5: "Tipų apibrėžimai",
+  6: "Apibrėžimai",
+  7: "Puslapiai"
 };
 

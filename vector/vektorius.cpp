@@ -1,12 +1,11 @@
 #include "header.h"
-#include "vector.h"
 
 /**
  * @brief Pagrindinė programos funkcija.
- * 
- * Ši funkcija leidžia vartotojui pasirinkti įvairias operacijas, tokias kaip studentų duomenų generavimas, 
+ *
+ * Ši funkcija leidžia vartotojui pasirinkti įvairias operacijas, tokias kaip studentų duomenų generavimas,
  * įvedimas, rikiavimas, skirstymas ir išvedimas į ekraną arba failą.
- * 
+ *
  * @return int Programos vykdymo rezultatas.
  */
 int main()
@@ -18,7 +17,7 @@ int main()
      * @brief Tikrinama, ar vartotojas nori testuoti Rule of Five taisyklę.
      */
     char test;
-    cout << "Ar norite testuoti? (y/n)" << endl;
+    cout << "Ar norite atlikti 'Rule of five' testa? (y/n)" << endl;
     while (true)
     {
         test = getch();

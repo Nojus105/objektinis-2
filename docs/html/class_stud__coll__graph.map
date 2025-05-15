@@ -1,5 +1,7 @@
 <map id="Stud" name="Stud">
-<area shape="rect" id="Node000001" title="Išvestinė klasė." alt="" coords="15,80,64,107"/>
+<area shape="rect" id="Node000001" title="Išvestinė klasė." alt="" coords="73,96,121,123"/>
 <area shape="rect" id="Node000002" href="$class_zmogus.html" title="Bazinė/abstrakti klasė." alt="" coords="5,5,74,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="42,48,42,80,37,80,37,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,44,91,94,86,97,54,47"/>
+<area shape="rect" id="Node000003" href="$class_vektorius.html" title=" " alt="" coords="98,5,211,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,47,107,97,103,94,136,44"/>
 </map>

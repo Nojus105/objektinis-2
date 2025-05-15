@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['naudojant_20klasę_20be_20flag_20strong_0',['&lt;strong&gt;Deque naudojant klasę (be flag)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]],
-  ['naudojant_20klasę_20o2_20strong_1',['&lt;strong&gt;Deque naudojant klasę (-O2)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]],
-  ['naudojant_20klasę_20o3_20strong_2',['&lt;strong&gt;Deque naudojant klasę (-O3)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'']]],
-  ['naudojant_20struct_2003_20strong_3',['&lt;strong&gt;Deque naudojant struct (-03)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md19',1,'']]],
-  ['naudojimo_20instrukcija_4',['Naudojimo instrukcija',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]],
-  ['naudojimo_20pavyzdžiai_3a_5',['Naudojimo pavyzdžiai:',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]]
+  ['main_0',['main',['../vektorius_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'vektorius.cpp']]],
+  ['manual_1',['Manual',['../functions_8cpp.html#a8218eaa00fcc4e268064fc97b18b4375',1,'Manual(Stud &amp;laik, Vektorius&lt; Zmogus * &gt; &amp;grupe):&#160;functions.cpp'],['../header_8h.html#a8218eaa00fcc4e268064fc97b18b4375',1,'Manual(Stud &amp;laik, Vektorius&lt; Zmogus * &gt; &amp;grupe):&#160;functions.cpp']]],
+  ['med_2',['med',['../class_stud.html#a0b6b9dbd39416e475e7531a224e16e93',1,'Stud']]],
+  ['metodų_20paaiškinimas_3',['Perdengtų metodų paaiškinimas',['../md__r_e_a_d_m_e.html#autotoc_md27',1,'']]]
 ];

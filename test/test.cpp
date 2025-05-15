@@ -1,76 +1,167 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "../deque/header2.h"
+#include "../vector/Vector.h"
 
-TEST_CASE("Rule of Five - Copy Constructor", "[rule_of_five]") {
-    Stud student1("Jonas", "Jonaitis", {10, 9, 8}, 9);
-    Stud copy = student1;
-
-    REQUIRE(copy.getVardas() == student1.getVardas());
-    REQUIRE(copy.getPavarde() == student1.getPavarde());
-    REQUIRE(copy.getEgzaminas() == student1.getEgzaminas());
-    REQUIRE(copy.getPazymiai() == student1.getPazymiai());
+// Default Constructor
+TEST_CASE("Vektorius - Default Constructor", "[vektorius]") {
+    Vektorius<int> vec;
+    REQUIRE(vec.size() == 0);
+    REQUIRE(vec.empty());
 }
 
-TEST_CASE("Rule of Five - Copy Assignment", "[rule_of_five]") {
-    Stud student1("Jonas", "Jonaitis", {10, 9, 8}, 9);
-    Stud student2;
-    student2 = student1;
-
-    REQUIRE(student2.getVardas() == student1.getVardas());
-    REQUIRE(student2.getPavarde() == student1.getPavarde());
-    REQUIRE(student2.getEgzaminas() == student1.getEgzaminas());
-    REQUIRE(student2.getPazymiai() == student1.getPazymiai());
+// Constructor with size and default value
+TEST_CASE("Vektorius - Constructor with Size and Default Value", "[vektorius]") {
+    Vektorius<int> vec(5, 42);
+    REQUIRE(vec.size() == 5);
+    for (size_t i = 0; i < vec.size(); ++i) {
+        REQUIRE(vec[i] == 42);
+    }
 }
 
-TEST_CASE("Rule of Five - Move Constructor", "[rule_of_five]") {
-    Stud student1("Jonas", "Jonaitis", {10, 9, 8}, 9);
-    Stud moved = std::move(student1);
-
-    REQUIRE(moved.getVardas() == "Jonas");
-    REQUIRE(moved.getPavarde() == "Jonaitis");
-    REQUIRE(moved.getEgzaminas() == 9);
-    REQUIRE(moved.getPazymiai() == std::vector<int>{10, 9, 8});
-    REQUIRE(student1.getVardas().empty());
-    REQUIRE(student1.getPavarde().empty());
+// Initializer List Constructor
+TEST_CASE("Vektorius - Initializer List Constructor", "[vektorius]") {
+    Vektorius<int> vec = {1, 2, 3, 4, 5};
+    REQUIRE(vec.size() == 5);
+    REQUIRE(vec[0] == 1);
+    REQUIRE(vec[4] == 5);
 }
 
-TEST_CASE("Rule of Five - Move Assignment", "[rule_of_five]") {
-    Stud student1("Jonas", "Jonaitis", {10, 9, 8}, 9);
-    Stud student2;
-    student2 = std::move(student1);
-
-    REQUIRE(student2.getVardas() == "Jonas");
-    REQUIRE(student2.getPavarde() == "Jonaitis");
-    REQUIRE(student2.getEgzaminas() == 9);
-    REQUIRE(student2.getPazymiai() == std::vector<int>{10, 9, 8});
-    REQUIRE(student1.getVardas().empty());
-    REQUIRE(student1.getPavarde().empty());
+// Copy Constructor
+TEST_CASE("Vektorius - Copy Constructor", "[vektorius]") {
+    Vektorius<int> vec1 = {1, 2, 3};
+    Vektorius<int> vec2 = vec1;
+    REQUIRE(vec2.size() == vec1.size());
+    REQUIRE(vec2 == vec1);
 }
 
-TEST_CASE("Auto Function", "[auto]") {
-    deque<Zmogus *> grupe;
-
-    Auto(grupe);
-
-    REQUIRE_FALSE(grupe.empty());
-    REQUIRE(grupe.size() > 0);
+// Move Constructor
+TEST_CASE("Vektorius - Move Constructor", "[vektorius]") {
+    Vektorius<int> vec1 = {1, 2, 3};
+    Vektorius<int> vec2 = std::move(vec1);
+    REQUIRE(vec2.size() == 3);
+    REQUIRE(vec1.size() == 0);
+    REQUIRE(vec1.empty());
 }
 
-TEST_CASE("Rusiuoti Function", "[sorting]") {
-    deque<Zmogus *> grupe;
-    Stud student1("Jonas", "Jonaitis", {10, 9, 8}, 9);
-    Stud student2("Petras", "Petraitis", {7, 6, 5}, 6);
-    Stud student3("Andrius", "Andraitis", {8, 8, 8}, 8);
+// Copy Assignment
+TEST_CASE("Vektorius - Copy Assignment", "[vektorius]") {
+    Vektorius<int> vec1 = {1, 2, 3};
+    Vektorius<int> vec2;
+    vec2 = vec1;
+    REQUIRE(vec2.size() == vec1.size());
+    REQUIRE(vec2 == vec1);
+}
 
-    grupe.push_back(&student1);
-    grupe.push_back(&student2);
-    grupe.push_back(&student3);
+// Move Assignment
+TEST_CASE("Vektorius - Move Assignment", "[vektorius]") {
+    Vektorius<int> vec1 = {1, 2, 3};
+    Vektorius<int> vec2;
+    vec2 = std::move(vec1);
+    REQUIRE(vec2.size() == 3);
+    REQUIRE(vec1.size() == 0);
+    REQUIRE(vec1.empty());
+}
 
-    double TotalTime = 0.0;
-    Rusiuoti(grupe, 'v', '0', TotalTime);
+// Push Back
+TEST_CASE("Vektorius - Push Back", "[vektorius]") {
+    Vektorius<int> vec;
+    vec.push_back(10);
+    vec.push_back(20);
+    REQUIRE(vec.size() == 2);
+    REQUIRE(vec[0] == 10);
+    REQUIRE(vec[1] == 20);
+}
 
-    REQUIRE(grupe[0]->getVardas() == "Andrius");
-    REQUIRE(grupe[1]->getVardas() == "Jonas");
-    REQUIRE(grupe[2]->getVardas() == "Petras");
+// Pop Back
+TEST_CASE("Vektorius - Pop Back", "[vektorius]") {
+    Vektorius<int> vec = {10, 20, 30};
+    vec.pop_back();
+    REQUIRE(vec.size() == 2);
+    REQUIRE(vec[1] == 20);
+}
+
+// Clear
+TEST_CASE("Vektorius - Clear", "[vektorius]") {
+    Vektorius<int> vec = {10, 20, 30};
+    vec.clear();
+    REQUIRE(vec.size() == 0);
+    REQUIRE(vec.empty());
+}
+
+// Resize
+TEST_CASE("Vektorius - Resize", "[vektorius]") {
+    Vektorius<int> vec = {10, 20};
+    vec.resize(5, 42);
+    REQUIRE(vec.size() == 5);
+    REQUIRE(vec[2] == 42);
+    vec.resize(1);
+    REQUIRE(vec.size() == 1);
+    REQUIRE(vec[0] == 10);
+}
+
+// Reserve
+TEST_CASE("Vektorius - Reserve", "[vektorius]") {
+    Vektorius<int> vec;
+    vec.reserve(10);
+    REQUIRE(vec.capacity() >= 10);
+}
+
+// Erase
+TEST_CASE("Vektorius - Erase", "[vektorius]") {
+    Vektorius<int> vec = {10, 20, 30};
+    auto it = vec.erase(vec.begin() + 1);
+    REQUIRE(vec.size() == 2);
+    REQUIRE(vec[0] == 10);
+    REQUIRE(vec[1] == 30);
+    REQUIRE(it == vec.begin() + 1);
+}
+
+// Element Access
+TEST_CASE("Vektorius - Element Access", "[vektorius]") {
+    Vektorius<int> vec = {10, 20, 30};
+    REQUIRE(vec[0] == 10);
+    REQUIRE(vec.at(1) == 20);
+    REQUIRE_THROWS_AS(vec.at(3), std::out_of_range);
+}
+
+// Iterators
+TEST_CASE("Vektorius - Iterators", "[vektorius]") {
+    Vektorius<int> vec = {10, 20, 30};
+    auto it = vec.begin();
+    REQUIRE(*it == 10);
+    ++it;
+    REQUIRE(*it == 20);
+    ++it;
+    REQUIRE(*it == 30);
+    REQUIRE(it + 1 == vec.end());
+}
+
+// Equality Operator
+TEST_CASE("Vektorius - Equality Operator", "[vektorius]") {
+    Vektorius<int> vec1 = {10, 20, 30};
+    Vektorius<int> vec2 = {10, 20, 30};
+    REQUIRE(vec1 == vec2);
+    vec2.push_back(40);
+    REQUIRE(vec1 != vec2);
+}
+
+// Relational Operators
+TEST_CASE("Vektorius - Relational Operators", "[vektorius]") {
+    Vektorius<int> vec1 = {10, 20};
+    Vektorius<int> vec2 = {10, 20, 30};
+    REQUIRE(vec1 < vec2);
+    REQUIRE(vec2 > vec1);
+    REQUIRE(vec1 <= vec2);
+    REQUIRE(vec2 >= vec1);
+}
+
+// Swap
+TEST_CASE("Vektorius - Swap", "[vektorius]") {
+    Vektorius<int> vec1 = {10, 20};
+    Vektorius<int> vec2 = {30, 40};
+    vec1.swap(vec2);
+    REQUIRE(vec1[0] == 30);
+    REQUIRE(vec1[1] == 40);
+    REQUIRE(vec2[0] == 10);
+    REQUIRE(vec2[1] == 20);
 }

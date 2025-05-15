@@ -52,13 +52,20 @@ make clean
 ## Spartos analizė
 
 ### **Vector**
-| Studentų skaičius | Failo kūrimas | Failo skaitymas | Rūšiavimas | Paskirstymas | Spausdinimas | Iš viso | Paskirstymas (2) | Paskirstymas (3) |
-|------------------|--------------|--------------|------------|-------------|------------|---------|-----------------|-----------------|
-| **1k** | 0.035 s | 0.015 s | 0 s | 0 s | 0.011 s | 0.061 s | 0.028 s | 0 s |
-| **10k** | 0.219 s | 0.105 s | 0.017 s | 0.004 s | 0.077 s | 0.422 s | 0.076 s | 0.001 s |
-| **100k** | 1.798 s | 0.392 s | 0.138 s | 0.021 s | 0.771 s | 3.120 s | 180.122 s | 0.012 s |
-| **1m** | 16.223 s | 7.795 s | 0.996 s | 0.098 s | 9.040 s | 34.152 s | >5 min | 0.048 s |
-| **10m** | 167.577 s | 87.541 | 12.792 | crash | 88.551 | 356.461 | crash | crash |
+| Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas | Spausdinimas | Iš viso | Paskirstymas (2) | Paskirstymas (3) |
+|------------------|--------------|------------|-------------|------------|---------|-----------------|-----------------|
+| **1k** | 0.015 s | 0 s | 0 s | 0.011 s | 0.026 s | 0.028 s | 0 s |
+| **10k** | 0.105 s | 0.017 s | 0.004 s | 0.077 s | 0.203 s | 0.076 s | 0.001 s |
+| **100k** | 0.392 s | 0.138 s | 0.021 s | 0.771 s | 1.322 s | 180.122 s | 0.012 s |
+| **1m** | 7.795 s | 0.996 s | 0.098 s | 9.040 s | 17.929 s | >5 min | 0.048 s |
+| **10m** | 87.541 s | 12.792 s | crash | 88.551 s | 188.884 s | crash | crash |
+
+### **Klasė "Vektorius"**
+| Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas | Spausdinimas | Iš viso | Paskirstymas (2) | Paskirstymas (3) |
+|------------------|--------------|------------|-------------|------------|---------|-----------------|-----------------|
+| **100k** | 0.230 s | 0.027 s | 0.032 s | 0.288 s | 0.577 s | 2.474 s | 0.031 s |
+| **1m** | 1.842 s | 0.381 s | 0.358 s | 3.067 s | 5.648 s | 236.430 s | 0.285 s |
+| **10m** | 24.155 s | 5.036 s | 2.785 | 28.227 s | 60.204 s | >5 min | 2.792 s |
 
 ### **List**
 | Studentų skaičius | Failo skaitymas | Rūšiavimas | Paskirstymas | Spausdinimas | Iš viso | Paskirstymas (2) | Paskirstymas (3) |
@@ -116,13 +123,21 @@ make clean
 
 ---
 
+### **Vektorių pildymo spartos analizė**
+| Vektoriaus dydis       |   10000   |   100000   |  1000000 |  10000000 |  100000000 | Perskirstymai (100000000) |
+|------------------------|-----------|------------|----------|-----------|------------|---------------------------|
+| **std::vector**        | 73 micros | 380 micros | 2.670 ms | 29.612 ms | 209.857 ms |             27            |
+| **Klasė "Vektorius"**  | 90 micros | 282 micros | 4.216 ms | 39.728 ms | 342.493 ms |             27            |
+
+---
+
 ## Sistemos parametrai
 - **CPU:** i7-13650HX
 - **RAM:** 24GB 4800MHz
 - **Storage:** NVMe M.2 SSD 1TB
 
 ## Išvados
-**Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas. Taip pat pastebime, kad **klasė** yra iki 20% spartesnė nei **struktūra**.
+**Vektoriai** veikė prasčiausiai atminties atžvilgiu, crashino. **1 strategija** pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). **2 strategija** pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp **deque ir list konteinerių** kito minimaliai, todėl spartos atžvilgiu **deque konteineris su strategija Nr. 2** yra geriausias pasirinkimas. Taip pat pastebime, kad **klasė** yra iki 20% spartesnė nei **struktūra**. Sukurta **klasė "Vektorius** veikė lėčiau su studentų paskirstymais, tačiau sparčiau visur kitur nei **std::vector**. Tačiau **"Vektorius" klasė** paskirstymo atžvilgiu yra stabilesnė, kadangi necrashina su dideliais failais.
 
 ![](https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885)
 

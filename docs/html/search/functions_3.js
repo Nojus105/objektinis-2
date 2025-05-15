@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['generuotifaila_0',['GeneruotiFaila',['../functions2_8cpp.html#a5d84fa58ad0d60e6870ee6350ff84f59',1,'GeneruotiFaila(double &amp;TotalTime):&#160;functions2.cpp'],['../header2_8h.html#a5d84fa58ad0d60e6870ee6350ff84f59',1,'GeneruotiFaila(double &amp;TotalTime):&#160;functions2.cpp'],['../functions1_8cpp.html#a5d84fa58ad0d60e6870ee6350ff84f59',1,'GeneruotiFaila(double &amp;TotalTime):&#160;functions1.cpp'],['../header1_8h.html#a5d84fa58ad0d60e6870ee6350ff84f59',1,'GeneruotiFaila(double &amp;TotalTime):&#160;functions2.cpp'],['../functions_8cpp.html#a5d84fa58ad0d60e6870ee6350ff84f59',1,'GeneruotiFaila(double &amp;TotalTime):&#160;functions.cpp'],['../header_8h.html#a5d84fa58ad0d60e6870ee6350ff84f59',1,'GeneruotiFaila(double &amp;TotalTime):&#160;functions2.cpp']]],
-  ['getegzaminas_1',['getEgzaminas',['../class_stud.html#a9997b21b5a5369e79c9956c651d27f0b',1,'Stud']]],
-  ['getmediana_2',['getMediana',['../class_stud.html#af710a46895b765c709527a5036e6e084',1,'Stud']]],
-  ['getpavarde_3',['getPavarde',['../class_zmogus.html#a11ee9ac120fbb7d6a4e1f4da3a602b63',1,'Zmogus']]],
-  ['getpazymiai_4',['getPazymiai',['../class_stud.html#a242b46996a7790866cc960d3245701c2',1,'Stud']]],
-  ['getvardas_5',['getVardas',['../class_zmogus.html#aaea44664c236e2fadf022f3821862499',1,'Zmogus']]],
-  ['getvidurkis_6',['getVidurkis',['../class_stud.html#ac5bf730e9827a5cdd641ed50fd0a1d1e',1,'Stud']]]
+  ['ekrane_0',['Ekrane',['../functions_8cpp.html#addce04794968efb5059df6484b270c64',1,'Ekrane(Vektorius&lt; Zmogus * &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions.cpp'],['../header_8h.html#addce04794968efb5059df6484b270c64',1,'Ekrane(Vektorius&lt; Zmogus * &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions.cpp']]],
+  ['empty_1',['empty',['../class_vektorius.html#ab4548c5f7e68bfeef88fe34ca6f8aaeb',1,'Vektorius']]],
+  ['end_2',['end',['../class_vektorius.html#a69cf29702fe199d7a7cbe6a53cb22440',1,'Vektorius::end() noexcept'],['../class_vektorius.html#aaf51092b128918c3e616d7be949d4ca1',1,'Vektorius::end() const noexcept']]],
+  ['erase_3',['erase',['../class_vektorius.html#a1f51e81505580a6ac8897752d66654f1',1,'Vektorius']]]
 ];

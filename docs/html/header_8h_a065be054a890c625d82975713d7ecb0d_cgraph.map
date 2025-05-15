@@ -1,0 +1,17 @@
+<map id="Skirstymas2" name="Skirstymas2">
+<area shape="rect" id="Node000001" title="Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės." alt="" coords="5,93,100,120"/>
+<area shape="rect" id="Node000002" href="$class_vektorius.html#a2fd6349a8f3438950c669addc8c997cc" title=" " alt="" coords="354,5,469,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,91,98,58,121,41,147,28,195,14,246,8,339,7,339,13,246,13,196,20,149,33,124,46,101,62,67,95"/>
+<area shape="rect" id="Node000003" href="$class_vektorius.html#a69cf29702fe199d7a7cbe6a53cb22440" title=" " alt="" coords="360,68,464,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,101,344,83,344,89,100,106"/>
+<area shape="rect" id="Node000004" href="$class_vektorius.html#a1f51e81505580a6ac8897752d66654f1" title=" " alt="" coords="163,43,278,69"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,90,159,72,160,77,100,95"/>
+<area shape="rect" id="Node000005" href="$class_stud.html#af710a46895b765c709527a5036e6e084" title=" " alt="" coords="159,144,282,171"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="100,118,160,136,159,141,99,123"/>
+<area shape="rect" id="Node000006" href="$class_vektorius.html#a75b241127fe5ad5628b1499185dad347" title=" " alt="" coords="148,195,294,221"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="69,118,104,149,149,180,160,186,157,191,146,185,101,153,66,122"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="279,42,339,30,340,35,280,47"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="279,61,345,70,344,75,279,66"/>
+<area shape="rect" id="Node000007" href="$class_vektorius.html#ac0f253f60fa2651f26bbc88000d2a9ab" title=" " alt="" coords="342,195,481,221"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="294,205,327,205,327,211,294,211"/>
+</map>

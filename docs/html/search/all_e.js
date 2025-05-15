@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['paaiškinimas_0',['Perdengtų metodų paaiškinimas',['../md__r_e_a_d_m_e.html#autotoc_md24',1,'']]],
-  ['paleidimas_3a_1',['Failų paleidimas:',['../md__r_e_a_d_m_e.html#autotoc_md5',1,'']]],
-  ['parametrai_2',['Sistemos parametrai',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
-  ['pav_3',['pav',['../class_zmogus.html#ab80a99f04209e53782005784384cb9d7',1,'Zmogus::pav'],['../class_stud.html#a5100b70a0b7e9822f900c472a2184160',1,'Stud::pav']]],
-  ['pavyzdžiai_3a_4',['Naudojimo pavyzdžiai:',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
-  ['paz_5',['paz',['../class_stud.html#a24d68b89dbf25923be2780f9f35c23e2',1,'Stud']]],
-  ['perdengtų_20metodų_20paaiškinimas_6',['Perdengtų metodų paaiškinimas',['../md__r_e_a_d_m_e.html#autotoc_md24',1,'']]],
-  ['programos_20versijos_7',['Programos versijos',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['o2_20strong_0',['&lt;strong&gt;Deque naudojant klasę (-O2)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
+  ['o3_20strong_1',['&lt;strong&gt;Deque naudojant klasę (-O3)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md18',1,'']]],
+  ['operator_21_3d_2',['operator!=',['../vector_8h.html#adffe69c640083bb2e71d28648712ea4b',1,'vector.h']]],
+  ['operator_3c_3',['operator&lt;',['../vector_8h.html#aff7e04b3f6dd8a34f3ba91f42d7ec0eb',1,'vector.h']]],
+  ['operator_3c_3d_4',['operator&lt;=',['../vector_8h.html#a064d0ff969fc9cdbe1f24b71b5f4709d',1,'vector.h']]],
+  ['operator_3d_5',['operator=',['../class_stud.html#a311ba01abe5e734694bd281a9653226f',1,'Stud::operator=(const Stud &amp;other)'],['../class_stud.html#a5d0e079824920b39953f50b2bd543819',1,'Stud::operator=(Stud &amp;&amp;other) noexcept'],['../class_vektorius.html#a441055b1107f1b53f72d47d715b98a63',1,'Vektorius::operator=(const Vektorius &amp;other)'],['../class_vektorius.html#a6b2241c5fe52e259a7a91d4a559102f0',1,'Vektorius::operator=(Vektorius &amp;&amp;other) noexcept']]],
+  ['operator_3d_3d_6',['operator==',['../vector_8h.html#a3a2222a3bd39cdf68b5e62f554264445',1,'vector.h']]],
+  ['operator_3e_7',['operator&gt;',['../vector_8h.html#a418806c124d2f93a619793cb2ea7d022',1,'vector.h']]],
+  ['operator_3e_3d_8',['operator&gt;=',['../vector_8h.html#a4ce8b311d11e35a31afa02ea66e2a5e7',1,'vector.h']]],
+  ['operator_5b_5d_9',['operator[]',['../class_vektorius.html#adb339db78733cbe0c33152f7363ad11d',1,'Vektorius::operator[](size_type index)'],['../class_vektorius.html#a5b093f0f73267a8de484a11ee69dbbfb',1,'Vektorius::operator[](size_type index) const']]]
 ];

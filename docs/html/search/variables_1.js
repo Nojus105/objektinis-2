@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['med_0',['med',['../class_stud.html#a0b6b9dbd39416e475e7531a224e16e93',1,'Stud']]]
+  ['data_5f_0',['data_',['../class_vektorius.html#a474935b3f2c0105a9bd5ca2d3aecaf8e',1,'Vektorius']]]
 ];

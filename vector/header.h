@@ -1,9 +1,7 @@
 #include "vector.h"
 #include <iostream>
 #include <iomanip>
-#include <algorithm>
 #include <sstream>
-#include <utility>
 #include <conio.h>
 #include <string>
 #include <ctime>

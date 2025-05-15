@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['klasę_20be_20flag_20strong_0',['&lt;strong&gt;Deque naudojant klasę (be flag)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]],
-  ['klasę_20o2_20strong_1',['&lt;strong&gt;Deque naudojant klasę (-O2)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]],
-  ['klasę_20o3_20strong_2',['&lt;strong&gt;Deque naudojant klasę (-O3)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'']]]
+  ['ištrynimas_3a_0',['Sugeneruotų failų ištrynimas:',['../md__r_e_a_d_m_e.html#autotoc_md6',1,'']]],
+  ['išvados_1',['Išvados',['../md__r_e_a_d_m_e.html#autotoc_md25',1,'']]],
+  ['instrukcija_2',['Naudojimo instrukcija',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]],
+  ['istorija_3a_3',['Versijos istorija:',['../md__r_e_a_d_m_e.html#autotoc_md1',1,'']]],
+  ['iterator_4',['iterator',['../class_vektorius.html#a0cf23975de514743fc4d73871317443f',1,'Vektorius']]]
 ];

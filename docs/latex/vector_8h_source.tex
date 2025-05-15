@@ -1,0 +1,229 @@
+\doxysection{vector.\+h}
+\hypertarget{vector_8h_source}{}\label{vector_8h_source}\index{vector/vector.h@{vector/vector.h}}
+\mbox{\hyperlink{vector_8h}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Member\ types}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vektorius_a8135cdfa7f440c33e9a1f39997d8e3e9}{value\_type}}\ =\ T;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ =\ std::size\_t;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vektorius_a0cf23975de514743fc4d73871317443f}{iterator}}\ =\ T\ *;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vektorius_a15c2f56cac10a9e08b3f4704005953bf}{const\_iterator}}\ =\ \textcolor{keyword}{const}\ T\ *;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::unique\_ptr<T[]>\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}};\ \textcolor{comment}{//\ Automatic\ memory\ management\ using\ std::unique\_ptr}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Current\ number\ of\ elements}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Maximum\ number\ of\ elements\ that\ can\ be\ stored}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ reallocate\ data\ to\ a\ new,\ larger\ array}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_ac0f253f60fa2651f26bbc88000d2a9ab}{reallocate}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ new\_capacity)}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::unique\_ptr<T[]>\ new\_data\ =\ std::make\_unique<T[]>(new\_capacity);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::move(\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get(),\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}},\ new\_data.get());}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}\ =\ std::move(new\_data);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}\ =\ new\_capacity;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Konstruktoriai}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}()\ :\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}(nullptr),\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}(0),\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}(0)\ \{\}\ \textcolor{comment}{//\ Default\ konstruktorius}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_vektorius_a2abe8ddb5cc89953ab430ada01ae7493}{Vektorius}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ count,\ \textcolor{keyword}{const}\ T\ \&value\ =\ T())\ :\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}(count),\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}(count)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}\ =\ std::make\_unique<T[]>(\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::fill(\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get(),\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}},\ value);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_vektorius_ac187f3b0d469954456dc171e3f6b60d5}{Vektorius}}(std::initializer\_list<T>\ init)\ :\ \mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}(init.\mbox{\hyperlink{class_vektorius_ad2653d04219ad38cb2eb8df253ec64f5}{size}}())}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::copy(init.begin(),\ init.end(),\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get());}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a2af97a5bc7f0df8485d27c7e473b0463}{Vektorius}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&other)\ :\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}(other.\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}),\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}(other.\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}})}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}\ =\ std::make\_unique<T[]>(\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::copy(other.\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get(),\ other.\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}},\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get());}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a09b37882533a9be5913844c51ea0c4c3}{Vektorius}}(\mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&\&other)\ noexcept\ :\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}(std::move(other.data\_)),\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}(other.size\_),\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}(other.capacity\_)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ other.size\_\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ other.capacity\_\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Assignment\ operatoriai}}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&\mbox{\hyperlink{class_vektorius_a441055b1107f1b53f72d47d715b98a63}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&other)}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}\ =\ std::make\_unique<T[]>(other.\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ =\ other.\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}\ =\ other.\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(other.\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get(),\ other.\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}},\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get());}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&\mbox{\hyperlink{class_vektorius_a6b2241c5fe52e259a7a91d4a559102f0}{operator=}}(\mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&\&other)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}\ =\ std::move(other.data\_);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ =\ other.size\_;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}\ =\ other.capacity\_;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ other.size\_\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ other.capacity\_\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Member\ funkcijos}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ \mbox{\hyperlink{class_vektorius_ad2653d04219ad38cb2eb8df253ec64f5}{size}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};\ \}\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ current\ number\ of\ elements}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ \mbox{\hyperlink{class_vektorius_a3e36ca92b8fdf8d49778093ef7de2b5f}{capacity}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}};\ \}\ \textcolor{comment}{//\ Returns\ the\ capacity}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_vektorius_ab4548c5f7e68bfeef88fe34ca6f8aaeb}{empty}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ ==\ 0;\ \}\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ the\ vector\ is\ empty}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Adds\ a\ new\ element\ to\ the\ end\ of\ the\ vector}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_a75b241127fe5ad5628b1499185dad347}{push\_back}}(\textcolor{keyword}{const}\ T\ \&value)}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ ==\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}})}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_ac0f253f60fa2651f26bbc88000d2a9ab}{reallocate}}(\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}\ ==\ 0\ ?\ 1\ :\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}}\ *\ 2);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}[\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}++]\ =\ value;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Removes\ the\ last\ element}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_a7104b7f80edddda1963a09e6a3a6090a}{pop\_back}}()}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ >\ 0)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Clears\ all\ elements}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_a5dde6342d3922105c0adec715705178d}{clear}}()\ noexcept}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_a4432065b099abd52c5ed3738b5224a65}{swap}}(\mbox{\hyperlink{class_vektorius_a7389838d55eae40d7a11ffd72accd402}{Vektorius}}\ \&other)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ std::swap(\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}},\ other.data\_);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::swap(\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}},\ other.size\_);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::swap(\mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}},\ other.capacity\_);}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ Changes\ the\ size\ of\ the\ vector}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_aab24e7005b484ae0c5db98a9f3df8e98}{resize}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ new\_size,\ \textcolor{keyword}{const}\ T\ \&value\ =\ T())}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_size\ >\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}})}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_ac0f253f60fa2651f26bbc88000d2a9ab}{reallocate}}(new\_size);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_size\ >\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}})}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ std::fill(\mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}},\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ new\_size,\ value);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}}\ =\ new\_size;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ Reserves\ memory\ for\ the\ specified\ number\ of\ elements}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vektorius_a9598025f13df3959c4402a25ead39546}{reserve}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ new\_capacity)}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_capacity\ >\ \mbox{\hyperlink{class_vektorius_ad648dc284b3ec5cbadee13fdc09d80ef}{capacity\_}})}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vektorius_ac0f253f60fa2651f26bbc88000d2a9ab}{reallocate}}(new\_capacity);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//\ Removes\ the\ element\ at\ the\ specified\ position\ and\ returns\ an\ iterator\ to\ the\ next\ element}}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a0cf23975de514743fc4d73871317443f}{iterator}}\ \mbox{\hyperlink{class_vektorius_a1f51e81505580a6ac8897752d66654f1}{erase}}(\mbox{\hyperlink{class_vektorius_a0cf23975de514743fc4d73871317443f}{iterator}}\ pos)}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ <\ \mbox{\hyperlink{class_vektorius_a2fd6349a8f3438950c669addc8c997cc}{begin}}()\ ||\ pos\ >=\ \mbox{\hyperlink{class_vektorius_a69cf29702fe199d7a7cbe6a53cb22440}{end}}())}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Iterator\ out\ of\ range"{}});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::move(pos\ +\ 1,\ \mbox{\hyperlink{class_vektorius_a69cf29702fe199d7a7cbe6a53cb22440}{end}}(),\ pos);\ \textcolor{comment}{//\ Shift\ elements\ to\ the\ left}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ -\/-\/\mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decrease\ the\ size}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pos;}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Element\ access\ operators}}
+\DoxyCodeLine{00153\ \ \ \ \ T\ \&\mbox{\hyperlink{class_vektorius_adb339db78733cbe0c33152f7363ad11d}{operator[]}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ index)}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}})}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}[index];}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{class_vektorius_a5b093f0f73267a8de484a11ee69dbbfb}{operator[]}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00161\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}})}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}[index];}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ T\ \&\mbox{\hyperlink{class_vektorius_a1b2958acea63464d6b62429e81171617}{at}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ index)}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}})}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}[index];}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{class_vektorius_ac0594151ca3cd347137595b4f4604ad8}{at}}(\mbox{\hyperlink{class_vektorius_a8f8489df4af4051a2e99f1cf022bea2c}{size\_type}}\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00175\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}})}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}[index];}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ Iterators}}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a0cf23975de514743fc4d73871317443f}{iterator}}\ \mbox{\hyperlink{class_vektorius_a2fd6349a8f3438950c669addc8c997cc}{begin}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get();\ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a15c2f56cac10a9e08b3f4704005953bf}{const\_iterator}}\ \mbox{\hyperlink{class_vektorius_a80cf28ae94947c61a1678698be120da8}{begin}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get();\ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a0cf23975de514743fc4d73871317443f}{iterator}}\ \mbox{\hyperlink{class_vektorius_a69cf29702fe199d7a7cbe6a53cb22440}{end}}()\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};\ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{class_vektorius_a15c2f56cac10a9e08b3f4704005953bf}{const\_iterator}}\ \mbox{\hyperlink{class_vektorius_aaf51092b128918c3e616d7be949d4ca1}{end}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vektorius_a474935b3f2c0105a9bd5ca2d3aecaf8e}{data\_}}.get()\ +\ \mbox{\hyperlink{class_vektorius_a6659a764b7b15bde8e80294f52818052}{size\_}};\ \}}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{comment}{//\ Non-\/member\ funkcijos}}
+\DoxyCodeLine{00189\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00190\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector_8h_a3a2222a3bd39cdf68b5e62f554264445}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&rhs)}
+\DoxyCodeLine{00191\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{return}\ lhs.\mbox{\hyperlink{class_vektorius_ad2653d04219ad38cb2eb8df253ec64f5}{size}}()\ ==\ rhs.\mbox{\hyperlink{class_vektorius_ad2653d04219ad38cb2eb8df253ec64f5}{size}}()\ \&\&\ std::equal(lhs.\mbox{\hyperlink{class_vektorius_a2fd6349a8f3438950c669addc8c997cc}{begin}}(),\ lhs.\mbox{\hyperlink{class_vektorius_a69cf29702fe199d7a7cbe6a53cb22440}{end}}(),\ rhs.\mbox{\hyperlink{class_vektorius_a2fd6349a8f3438950c669addc8c997cc}{begin}}());}
+\DoxyCodeLine{00193\ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector_8h_adffe69c640083bb2e71d28648712ea4b}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&rhs)}
+\DoxyCodeLine{00197\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector_8h_aff7e04b3f6dd8a34f3ba91f42d7ec0eb}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&rhs)}
+\DoxyCodeLine{00203\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{return}\ std::lexicographical\_compare(lhs.\mbox{\hyperlink{class_vektorius_a2fd6349a8f3438950c669addc8c997cc}{begin}}(),\ lhs.\mbox{\hyperlink{class_vektorius_a69cf29702fe199d7a7cbe6a53cb22440}{end}}(),\ rhs.\mbox{\hyperlink{class_vektorius_a2fd6349a8f3438950c669addc8c997cc}{begin}}(),\ rhs.\mbox{\hyperlink{class_vektorius_a69cf29702fe199d7a7cbe6a53cb22440}{end}}());}
+\DoxyCodeLine{00205\ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector_8h_a418806c124d2f93a619793cb2ea7d022}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&rhs)}
+\DoxyCodeLine{00209\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{return}\ rhs\ <\ lhs;}
+\DoxyCodeLine{00211\ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00214\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector_8h_a064d0ff969fc9cdbe1f24b71b5f4709d}{operator<=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&rhs)}
+\DoxyCodeLine{00215\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{return}\ !(rhs\ <\ lhs);}
+\DoxyCodeLine{00217\ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vector_8h_a4ce8b311d11e35a31afa02ea66e2a5e7}{operator>=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vektorius}{Vektorius<T>}}\ \&rhs)}
+\DoxyCodeLine{00221\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ <\ rhs);}
+\DoxyCodeLine{00223\ \}}
+
+\end{DoxyCode}

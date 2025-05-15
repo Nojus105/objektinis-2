@@ -1,0 +1,105 @@
+\doxysection{vector/vector.h Failo Nuoroda}
+\hypertarget{vector_8h}{}\label{vector_8h}\index{vector/vector.h@{vector/vector.h}}
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Įtraukimo priklausomybių diagrama vector.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h__incl}
+\end{center}
+\end{figure}
+Šis grafas rodo, kuris failas tiesiogiai ar netiesiogiai įtraukia šį failą\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{vector_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Klasės}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_vektorius}{Vektorius$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcijos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{vector_8h_a3a2222a3bd39cdf68b5e62f554264445}{operator==}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&lhs, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{vector_8h_adffe69c640083bb2e71d28648712ea4b}{operator!=}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&lhs, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{vector_8h_aff7e04b3f6dd8a34f3ba91f42d7ec0eb}{operator$<$}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&lhs, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{vector_8h_a418806c124d2f93a619793cb2ea7d022}{operator$>$}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&lhs, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{vector_8h_a064d0ff969fc9cdbe1f24b71b5f4709d}{operator$<$=}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&lhs, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{vector_8h_a4ce8b311d11e35a31afa02ea66e2a5e7}{operator$>$=}} (const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&lhs, const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funkcijos Dokumentacija}
+\Hypertarget{vector_8h_adffe69c640083bb2e71d28648712ea4b}\index{vector.h@{vector.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{vector_8h_adffe69c640083bb2e71d28648712ea4b} 
+template$<$typename T$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+\Hypertarget{vector_8h_aff7e04b3f6dd8a34f3ba91f42d7ec0eb}\index{vector.h@{vector.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{vector_8h_aff7e04b3f6dd8a34f3ba91f42d7ec0eb} 
+template$<$typename T$>$ \\
+bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Funkcijos kvietimo grafas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{vector_8h_aff7e04b3f6dd8a34f3ba91f42d7ec0eb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{vector_8h_a064d0ff969fc9cdbe1f24b71b5f4709d}\index{vector.h@{vector.h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{vector_8h_a064d0ff969fc9cdbe1f24b71b5f4709d} 
+template$<$typename T$>$ \\
+bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+\Hypertarget{vector_8h_a3a2222a3bd39cdf68b5e62f554264445}\index{vector.h@{vector.h}!operator==@{operator==}}
+\index{operator==@{operator==}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{vector_8h_a3a2222a3bd39cdf68b5e62f554264445} 
+template$<$typename T$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Funkcijos kvietimo grafas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{vector_8h_a3a2222a3bd39cdf68b5e62f554264445_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{vector_8h_a418806c124d2f93a619793cb2ea7d022}\index{vector.h@{vector.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{vector_8h_a418806c124d2f93a619793cb2ea7d022} 
+template$<$typename T$>$ \\
+bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+\Hypertarget{vector_8h_a4ce8b311d11e35a31afa02ea66e2a5e7}\index{vector.h@{vector.h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{vector_8h_a4ce8b311d11e35a31afa02ea66e2a5e7} 
+template$<$typename T$>$ \\
+bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ T $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+

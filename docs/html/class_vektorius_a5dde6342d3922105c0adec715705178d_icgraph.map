@@ -1,0 +1,11 @@
+<map id="Vektorius::clear" name="Vektorius::clear">
+<area shape="rect" id="Node000001" title=" " alt="" coords="250,56,361,83"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html#a8218eaa00fcc4e268064fc97b18b4375" title="Funkcija studentų duomenų įvedimui rankiniu būdu." alt="" coords="121,5,184,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,53,184,32,185,27,249,48"/>
+<area shape="rect" id="Node000004" href="$class_stud.html#a3ddb538bd2b699c964ae8a8491b3e87e" title="Move konstruktorius." alt="" coords="111,56,194,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,72,195,72,195,67,234,67"/>
+<area shape="rect" id="Node000005" href="$test_8cpp.html#a4f834dc5b55ce37ed932b5b0e09b2390" title=" " alt="" coords="103,107,202,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="249,91,196,109,194,104,248,86"/>
+<area shape="rect" id="Node000003" href="$vektorius_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Pagrindinė programos funkcija." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,21,55,21,55,16,105,16"/>
+</map>

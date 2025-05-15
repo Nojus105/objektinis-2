@@ -1,0 +1,13 @@
+<map id="testRuleOfFive" name="testRuleOfFive">
+<area shape="rect" id="Node000001" title="Funkcija Rule of Five taisyklės testavimui." alt="" coords="5,107,115,133"/>
+<area shape="rect" id="Node000002" href="$class_vektorius.html#ab4548c5f7e68bfeef88fe34ca6f8aaeb" title=" " alt="" coords="174,5,294,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,104,113,73,161,42,173,36,175,41,164,46,116,78,79,108"/>
+<area shape="rect" id="Node000003" href="$class_stud.html#a9997b21b5a5369e79c9956c651d27f0b" title=" " alt="" coords="164,56,304,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,103,170,85,172,90,109,109"/>
+<area shape="rect" id="Node000004" href="$class_zmogus.html#a11ee9ac120fbb7d6a4e1f4da3a602b63" title=" " alt="" coords="163,107,305,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="115,117,147,117,147,123,115,123"/>
+<area shape="rect" id="Node000005" href="$class_stud.html#a8ea0274d1700f08046395f675c4899ff" title="Getteriai." alt="" coords="170,157,298,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="109,131,172,150,170,155,108,137"/>
+<area shape="rect" id="Node000006" href="$class_zmogus.html#aaea44664c236e2fadf022f3821862499" title="Getteriai." alt="" coords="167,208,301,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="79,132,116,162,164,194,175,199,173,204,161,198,113,167,75,136"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['faile_0',['Faile',['../functions2_8cpp.html#ac415010cc90ad5b7c6a657d70a59b073',1,'Faile(deque&lt; Zmogus * &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions2.cpp'],['../header2_8h.html#ac415010cc90ad5b7c6a657d70a59b073',1,'Faile(deque&lt; Zmogus * &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions2.cpp'],['../functions1_8cpp.html#ab1cc1bfe3f2b150484550b849ba052e3',1,'Faile(list&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions1.cpp'],['../header1_8h.html#ab1cc1bfe3f2b150484550b849ba052e3',1,'Faile(list&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions1.cpp'],['../functions_8cpp.html#a97996a8a56967a5cefea234e5ff7a73f',1,'Faile(vector&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions.cpp'],['../header_8h.html#a97996a8a56967a5cefea234e5ff7a73f',1,'Faile(vector&lt; Stud &gt; &amp;grupe, char gal, double &amp;TotalTime):&#160;functions.cpp']]]
+  ['capacity_0',['capacity',['../class_vektorius.html#a3e36ca92b8fdf8d49778093ef7de2b5f',1,'Vektorius']]],
+  ['clear_1',['clear',['../class_vektorius.html#a5dde6342d3922105c0adec715705178d',1,'Vektorius']]]
 ];

@@ -1,0 +1,11 @@
+<map id="Skirstymas3" name="Skirstymas3">
+<area shape="rect" id="Node000001" title="Funkcija studentų skirstymui į dvi grupes naudojant std::partition." alt="" coords="5,56,100,83"/>
+<area shape="rect" id="Node000002" href="$class_vektorius.html#a2fd6349a8f3438950c669addc8c997cc" title=" " alt="" coords="164,5,278,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,53,159,35,160,40,100,58"/>
+<area shape="rect" id="Node000003" href="$class_vektorius.html#a69cf29702fe199d7a7cbe6a53cb22440" title=" " alt="" coords="169,56,273,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,67,153,67,153,72,100,72"/>
+<area shape="rect" id="Node000004" href="$class_vektorius.html#a75b241127fe5ad5628b1499185dad347" title=" " alt="" coords="148,107,294,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="100,81,160,99,159,104,99,86"/>
+<area shape="rect" id="Node000005" href="$class_vektorius.html#ac0f253f60fa2651f26bbc88000d2a9ab" title=" " alt="" coords="342,107,481,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="294,117,327,117,327,123,294,123"/>
+</map>

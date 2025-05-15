@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['egz_0',['egz',['../class_stud.html#a888ec71dda6c6b3f9390d2141dc7ef17',1,'Stud']]]
+  ['capacity_5f_0',['capacity_',['../class_vektorius.html#ad648dc284b3ec5cbadee13fdc09d80ef',1,'Vektorius']]]
 ];

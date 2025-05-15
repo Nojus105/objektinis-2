@@ -117,7 +117,9 @@ Versijos istorija:</h2>
 <li><b>v1.0</b> - Pilna versija. Sukurtas Makefile, kelios versijos su skirtingais konteineriais, optimizacija.</li>
 <li><b>v1.1</b> - Pertvarkyta struktūrą pakeičiant į klasę.</li>
 <li><b>v1.2</b> - Panaudotas rule of five, implementuoti jo testai.</li>
-<li><b>v1.2</b> - Klasė paskirstyta į abstrakčią ir derived klases.</li>
+<li><b>v1.5</b> - Klasė paskirstyta į abstrakčią ir derived klases.</li>
+<li><b>v2.0</b> - dokumentacija, unit testai.</li>
+<li><b>v3.0</b> - pilnai realizuota klasė (turi beveik pilną std::vector funkcionalumą)</li>
 </ol>
 <hr  />
 <h1><a class="anchor" id="autotoc_md3"></a>
@@ -148,19 +150,31 @@ Spartos analizė</h1>
 <b>Vector</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Studentų skaičius   </th><th class="markdownTableHeadNone">Failo kūrimas   </th><th class="markdownTableHeadNone">Failo skaitymas   </th><th class="markdownTableHeadNone">Rūšiavimas   </th><th class="markdownTableHeadNone">Paskirstymas   </th><th class="markdownTableHeadNone">Spausdinimas   </th><th class="markdownTableHeadNone">Iš viso   </th><th class="markdownTableHeadNone">Paskirstymas (2)   </th><th class="markdownTableHeadNone">Paskirstymas (3)    </th></tr>
+<th class="markdownTableHeadNone">Studentų skaičius   </th><th class="markdownTableHeadNone">Failo skaitymas   </th><th class="markdownTableHeadNone">Rūšiavimas   </th><th class="markdownTableHeadNone">Paskirstymas   </th><th class="markdownTableHeadNone">Spausdinimas   </th><th class="markdownTableHeadNone">Iš viso   </th><th class="markdownTableHeadNone">Paskirstymas (2)   </th><th class="markdownTableHeadNone">Paskirstymas (3)    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>1k</b>   </td><td class="markdownTableBodyNone">0.035 s   </td><td class="markdownTableBodyNone">0.015 s   </td><td class="markdownTableBodyNone">0 s   </td><td class="markdownTableBodyNone">0 s   </td><td class="markdownTableBodyNone">0.011 s   </td><td class="markdownTableBodyNone">0.061 s   </td><td class="markdownTableBodyNone">0.028 s   </td><td class="markdownTableBodyNone">0 s    </td></tr>
+<td class="markdownTableBodyNone"><b>1k</b>   </td><td class="markdownTableBodyNone">0.015 s   </td><td class="markdownTableBodyNone">0 s   </td><td class="markdownTableBodyNone">0 s   </td><td class="markdownTableBodyNone">0.011 s   </td><td class="markdownTableBodyNone">0.026 s   </td><td class="markdownTableBodyNone">0.028 s   </td><td class="markdownTableBodyNone">0 s    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>10k</b>   </td><td class="markdownTableBodyNone">0.219 s   </td><td class="markdownTableBodyNone">0.105 s   </td><td class="markdownTableBodyNone">0.017 s   </td><td class="markdownTableBodyNone">0.004 s   </td><td class="markdownTableBodyNone">0.077 s   </td><td class="markdownTableBodyNone">0.422 s   </td><td class="markdownTableBodyNone">0.076 s   </td><td class="markdownTableBodyNone">0.001 s    </td></tr>
+<td class="markdownTableBodyNone"><b>10k</b>   </td><td class="markdownTableBodyNone">0.105 s   </td><td class="markdownTableBodyNone">0.017 s   </td><td class="markdownTableBodyNone">0.004 s   </td><td class="markdownTableBodyNone">0.077 s   </td><td class="markdownTableBodyNone">0.203 s   </td><td class="markdownTableBodyNone">0.076 s   </td><td class="markdownTableBodyNone">0.001 s    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>100k</b>   </td><td class="markdownTableBodyNone">1.798 s   </td><td class="markdownTableBodyNone">0.392 s   </td><td class="markdownTableBodyNone">0.138 s   </td><td class="markdownTableBodyNone">0.021 s   </td><td class="markdownTableBodyNone">0.771 s   </td><td class="markdownTableBodyNone">3.120 s   </td><td class="markdownTableBodyNone">180.122 s   </td><td class="markdownTableBodyNone">0.012 s    </td></tr>
+<td class="markdownTableBodyNone"><b>100k</b>   </td><td class="markdownTableBodyNone">0.392 s   </td><td class="markdownTableBodyNone">0.138 s   </td><td class="markdownTableBodyNone">0.021 s   </td><td class="markdownTableBodyNone">0.771 s   </td><td class="markdownTableBodyNone">1.322 s   </td><td class="markdownTableBodyNone">180.122 s   </td><td class="markdownTableBodyNone">0.012 s    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>1m</b>   </td><td class="markdownTableBodyNone">16.223 s   </td><td class="markdownTableBodyNone">7.795 s   </td><td class="markdownTableBodyNone">0.996 s   </td><td class="markdownTableBodyNone">0.098 s   </td><td class="markdownTableBodyNone">9.040 s   </td><td class="markdownTableBodyNone">34.152 s   </td><td class="markdownTableBodyNone">&gt;5 min   </td><td class="markdownTableBodyNone">0.048 s    </td></tr>
+<td class="markdownTableBodyNone"><b>1m</b>   </td><td class="markdownTableBodyNone">7.795 s   </td><td class="markdownTableBodyNone">0.996 s   </td><td class="markdownTableBodyNone">0.098 s   </td><td class="markdownTableBodyNone">9.040 s   </td><td class="markdownTableBodyNone">17.929 s   </td><td class="markdownTableBodyNone">&gt;5 min   </td><td class="markdownTableBodyNone">0.048 s    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>10m</b>   </td><td class="markdownTableBodyNone">167.577 s   </td><td class="markdownTableBodyNone">87.541   </td><td class="markdownTableBodyNone">12.792   </td><td class="markdownTableBodyNone">crash   </td><td class="markdownTableBodyNone">88.551   </td><td class="markdownTableBodyNone">356.461   </td><td class="markdownTableBodyNone">crash   </td><td class="markdownTableBodyNone">crash   </td></tr>
+<td class="markdownTableBodyNone"><b>10m</b>   </td><td class="markdownTableBodyNone">87.541 s   </td><td class="markdownTableBodyNone">12.792 s   </td><td class="markdownTableBodyNone">crash   </td><td class="markdownTableBodyNone">88.551 s   </td><td class="markdownTableBodyNone">188.884 s   </td><td class="markdownTableBodyNone">crash   </td><td class="markdownTableBodyNone">crash   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md11"></a>
+<b>Klasė "Vektorius"</b></h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Studentų skaičius   </th><th class="markdownTableHeadNone">Failo skaitymas   </th><th class="markdownTableHeadNone">Rūšiavimas   </th><th class="markdownTableHeadNone">Paskirstymas   </th><th class="markdownTableHeadNone">Spausdinimas   </th><th class="markdownTableHeadNone">Iš viso   </th><th class="markdownTableHeadNone">Paskirstymas (2)   </th><th class="markdownTableHeadNone">Paskirstymas (3)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>100k</b>   </td><td class="markdownTableBodyNone">0.230 s   </td><td class="markdownTableBodyNone">0.027 s   </td><td class="markdownTableBodyNone">0.032 s   </td><td class="markdownTableBodyNone">0.288 s   </td><td class="markdownTableBodyNone">0.577 s   </td><td class="markdownTableBodyNone">2.474 s   </td><td class="markdownTableBodyNone">0.031 s    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>1m</b>   </td><td class="markdownTableBodyNone">1.842 s   </td><td class="markdownTableBodyNone">0.381 s   </td><td class="markdownTableBodyNone">0.358 s   </td><td class="markdownTableBodyNone">3.067 s   </td><td class="markdownTableBodyNone">5.648 s   </td><td class="markdownTableBodyNone">236.430 s   </td><td class="markdownTableBodyNone">0.285 s    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>10m</b>   </td><td class="markdownTableBodyNone">24.155 s   </td><td class="markdownTableBodyNone">5.036 s   </td><td class="markdownTableBodyNone">2.785   </td><td class="markdownTableBodyNone">28.227 s   </td><td class="markdownTableBodyNone">60.204 s   </td><td class="markdownTableBodyNone">&gt;5 min   </td><td class="markdownTableBodyNone">2.792 s   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md12"></a>
 <b>List</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -176,7 +190,7 @@ Spartos analizė</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>10m</b>   </td><td class="markdownTableBodyNone">86.119 s   </td><td class="markdownTableBodyNone">10.844 s   </td><td class="markdownTableBodyNone">crash   </td><td class="markdownTableBodyNone">89.815 s   </td><td class="markdownTableBodyNone">188.504 s   </td><td class="markdownTableBodyNone">1.726 s   </td><td class="markdownTableBodyNone">4.288 s   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 <b>Deque</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -192,7 +206,7 @@ Spartos analizė</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>10m</b>   </td><td class="markdownTableBodyNone">85.353 s   </td><td class="markdownTableBodyNone">12.767 s   </td><td class="markdownTableBodyNone">crash   </td><td class="markdownTableBodyNone">89.707 s   </td><td class="markdownTableBodyNone">188.283 s   </td><td class="markdownTableBodyNone">0.456 s   </td><td class="markdownTableBodyNone">0.470 s   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 <b>Deque naudojant klasę (be flag)</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -204,7 +218,7 @@ Spartos analizė</h1>
 </table>
 <p>.exe failo dydis - 372 KB</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 <b>Deque naudojant klasę (-O2)</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -216,7 +230,7 @@ Spartos analizė</h1>
 </table>
 <p>.exe failo dydis - 195 KB</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 <b>Deque naudojant klasę (-O3)</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -228,7 +242,7 @@ Spartos analizė</h1>
 </table>
 <p>.exe failo dydis - 190 KB</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 <b>Deque naudojant struct (-03)</b></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -239,29 +253,47 @@ Spartos analizė</h1>
 <td class="markdownTableBodyNone"><b>1m</b>   </td><td class="markdownTableBodyNone">7.214 s   </td><td class="markdownTableBodyNone">1.092 s   </td><td class="markdownTableBodyNone">0.059 s   </td><td class="markdownTableBodyNone">8.895 s   </td><td class="markdownTableBodyNone">17.260 s   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
+<b>Vektorių pildymo spartos analizė</b></h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Vektoriaus dydis   </th><th class="markdownTableHeadNone">10000   </th><th class="markdownTableHeadNone">100000   </th><th class="markdownTableHeadNone">1000000   </th><th class="markdownTableHeadNone">10000000   </th><th class="markdownTableHeadNone">100000000   </th><th class="markdownTableHeadNone">Perskirstymai (100000000)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>std::vector</b>   </td><td class="markdownTableBodyNone">73 micros   </td><td class="markdownTableBodyNone">380 micros   </td><td class="markdownTableBodyNone">2.670 ms   </td><td class="markdownTableBodyNone">29.612 ms   </td><td class="markdownTableBodyNone">209.857 ms   </td><td class="markdownTableBodyNone">27    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Klasė "Vektorius"</b>   </td><td class="markdownTableBodyNone">90 micros   </td><td class="markdownTableBodyNone">282 micros   </td><td class="markdownTableBodyNone">4.216 ms   </td><td class="markdownTableBodyNone">39.728 ms   </td><td class="markdownTableBodyNone">342.493 ms   </td><td class="markdownTableBodyNone">27   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md24"></a>
 Sistemos parametrai</h1>
 <ul>
 <li><b>CPU:</b> i7-13650HX</li>
 <li><b>RAM:</b> 24GB 4800MHz</li>
 <li><b>Storage:</b> NVMe M.2 SSD 1TB</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 Išvados</h1>
-<p><b>Vektoriai</b> veikė prasčiausiai atminties atžvilgiu, crashino. <b>1 strategija</b> pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). <b>2 strategija</b> pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp <b>deque ir list konteinerių</b> kito minimaliai, todėl spartos atžvilgiu <b>deque konteineris su strategija Nr. 2</b> yra geriausias pasirinkimas. Taip pat pastebime, kad <b>klasė</b> yra iki 20% spartesnė nei <b>struktūra</b>.</p>
-<p><img src="https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885" alt="" class="inline"/></p>
-<p><b>Klasės konteineris</b> užtrunka šiek tiek ilgiau skaitymo funkcijoje, tačiau visas kitas funkcijas atlieka greičiau (skirtumas nėra didelis).</p>
-<p>Naudojant -O2 ir -O3 <b>Optimizavimo flag'us</b> matomas didelis spartos skirtumas palyginus be flag'o. Skirtumas tarp -O2 ir -O3 yra minimalus, bet vistiek pastebime, kad -O3 veikia sparčiausiai. Su -O1 flag'u kilo problemų, yra errorų tarp naudojamos mingw32 versijos ir -O1 flag.</p>
-<hr  />
-<h1><a class="anchor" id="autotoc_md24"></a>
-Perdengtų metodų paaiškinimas</h1>
-<p><b>Manual</b> įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Vienu metu įvedami visi pažymiai atskirti tarpu, kurie yra saugojami vektoriuje. Įvedamas egzamino pažymys. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.</p>
-<p><b>Semi</b> įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Randomly sugeneruojami iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.</p>
-<p><b>Auto</b> įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Sugeneruojami iki 10 studentų (vardai, pavardės parenkami atsitiktinai iš vektorių), kiekvienas iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.</p>
-<p><b>Ekrane</b> išvestis - ekrane atspausdina visus surūšiuotus studentus (pagal vardą/pavardę/galutinį balą) ir jų galutinį balą vidurkį/medianą pagal vartotojo pasirinkimą. Rule of five nenaudojamas, kadangi nekuriama nauja klasė (nereikia default konstruktoriaus), neperkeliami ir nekopijuojami duomenys (nereikia move/copy konstruktoriaus/operatoriaus) ir nenaikinami laikini duomenys (nereikia destruktoriaus).</p>
-<p><b>Faile</b> išvestis - vartotojas pasirenka ar paskirstyti studentus į 2 atskirus failus pagal vidurkį. Skirstant i grupeles sukuriami 2 nauji vektoriai, į kuriuos perkeliami duomenys naudojant move konstruktorių, priklausant nuo vartotojo pasirinktos rūšiavimo strategijos. Duomenys atspausdinami faile/failuose pagal vartotojo pasirinktą rūšiavimą. Panaudojamas destruktorius, kadangi vektoriams priklausė klasės nariai.</p>
-<hr  />
-<p>Kilus klausimams ar pastaboms, susisiekite el. paštu: **nojus<a href="#" onclick="location.href='mai'+'lto:'+'.pe'+'tr'+'usi'+'s@'+'mif'+'.s'+'tud'+'.v'+'u.l'+'t'; return false;">.petr<span class="obfuscator">.nosp@m.</span>usis<span class="obfuscator">.nosp@m.</span>@mif.<span class="obfuscator">.nosp@m.</span>stud<span class="obfuscator">.nosp@m.</span>.vu.l<span class="obfuscator">.nosp@m.</span>t</a>** </p>
+<p><b>Vektoriai</b> veikė prasčiausiai atminties atžvilgiu, crashino. <b>1 strategija</b> pasižymi prastu atminties išnaudojimu (su dideliais kiekiais taip pat sukėlė crash). <b>2 strategija</b> pasižymi didžiausiu spartumu (išskyrus su vektoriais). Naudojamos atminties kiekis tarp <b>deque ir list konteinerių</b> kito minimaliai, todėl spartos atžvilgiu <b>deque konteineris su strategija Nr. 2</b> yra geriausias pasirinkimas. Taip pat pastebime, kad <b>klasė</b> yra iki 20% spartesnė nei <b>struktūra</b>. Sukurta <b>klasė "Vektorius&lt;/strong&gt; veikė lėčiau su studentų paskirstymais, tačiau sparčiau visur kitur nei &lt;strong&gt;std::vector&lt;/strong&gt;. Tačiau &lt;strong&gt;"<a class="el" href="class_vektorius.html">Vektorius</a>" klasė&lt;/strong&gt; paskirstymo atžvilgiu yra stabilesnė, kadangi necrashina su dideliais failais.
+
+&lt;img src="<a href="https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885">https://github.com/user-attachments/assets/a45d0f40-fdef-4fcb-845b-b67f36220885</a>" alt=""/&gt;
+
+&lt;strong&gt;Klasės konteineris&lt;/strong&gt; užtrunka šiek tiek ilgiau skaitymo funkcijoje, tačiau visas kitas funkcijas atlieka greičiau (skirtumas nėra didelis).
+
+Naudojant -O2 ir -O3 &lt;strong&gt;Optimizavimo flag'us&lt;/strong&gt; matomas didelis spartos skirtumas palyginus be flag'o. Skirtumas tarp -O2 ir -O3 yra minimalus, bet vistiek pastebime, kad -O3 veikia sparčiausiai. Su -O1 flag'u kilo problemų, yra errorų tarp naudojamos mingw32 versijos ir -O1 flag.
+
+&lt;hr&gt;
+
+@section autotoc_md27 Perdengtų metodų paaiškinimas
+
+&lt;strong&gt;Manual&lt;/strong&gt; įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Vienu metu įvedami visi pažymiai atskirti tarpu, kurie yra saugojami vektoriuje. Įvedamas egzamino pažymys. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.
+
+&lt;strong&gt;Semi&lt;/strong&gt; įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Vartotojas veda studentų vardus/pavardes arba "stop", kad užbaigtų įvedimą (nėra case sensitive). Randomly sugeneruojami iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.</b></p>
+<p><b><b>Auto</b> įvestis - sukuriama laikina klasė, panaudojamas default konstruktorius. Sugeneruojami iki 10 studentų (vardai, pavardės parenkami atsitiktinai iš vektorių), kiekvienas iki 10 pažymių. Iš karto paskaičiuojami mediana ir vidurkiai, kad nereikėtų saugoti visų pažymių, kad sutaupyti atminties. Panaudojamas move konstruktorius perkelti iš laikinos klasės į naudojamą visoje programoje. Destruktorius sunaikina laikiną klasę.</b></p>
+<p><b><b>Ekrane</b> išvestis - ekrane atspausdina visus surūšiuotus studentus (pagal vardą/pavardę/galutinį balą) ir jų galutinį balą vidurkį/medianą pagal vartotojo pasirinkimą. Rule of five nenaudojamas, kadangi nekuriama nauja klasė (nereikia default konstruktoriaus), neperkeliami ir nekopijuojami duomenys (nereikia move/copy konstruktoriaus/operatoriaus) ir nenaikinami laikini duomenys (nereikia destruktoriaus).</b></p>
+<p><b><b>Faile</b> išvestis - vartotojas pasirenka ar paskirstyti studentus į 2 atskirus failus pagal vidurkį. Skirstant i grupeles sukuriami 2 nauji vektoriai, į kuriuos perkeliami duomenys naudojant move konstruktorių, priklausant nuo vartotojo pasirinktos rūšiavimo strategijos. Duomenys atspausdinami faile/failuose pagal vartotojo pasirinktą rūšiavimą. Panaudojamas destruktorius, kadangi vektoriams priklausė klasės nariai.</b></p>
+<p><b></p><hr  />
+<p></b></p>
+<p><b>Kilus klausimams ar pastaboms, susisiekite el. paštu: **nojus<a href="#" onclick="location.href='mai'+'lto:'+'.pe'+'tr'+'usi'+'s@'+'mif'+'.s'+'tud'+'.v'+'u.l'+'t'; return false;">.petr<span class="obfuscator">.nosp@m.</span>usis<span class="obfuscator">.nosp@m.</span>@mif.<span class="obfuscator">.nosp@m.</span>stud<span class="obfuscator">.nosp@m.</span>.vu.l<span class="obfuscator">.nosp@m.</span>t</a>** </b></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
