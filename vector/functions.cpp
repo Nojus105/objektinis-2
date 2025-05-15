@@ -1,3 +1,4 @@
+#define EXPORTING_DLL
 #include "header.h"
 
 Stud::~Stud()

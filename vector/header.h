@@ -1,6 +1,5 @@
 #pragma once
 
-#define EXPORTING_DLL
 #include "dll_header.h"
 #include "vector.h"
 #include <iostream>
