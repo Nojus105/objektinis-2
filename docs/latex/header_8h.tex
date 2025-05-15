@@ -1,5 +1,6 @@
 \doxysection{vector/header.h Failo Nuoroda}
 \hypertarget{header_8h}{}\label{header_8h}\index{vector/header.h@{vector/header.h}}
+{\ttfamily \#include "{}dll\+\_\+header.\+h"{}}\newline
 {\ttfamily \#include "{}vector.\+h"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$iomanip$>$}\newline
@@ -52,8 +53,6 @@ void \mbox{\hyperlink{header_8h_a065be054a890c625d82975713d7ecb0d}{Skirstymas2}}
 \begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{header_8h_a8430ccda25498928e2c54d54c09406d9}{Skirstymas3}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char gal, \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&galvociai, double \&Total\+Time)
 \begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes naudojant {\ttfamily std\+::partition}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{header_8h_ad1eb32d6059294f4ad07ee0ed9e871a5}{Faile}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char gal, double \&Total\+Time)
-\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų išvedimui į failą. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{header_8h_aa908f0ccb9632d69a62bd347ee0f0b73}{Rusiuoti}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char rusiavimas, char gal, double \&Total\+Time)
 \begin{DoxyCompactList}\small\item\em Funkcija studentų rikiavimui pagal pasirinktą kriterijų. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59}{Generuoti\+Faila}} (double \&Total\+Time)
@@ -119,41 +118,6 @@ Here is the caller graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=200pt]{header_8h_addce04794968efb5059df6484b270c64_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{header_8h_ad1eb32d6059294f4ad07ee0ed9e871a5}\index{header.h@{header.h}!Faile@{Faile}}
-\index{Faile@{Faile}!header.h@{header.h}}
-\doxysubsubsection{\texorpdfstring{Faile()}{Faile()}}
-{\footnotesize\ttfamily \label{header_8h_ad1eb32d6059294f4ad07ee0ed9e871a5} 
-void Faile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
-
-
-
-Funkcija studentų duomenų išvedimui į failą. 
-
-
-\begin{DoxyParams}{Parametrai}
-{\em grupe} & Studentų grupė. \\
-\hline
-{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
-\hline
-{\em Total\+Time} & Bendras operacijos laikas. \\
-\hline
-\end{DoxyParams}
-Funkcijos kvietimo grafas\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{header_8h_ad1eb32d6059294f4ad07ee0ed9e871a5_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=190pt]{header_8h_ad1eb32d6059294f4ad07ee0ed9e871a5_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{header_8h_a5d84fa58ad0d60e6870ee6350ff84f59}\index{header.h@{header.h}!GeneruotiFaila@{GeneruotiFaila}}

@@ -1,8 +1,9 @@
 var functions_8cpp =
 [
+    [ "EXPORTING_DLL", "functions_8cpp.html#a9462282b2cb8767c0fd07267338d226f", null ],
     [ "Auto", "functions_8cpp.html#ad7f15d507fc79746ac0015fe2e8645df", null ],
     [ "Ekrane", "functions_8cpp.html#addce04794968efb5059df6484b270c64", null ],
-    [ "Faile", "functions_8cpp.html#ad1eb32d6059294f4ad07ee0ed9e871a5", null ],
+    [ "Faile", "functions_8cpp.html#ad7d4675bad8a0f12e6dbb6bb78b5220c", null ],
     [ "GeneruotiFaila", "functions_8cpp.html#a5d84fa58ad0d60e6870ee6350ff84f59", null ],
     [ "Manual", "functions_8cpp.html#a8218eaa00fcc4e268064fc97b18b4375", null ],
     [ "Rusiuoti", "functions_8cpp.html#aa908f0ccb9632d69a62bd347ee0f0b73", null ],

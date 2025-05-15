@@ -5,5 +5,7 @@ var searchData=
   ['deque_20naudojant_20klasę_20o2_20strong_2',['&lt;strong&gt;Deque naudojant klasę (-O2)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
   ['deque_20naudojant_20klasę_20o3_20strong_3',['&lt;strong&gt;Deque naudojant klasę (-O3)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md18',1,'']]],
   ['deque_20naudojant_20struct_2003_20strong_4',['&lt;strong&gt;Deque naudojant struct (-03)&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
-  ['deque_20strong_5',['&lt;strong&gt;Deque&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]]
+  ['deque_20strong_5',['&lt;strong&gt;Deque&lt;/strong&gt;',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]],
+  ['dll_5fapi_6',['DLL_API',['../dll__header_8h.html#a1a2aaad2f42ad198a2e6c97dc7681137',1,'dll_header.h']]],
+  ['dll_5fheader_2eh_7',['dll_header.h',['../dll__header_8h.html',1,'']]]
 ];

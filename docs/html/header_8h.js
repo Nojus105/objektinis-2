@@ -4,7 +4,6 @@ var header_8h =
     [ "Stud", "class_stud.html", "class_stud" ],
     [ "Auto", "header_8h.html#ad7f15d507fc79746ac0015fe2e8645df", null ],
     [ "Ekrane", "header_8h.html#addce04794968efb5059df6484b270c64", null ],
-    [ "Faile", "header_8h.html#ad1eb32d6059294f4ad07ee0ed9e871a5", null ],
     [ "GeneruotiFaila", "header_8h.html#a5d84fa58ad0d60e6870ee6350ff84f59", null ],
     [ "Manual", "header_8h.html#a8218eaa00fcc4e268064fc97b18b4375", null ],
     [ "Rusiuoti", "header_8h.html#aa908f0ccb9632d69a62bd347ee0f0b73", null ],

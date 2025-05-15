@@ -9,6 +9,11 @@
 \includegraphics[width=350pt]{functions_8cpp__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Apibrėžimai}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{functions_8cpp_a9462282b2cb8767c0fd07267338d226f}{EXPORTING\+\_\+\+DLL}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Funkcijos}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,14 +31,23 @@ void \mbox{\hyperlink{functions_8cpp_a065be054a890c625d82975713d7ecb0d}{Skirstym
 \begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{functions_8cpp_a8430ccda25498928e2c54d54c09406d9}{Skirstymas3}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char gal, \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&vargsiukai, \mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_stud}{Stud}} $>$ \&galvociai, double \&Total\+Time)
 \begin{DoxyCompactList}\small\item\em Funkcija studentų skirstymui į dvi grupes naudojant {\ttfamily std\+::partition}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{functions_8cpp_ad1eb32d6059294f4ad07ee0ed9e871a5}{Faile}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char gal, double \&Total\+Time)
-\begin{DoxyCompactList}\small\item\em Funkcija studentų duomenų išvedimui į failą. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dll__header_8h_a1a2aaad2f42ad198a2e6c97dc7681137}{DLL\+\_\+\+API}} void \mbox{\hyperlink{functions_8cpp_ad7d4675bad8a0f12e6dbb6bb78b5220c}{Faile}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char gal, double \&Total\+Time)
+\begin{DoxyCompactList}\small\item\em Exported function for the DLL. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{functions_8cpp_aa908f0ccb9632d69a62bd347ee0f0b73}{Rusiuoti}} (\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&grupe, char rusiavimas, char gal, double \&Total\+Time)
 \begin{DoxyCompactList}\small\item\em Funkcija studentų rikiavimui pagal pasirinktą kriterijų. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{functions_8cpp_a5d84fa58ad0d60e6870ee6350ff84f59}{Generuoti\+Faila}} (double \&Total\+Time)
 \begin{DoxyCompactList}\small\item\em Funkcija studentų failo generavimui. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{functions_8cpp_a49ee3f6d9717457a62ff562e1048bc64}{test\+Rule\+Of\+Five}} ()
 \begin{DoxyCompactList}\small\item\em Funkcija Rule of Five taisyklės testavimui. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Apibrėžimų Dokumentacija}
+\Hypertarget{functions_8cpp_a9462282b2cb8767c0fd07267338d226f}\index{functions.cpp@{functions.cpp}!EXPORTING\_DLL@{EXPORTING\_DLL}}
+\index{EXPORTING\_DLL@{EXPORTING\_DLL}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPORTING\_DLL}{EXPORTING\_DLL}}
+{\footnotesize\ttfamily \label{functions_8cpp_a9462282b2cb8767c0fd07267338d226f} 
+\#define EXPORTING\+\_\+\+DLL}
+
 
 
 \doxysubsection{Funkcijos Dokumentacija}
@@ -95,31 +109,22 @@ Here is the caller graph for this function\+:
 \includegraphics[width=200pt]{functions_8cpp_addce04794968efb5059df6484b270c64_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{functions_8cpp_ad1eb32d6059294f4ad07ee0ed9e871a5}\index{functions.cpp@{functions.cpp}!Faile@{Faile}}
+\Hypertarget{functions_8cpp_ad7d4675bad8a0f12e6dbb6bb78b5220c}\index{functions.cpp@{functions.cpp}!Faile@{Faile}}
 \index{Faile@{Faile}!functions.cpp@{functions.cpp}}
 \doxysubsubsection{\texorpdfstring{Faile()}{Faile()}}
-{\footnotesize\ttfamily \label{functions_8cpp_ad1eb32d6059294f4ad07ee0ed9e871a5} 
-void Faile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{functions_8cpp_ad7d4675bad8a0f12e6dbb6bb78b5220c} 
+\mbox{\hyperlink{dll__header_8h_a1a2aaad2f42ad198a2e6c97dc7681137}{DLL\+\_\+\+API}} void Faile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vektorius}{Vektorius}}$<$ \mbox{\hyperlink{class_zmogus}{Zmogus}} \texorpdfstring{$\ast$}{*} $>$ \&}]{grupe}{, }\item[{char}]{gal}{, }\item[{double \&}]{Total\+Time}{}\end{DoxyParamCaption})}
 
 
 
-Funkcija studentų duomenų išvedimui į failą. 
+Exported function for the DLL. 
 
-
-\begin{DoxyParams}{Parametrai}
-{\em grupe} & Studentų grupė. \\
-\hline
-{\em gal} & Pasirinkimas, ar naudoti vidurkį (\textquotesingle{}0\textquotesingle{}) ar medianą (\textquotesingle{}1\textquotesingle{}). \\
-\hline
-{\em Total\+Time} & Bendras operacijos laikas. \\
-\hline
-\end{DoxyParams}
-Funkcijos kvietimo grafas\+:
+This function will be exported and can be used by other applications. Funkcijos kvietimo grafas\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{functions_8cpp_ad1eb32d6059294f4ad07ee0ed9e871a5_cgraph}
+\includegraphics[width=350pt]{functions_8cpp_ad7d4675bad8a0f12e6dbb6bb78b5220c_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -127,7 +132,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=190pt]{functions_8cpp_ad1eb32d6059294f4ad07ee0ed9e871a5_icgraph}
+\includegraphics[width=190pt]{functions_8cpp_ad7d4675bad8a0f12e6dbb6bb78b5220c_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{functions_8cpp_a5d84fa58ad0d60e6870ee6350ff84f59}\index{functions.cpp@{functions.cpp}!GeneruotiFaila@{GeneruotiFaila}}

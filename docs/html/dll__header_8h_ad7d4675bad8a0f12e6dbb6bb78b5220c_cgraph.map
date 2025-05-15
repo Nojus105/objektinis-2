@@ -1,5 +1,5 @@
 <map id="Faile" name="Faile">
-<area shape="rect" id="Node000001" title="Funkcija studentų duomenų išvedimui į failą." alt="" coords="5,239,55,266"/>
+<area shape="rect" id="Node000001" title="Exported function for the DLL." alt="" coords="5,239,55,266"/>
 <area shape="rect" id="Node000002" href="$functions_8cpp.html#ad3ba604cfecf00854206f17d2db94d04" title="Funkcija studentų skirstymui į dvi grupes pagal vidurkį arba medianą." alt="" coords="103,290,197,316"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,260,104,281,102,285,54,265"/>
 <area shape="rect" id="Node000005" href="$functions_8cpp.html#a065be054a890c625d82975713d7ecb0d" title="Funkcija studentų skirstymui į dvi grupes su pašalinimu iš pradinės grupės." alt="" coords="103,138,197,164"/>

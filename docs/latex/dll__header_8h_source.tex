@@ -1,0 +1,20 @@
+\doxysection{dll\+\_\+header.\+h}
+\hypertarget{dll__header_8h_source}{}\label{dll__header_8h_source}\index{vector/dll\_header.h@{vector/dll\_header.h}}
+\mbox{\hyperlink{dll__header_8h}{Eiti į šio failo dokumentaciją.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{vector.h}}"{}}\ \textcolor{comment}{//\ Ensure\ this\ is\ necessary}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ EXPORTING\_DLL}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ DLL\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DLL\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Forward\ declaration\ of\ Zmogus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zmogus}{Zmogus}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \mbox{\hyperlink{dll__header_8h_a1a2aaad2f42ad198a2e6c97dc7681137}{DLL\_API}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dll__header_8h_ad7d4675bad8a0f12e6dbb6bb78b5220c}{Faile}}(\mbox{\hyperlink{class_vektorius}{Vektorius<Zmogus\ *>}}\ \&grupe,\ \textcolor{keywordtype}{char}\ gal,\ \textcolor{keywordtype}{double}\ \&TotalTime);}
+
+\end{DoxyCode}
