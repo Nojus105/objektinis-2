@@ -1,5 +1,4 @@
 #include "header.h"
-#include "vector.h"
 
 Stud::~Stud()
 {
