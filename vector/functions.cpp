@@ -439,7 +439,8 @@ void Skirstymas3(Vektorius<Zmogus *> &grupe, char gal, Vektorius<Stud> &vargsiuk
     TotalTime += elapsed.count();
 }
 
-void Faile(Vektorius<Zmogus *> &grupe, char gal, double &TotalTime)
+#ifdef EXPORTING_DLL
+DLL_API void Faile(Vektorius<Zmogus *> &grupe, char gal, double &TotalTime)
 {
     cout << "Paskirstyti i 2 grupes?" << endl;
     cout << "0 - Ne, 1 - Taip" << endl;
@@ -582,6 +583,7 @@ void Faile(Vektorius<Zmogus *> &grupe, char gal, double &TotalTime)
         TotalTime += elapsed.count();
     }
 }
+#endif
 
 void Rusiuoti(Vektorius<Zmogus *> &grupe, char rusiavimas, char gal, double &TotalTime)
 {

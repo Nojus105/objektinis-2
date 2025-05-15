@@ -1,3 +1,7 @@
+#pragma once
+
+#define EXPORTING_DLL
+#include "dll_header.h"
 #include "vector.h"
 #include <iostream>
 #include <iomanip>
@@ -10,7 +14,6 @@
 #include <chrono>
 #include <numeric>
 #include <cassert>
-#pragma once
 
 using std::cin;
 using std::cout;
@@ -259,15 +262,6 @@ void Skirstymas2(Vektorius<Zmogus *> &grupe, char gal, Vektorius<Stud> &vargsiuk
  * @param TotalTime Bendras operacijos laikas.
  */
 void Skirstymas3(Vektorius<Zmogus *> &grupe, char gal, Vektorius<Stud> &vargsiukai, Vektorius<Stud> &galvociai, double &TotalTime);
-
-/**
- * @brief Funkcija studentų duomenų išvedimui į failą.
- *
- * @param grupe Studentų grupė.
- * @param gal Pasirinkimas, ar naudoti vidurkį ('0') ar medianą ('1').
- * @param TotalTime Bendras operacijos laikas.
- */
-void Faile(Vektorius<Zmogus *> &grupe, char gal, double &TotalTime);
 
 /**
  * @brief Funkcija studentų rikiavimui pagal pasirinktą kriterijų.
