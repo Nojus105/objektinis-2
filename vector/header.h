@@ -13,6 +13,7 @@
 #include <chrono>
 #include <numeric>
 #include <cassert>
+#include <vector>
 
 using std::cin;
 using std::cout;

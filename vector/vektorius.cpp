@@ -10,6 +10,46 @@
  */
 int main()
 {
+    cout << "Skaiciuoti perskirstymus? (y/n)" << endl;
+    char perskirstymas;
+    while (true)
+    {
+        perskirstymas = getch();
+        if (perskirstymas == 'y' || perskirstymas == 'n')
+            break;
+        else
+            cout << "Neteisingas pasirinkimas" << endl;
+    }
+    if (perskirstymas == 'y')
+    {
+        unsigned int sz = 100000000;
+        int count = 0;
+        std::vector<int> v1;
+        auto laikas1=std::chrono::high_resolution_clock::now();
+        for (unsigned int i = 1; i <= sz; ++i)
+        {
+            v1.push_back(i);
+            if (v1.capacity() == v1.size())
+                count++;
+        }
+        auto laikas2=std::chrono::high_resolution_clock::now();
+        cout << "std::vector perskirstymu: " << count << endl;
+        cout << "std::vector laikas: " << std::chrono::duration_cast<std::chrono::milliseconds>(laikas2-laikas1).count() << " ms" << endl;
+        count = 0;
+        Vektorius<int> v2;
+        auto laikas3=std::chrono::high_resolution_clock::now();
+        for (unsigned int i = 1; i <= sz; ++i)
+        {
+            v2.push_back(i);
+            if (v2.capacity() == v2.size())
+                count++;
+        }
+        auto laikas4=std::chrono::high_resolution_clock::now();
+        cout << endl << "Klases Vektorius perskirstymu: " << count << endl;
+        cout << "Vektorius laikas: " << std::chrono::duration_cast<std::chrono::milliseconds>(laikas4-laikas3).count() << " ms" << endl;
+        return 0;
+    }
+
     // Uzkomentuota eilutė, rodanti, kad abstrakčios klasės objektų kūrimas negalimas
     // Zmogus testas;
 
